@@ -103,14 +103,14 @@ namespace Tests
             foreach (var game in games)
             {
                 var pairs = Helper.GetPairs(game.Houses);
-                result += Helper.GetPairs(houses).Count(p => pairs.Any(p2 => Same(p, p2)));
+                result += Helper.GetPairs(houses).Count(p => pairs.SingleOrDefault(p2 => Same(p, p2)) != null);
             }
             return result;
         }
 
         private bool Same(string[] pair1, string[] pair2)
         {
-            return pair1.Contains(pair2.First()) && pair1.Contains(pair1.Last());
+            return pair1.Contains(pair2.First()) && pair1.Contains(pair2.Last());
         }
 
         private static bool CheckSameHouse(House x, Game lastGame)
