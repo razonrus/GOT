@@ -86,6 +86,45 @@ namespace BusinessLogic
                             HouseType = HouseType.Baratheon
                         }
                     }
+                },
+                new Game
+                {
+                    Date = new DateTime(2016, 8, 26),
+                    Winner = Players.Ruslan,
+                    WinType = WinType.Score,
+                    Houses = new List<House>
+                    {
+                        new House
+                        {
+                            Name = Players.Ruslan,
+                            HouseType = HouseType.Martell
+                        },
+                        new House
+                        {
+                            Name = Players.Serega,
+                            HouseType = HouseType.Lannister
+                        },
+                        new House
+                        {
+                            Name = Players.Gleb,
+                            HouseType = HouseType.Stark
+                        },
+                        new House
+                        {
+                            Name = Players.Semen,
+                            HouseType = HouseType.Baratheon
+                        },
+                        new House
+                        {
+                            Name = Players.Igor,
+                            HouseType = HouseType.Tyrell
+                        },
+                        new House
+                        {
+                            Name = Players.Anatron,
+                            HouseType = HouseType.Greyjoy
+                        }
+                    }
                 }
             };
         }

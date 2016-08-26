@@ -88,7 +88,7 @@ namespace Tests
 
             foreach (var item in best.Take(10))
             {
-                foreach (var house in item.houses)
+                foreach (var house in item.houses.OrderBy(x=>x.HouseType))
                 {
                     Console.WriteLine(house.HouseType + " " + house.Name);
                 }
