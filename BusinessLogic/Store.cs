@@ -82,7 +82,7 @@ namespace BusinessLogic
                         },
                         new House
                         {
-                            Name = Players.Anatron,
+                            Name = Players.Anotron,
                             HouseType = HouseType.Baratheon
                         }
                     }
@@ -121,7 +121,7 @@ namespace BusinessLogic
                         },
                         new House
                         {
-                            Name = Players.Anatron,
+                            Name = Players.Anotron,
                             HouseType = HouseType.Greyjoy
                         }
                     }
