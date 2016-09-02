@@ -3,7 +3,7 @@ namespace BusinessLogic
     public static class Players
     {
         public static string Ruslan = "Ruslan";
-        public static string Anatron = "Anatron";
+        public static string Anotron = "Anotron";
         public static string Semen = "Semen";
         public static string Gleb = "Gleb";
         public static string Igor = "Igor";

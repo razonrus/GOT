@@ -41,7 +41,7 @@ namespace Tests
                 Players.Ruslan,
                 Players.Gleb,
                 Players.Semen,
-                Players.Anatron,
+                Players.Anotron,
                 Players.Serega,
                 Players.Igor
             };
