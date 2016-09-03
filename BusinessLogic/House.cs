@@ -8,6 +8,11 @@ namespace BusinessLogic
     {
         public string Name { get; set; }
         public HouseType HouseType { get; set; }
+
+        public override string ToString()
+        {
+            return HouseType + " - " + Name;
+        }
     }
 
     public class Game

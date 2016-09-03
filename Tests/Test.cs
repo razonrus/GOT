@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using BusinessLogic;
 using NUnit.Framework;
 
@@ -14,13 +15,25 @@ namespace Tests
             public List<House> Houses { get; }
 
             public int MinusScore { get; }
+            public StringBuilder Sb { get; set; }
 
-            public Variant(List<House> houses, int minusScore)
+            public Variant(List<House> houses, int minusScore, StringBuilder sb)
             {
                 Houses = houses;
                 MinusScore = minusScore;
+                Sb = sb;
             }
         }
+
+//        [Test]
+//        public void M2()
+//        {
+//            var permutations = GetPermutations(new List<string>() {"1", "2", "3", "4", "5", "6", "7"}, 7);
+//
+//            var s = string.Join(Environment.NewLine, permutations.Select(x => string.Join("", x)));
+//
+//            Console.WriteLine(s);
+//        }
 
         [Test]
         public void M1()
@@ -43,12 +56,16 @@ namespace Tests
 
             Console.WriteLine("permutations count: " + permutations.Count);
 
-            var filteredByLastGame = permutations.Select(p => p.Select((n, i) =>
+            var enumerable = permutations.Select(p => p.Select((n, i) =>
                 new House
                 {
                     Name = n,
                     HouseType = (HouseType) i
                 }).ToList())
+                .ToList();
+
+
+            var filteredByLastGame = enumerable
                 .Where(h =>
                 {
                     return h.Any(x =>
@@ -64,11 +81,13 @@ namespace Tests
 
             foreach (var houses in filteredByLastGame)
             {
-                var minusScore = houses.Sum(h => store.Games.Count(g => CheckSameHouse(h, g)))*10
-                                 + MinusMutual(houses, store.Games)*5
+                var sb = new StringBuilder();
+
+                var minusScore = houses.Sum(h => store.Games.Count(g => CheckSameHouse(h, g, sb)))*10
+                                 + MinusMutual(houses, store.Games, sb)*5
                     ;
 
-                result.Add(new Variant(houses, minusScore));
+                result.Add(new Variant(houses, minusScore, sb));
             }
 
             var min = result.Min(x => x.MinusScore);
@@ -84,17 +103,26 @@ namespace Tests
                     Console.WriteLine(house.HouseType + " " + house.Name);
                 }
 
+                Console.WriteLine(item.Sb.ToString());
                 Console.WriteLine("_____________________________");
             }
         }
 
-        private int MinusMutual(List<House> houses, List<Game> games)
+        private int MinusMutual(List<House> houses, List<Game> games, StringBuilder sb)
         {
             var result = 0;
             foreach (var game in games)
             {
                 var pairs = Helper.GetPairs(game.Houses);
-                result += Helper.GetPairs(houses).Count(p => pairs.SingleOrDefault(p2 => Same(p, p2)) != null);
+                result += Helper.GetPairs(houses).Count(p =>
+                {
+                    var b = pairs.SingleOrDefault(p2 => Same(p, p2)) != null;
+                    if (b)
+                    {
+                        sb.AppendLine($"Repeat pair {p[0]}-{p[1]}");
+                    }
+                    return b;
+                });
             }
             return result;
         }
@@ -104,9 +132,16 @@ namespace Tests
             return pair1.Contains(pair2.First()) && pair1.Contains(pair2.Last());
         }
 
-        private static bool CheckSameHouse(House x, Game lastGame)
+        private static bool CheckSameHouse(House house, Game lastGame, StringBuilder sb = null)
         {
-            return x.Name == lastGame.Houses.Single(l=>l.HouseType == x.HouseType).Name;
+            var result = house.Name == lastGame.Houses.Single(l=>l.HouseType == house.HouseType).Name;
+
+            if (sb != null && result)
+            {
+                sb.AppendLine($"Repeat {house} with game at {lastGame.Date.Date}");
+            }
+
+            return result;
         }
 
         static IEnumerable<IEnumerable<T>> GetPermutations<T>(List<T> list, int length)
