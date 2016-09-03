@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BusinessLogic
 {
@@ -165,7 +166,9 @@ namespace BusinessLogic
                         }
                     }
                 }
-            };
+            }
+                .OrderBy(x => x.Date)
+                .ToList();
         }
 
         public List<Game> Games { get; set; } 

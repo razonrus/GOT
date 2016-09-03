@@ -119,7 +119,7 @@ namespace Tests
                     var b = pairs.SingleOrDefault(p2 => Same(p, p2)) != null;
                     if (b)
                     {
-                        sb.AppendLine($"Repeat pair {p[0]}-{p[1]}");
+                        sb.AppendLine($"Repeat pair {p[0]}-{p[1]} with the game at {game.Date.ToShortDateString()}");
                     }
                     return b;
                 });
@@ -132,13 +132,13 @@ namespace Tests
             return pair1.Contains(pair2.First()) && pair1.Contains(pair2.Last());
         }
 
-        private static bool CheckSameHouse(House house, Game lastGame, StringBuilder sb = null)
+        private static bool CheckSameHouse(House house, Game game, StringBuilder sb = null)
         {
-            var result = house.Name == lastGame.Houses.Single(l=>l.HouseType == house.HouseType).Name;
+            var result = house.Name == game.Houses.Single(l=>l.HouseType == house.HouseType).Name;
 
             if (sb != null && result)
             {
-                sb.AppendLine($"Repeat {house} with game at {lastGame.Date.Date}");
+                sb.AppendLine($"Repeat {house} with the game at {game.Date.ToShortDateString()}");
             }
 
             return result;
