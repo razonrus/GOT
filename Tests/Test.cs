@@ -11,23 +11,14 @@ namespace Tests
     {
         public class Variant
         {
-            private readonly List<House> houses1;
-            private readonly int minusScore1;
+            public List<House> Houses { get; }
 
-            public List<House> houses
-            {
-                get { return houses1; }
-            }
-
-            public int minusScore
-            {
-                get { return minusScore1; }
-            }
+            public int MinusScore { get; }
 
             public Variant(List<House> houses, int minusScore)
             {
-                houses1 = houses;
-                minusScore1 = minusScore;
+                Houses = houses;
+                MinusScore = minusScore;
             }
         }
 
@@ -80,15 +71,15 @@ namespace Tests
                 result.Add(new Variant(houses, minusScore));
             }
 
-            var min = result.Min(x => x.minusScore);
+            var min = result.Min(x => x.MinusScore);
 
-            var best = result.Where(x => x.minusScore == min).ToList();
+            var best = result.Where(x => x.MinusScore == min).ToList();
 
             Console.WriteLine("best count: " + best.Count);
 
             foreach (var item in best.Take(10))
             {
-                foreach (var house in item.houses.OrderBy(x=>x.HouseType))
+                foreach (var house in item.Houses.OrderBy(x=>x.HouseType))
                 {
                     Console.WriteLine(house.HouseType + " " + house.Name);
                 }
