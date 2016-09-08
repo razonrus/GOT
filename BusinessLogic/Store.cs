@@ -165,6 +165,45 @@ namespace BusinessLogic
                             HouseType = HouseType.Greyjoy
                         }
                     }
+                },
+                new Game
+                {
+                    Date = new DateTime(2016, 9, 8),
+                    Winner = Players.Ruslan,
+                    WinType = WinType.Seven,
+                    Houses = new List<House>
+                    {
+                        new House
+                        {
+                            Name = Players.Anotron,
+                            HouseType = HouseType.Lannister
+                        },
+                        new House
+                        {
+                            Name = Players.Gleb,
+                            HouseType = HouseType.Tyrell
+                        },
+                        new House
+                        {
+                            Name = Players.Semen,
+                            HouseType = HouseType.Martell
+                        },
+                        new House
+                        {
+                            Name = Players.Serega,
+                            HouseType = HouseType.Baratheon
+                        },
+                        new House
+                        {
+                            Name = Players.Igor,
+                            HouseType = HouseType.Stark
+                        },
+                        new House
+                        {
+                            Name = Players.Ruslan,
+                            HouseType = HouseType.Greyjoy
+                        }
+                    }
                 }
             }
                 .OrderBy(x => x.Date)
