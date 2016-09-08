@@ -25,16 +25,6 @@ namespace Tests
             }
         }
 
-//        [Test]
-//        public void M2()
-//        {
-//            var permutations = GetPermutations(new List<string>() {"1", "2", "3", "4", "5", "6", "7"}, 7);
-//
-//            var s = string.Join(Environment.NewLine, permutations.Select(x => string.Join("", x)));
-//
-//            Console.WriteLine(s);
-//        }
-
         [Test]
         public void M1()
         {
