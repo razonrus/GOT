@@ -12,45 +12,6 @@ namespace BusinessLogic
             {
                 new Game
                 {
-                    Date = new DateTime(2016, 8, 19),
-                    Winner = Players.Semen,
-                    WinType = WinType.Score,
-                    Houses = new List<House>
-                    {
-                        new House
-                        {
-                            Name = Players.Ruslan,
-                            HouseType = HouseType.Stark
-                        },
-                        new House
-                        {
-                            Name = Players.Gleb,
-                            HouseType = HouseType.Greyjoy
-                        },
-                        new House
-                        {
-                            Name = Players.Igor,
-                            HouseType = HouseType.Lannister
-                        },
-                        new House
-                        {
-                            Name = Players.Semen,
-                            HouseType = HouseType.Tyrell
-                        },
-                        new House
-                        {
-                            Name = Players.Serega,
-                            HouseType = HouseType.Martell
-                        },
-                        new House
-                        {
-                            Name = Players.Levch,
-                            HouseType = HouseType.Baratheon
-                        }
-                    }
-                },
-                new Game
-                {
                     Date = new DateTime(2016, 8, 12),
                     Winner = Players.Ruslan,
                     WinType = WinType.Seven,
@@ -84,6 +45,45 @@ namespace BusinessLogic
                         new House
                         {
                             Name = Players.Anotron,
+                            HouseType = HouseType.Baratheon
+                        }
+                    }
+                },
+                new Game
+                {
+                    Date = new DateTime(2016, 8, 19),
+                    Winner = Players.Semen,
+                    WinType = WinType.Score,
+                    Houses = new List<House>
+                    {
+                        new House
+                        {
+                            Name = Players.Ruslan,
+                            HouseType = HouseType.Stark
+                        },
+                        new House
+                        {
+                            Name = Players.Gleb,
+                            HouseType = HouseType.Greyjoy
+                        },
+                        new House
+                        {
+                            Name = Players.Igor,
+                            HouseType = HouseType.Lannister
+                        },
+                        new House
+                        {
+                            Name = Players.Semen,
+                            HouseType = HouseType.Tyrell
+                        },
+                        new House
+                        {
+                            Name = Players.Serega,
+                            HouseType = HouseType.Martell
+                        },
+                        new House
+                        {
+                            Name = Players.Levch,
                             HouseType = HouseType.Baratheon
                         }
                     }
@@ -201,6 +201,45 @@ namespace BusinessLogic
                         new House
                         {
                             Name = Players.Ruslan,
+                            HouseType = HouseType.Greyjoy
+                        }
+                    }
+                },
+                new Game
+                {
+                    Date = new DateTime(2016, 9, 14),
+                    Winner = Players.Igor,
+                    WinType = WinType.Score,
+                    Houses = new List<House>
+                    {
+                        new House
+                        {
+                            Name = Players.Semen,
+                            HouseType = HouseType.Lannister
+                        },
+                        new House
+                        {
+                            Name = Players.Ruslan,
+                            HouseType = HouseType.Tyrell
+                        },
+                        new House
+                        {
+                            Name = Players.Anotron,
+                            HouseType = HouseType.Martell
+                        },
+                        new House
+                        {
+                            Name = Players.Gleb,
+                            HouseType = HouseType.Baratheon
+                        },
+                        new House
+                        {
+                            Name = Players.Serega,
+                            HouseType = HouseType.Stark
+                        },
+                        new House
+                        {
+                            Name = Players.Igor,
                             HouseType = HouseType.Greyjoy
                         }
                     }
