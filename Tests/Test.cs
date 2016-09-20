@@ -98,7 +98,7 @@ namespace Tests
                     switch (i)
                     {
                         case 0:
-                            koef = 10;
+                            koef = 15;
                             break;
                         case 1:
                             koef = 9;
@@ -148,10 +148,10 @@ namespace Tests
                 switch (index)
                 {
                     case 0:
-                        koef = 2;
+                        koef = 5;
                         break;
                     case 1:
-                        koef = 1.7;
+                        koef = 2;
                         break;
                     default:
                         koef = 1 + 1d / index;
