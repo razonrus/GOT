@@ -14,10 +14,10 @@ namespace Tests
         {
             public List<House> Houses { get; }
 
-            public int MinusScore { get; }
+            public double MinusScore { get; }
             public StringBuilder Sb { get; set; }
 
-            public Variant(List<House> houses, int minusScore, StringBuilder sb)
+            public Variant(List<House> houses, double minusScore, StringBuilder sb)
             {
                 Houses = houses;
                 MinusScore = minusScore;
@@ -55,26 +55,26 @@ namespace Tests
                 .ToList();
 
 
-            var filteredByLastGame = enumerable
-                .Where(h =>
-                {
-                    return h.Any(x =>
-                    {
-                        var lastGame = store.Games.Where(g => g.Houses.Any(ho => ho.Name == x.Name)).OrderBy(q => q.Date).Last();
+            //var filteredByLastGame = enumerable
+            //    .Where(h =>
+            //    {
+            //        return h.Any(x =>
+            //        {
+            //            var lastGame = store.Games.Where(g => g.Houses.Any(ho => ho.Name == x.Name)).OrderBy(q => q.Date).Last();
 
-                        return CheckSameHouse(x, lastGame);
-                    }) == false;
-                })
-                .ToList();
+            //            return CheckSameHouse(x, lastGame);
+            //        }) == false;
+            //    })
+            //    .ToList();
 
-            Console.WriteLine("filteredByLastGame count: " + filteredByLastGame.Count);
+            //Console.WriteLine("filteredByLastGame count: " + filteredByLastGame.Count);
 
-            foreach (var houses in filteredByLastGame)
+            foreach (var houses in enumerable)
             {
                 var sb = new StringBuilder();
 
-                var minusScore = houses.Sum(h => store.Games.Count(g => CheckSameHouse(h, g, sb)))*10
-                                 + MinusMutual(houses, store.Games, sb)*5
+                var minusScore = MinusHouses(houses, store, sb)
+                                 + MinusMutual(houses, store.Games, sb)
                     ;
 
                 result.Add(new Variant(houses, minusScore, sb));
@@ -86,16 +86,70 @@ namespace Tests
 
             Console.WriteLine("best count: " + best.Count);
 
-            foreach (var item in best.Take(10))
+            foreach (var item in best)
             {
                 foreach (var house in item.Houses.OrderBy(x=>x.HouseType))
                 {
                     Console.WriteLine(house.HouseType + " " + house.Name);
                 }
-
                 Console.WriteLine(item.Sb.ToString());
                 Console.WriteLine("_____________________________");
             }
+        }
+
+        private static double MinusHouses(List<House> houses, Store store, StringBuilder sb)
+        {
+            return houses.Sum(h => MinusHouseForPlayer(store, sb, h));
+        }
+
+        private static double MinusHouseForPlayer(Store store, StringBuilder sb, House house)
+        {
+            var games = store.Games.Where(x=>x.Houses.Any(h=>h.Name == house.Name))
+                .OrderByDescending(x=>x.Date)
+                .Select((x,i)=>
+                {
+                    double koef;
+                    switch (i)
+                    {
+                        case 0:
+                            koef = 10;
+                            break;
+                        case 1:
+                            koef = 9;
+                            break;
+                        case 2:
+                            koef = 8;
+                            break;
+                        case 3:
+                            koef = 7;
+                            break;
+                        case 4:
+                            koef = 6;
+                            break;
+                        default:
+                            koef = 1+1d/i;
+                            break;
+                    }
+
+                    return new
+                    {
+                        Game = x,
+                        Koeff = koef
+                    };
+                });
+
+            return games.Sum(g =>
+            {
+                var result = house.Name == g.Game.Houses.Single(l=>l.HouseType == house.HouseType).Name;
+
+                if (sb != null && result)
+                {
+                    sb.AppendLine($"Repeat {house} with the game at {g.Game.Date.ToShortDateString()}");
+                }
+                if (result)
+                    return g.Koeff;
+                return 0d;
+            });
         }
 
         private int MinusMutual(List<House> houses, List<Game> games, StringBuilder sb)
@@ -120,18 +174,6 @@ namespace Tests
         private bool Same(string[] pair1, string[] pair2)
         {
             return pair1.Contains(pair2.First()) && pair1.Contains(pair2.Last());
-        }
-
-        private static bool CheckSameHouse(House house, Game game, StringBuilder sb = null)
-        {
-            var result = house.Name == game.Houses.Single(l=>l.HouseType == house.HouseType).Name;
-
-            if (sb != null && result)
-            {
-                sb.AppendLine($"Repeat {house} with the game at {game.Date.ToShortDateString()}");
-            }
-
-            return result;
         }
 
         static IEnumerable<IEnumerable<T>> GetPermutations<T>(List<T> list, int length)
