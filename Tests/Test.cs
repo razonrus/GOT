@@ -10,6 +10,16 @@ namespace Tests
     [TestFixture]
     public class Test
     {
+        private readonly List<string> players = new List<string>()
+        {
+            Players.Ruslan,
+            Players.Gleb,
+            Players.Semen,
+            Players.Anotron,
+            Players.Serega,
+            Players.Igor
+        };
+
         public class Variant
         {
             public List<House> Houses { get; }
@@ -26,21 +36,33 @@ namespace Tests
         }
 
         [Test]
+        public void Stats()
+        {
+            var store = new Store();
+
+            foreach (var player in players)
+            {
+                Console.WriteLine(player);
+
+                foreach (HouseType type in Enum.GetValues(typeof(HouseType)))
+                {
+                    Console.WriteLine(type + " " + store.Games.Count(x=>x.Houses.Any(h=>h.HouseType == type && h.Name == player)));
+                }
+                foreach (var sosed in players.Where(x => x != player))
+                {
+                    Console.WriteLine("pair with " + sosed + " " + store.Games
+                        .Count(g=> Helper.GetPairs(g.Houses).Any(x=>x.Contains(player) && x.Contains(sosed))));
+                }
+                Console.WriteLine("___________________");
+            }
+        }
+
+        [Test]
         public void M1()
         {
             var store = new Store();
 
-            var players = new List<string>()
-            {
-                Players.Ruslan,
-                Players.Gleb,
-                Players.Semen,
-                Players.Anotron,
-                Players.Serega,
-                Players.Igor
-            };
 
-            
             var result = new List<Variant>();
             var permutations = GetPermutations(players, players.Count).ToList();
 
