@@ -53,22 +53,7 @@ namespace Tests
                     HouseType = (HouseType) i
                 }).ToList())
                 .ToList();
-
-
-            //var filteredByLastGame = enumerable
-            //    .Where(h =>
-            //    {
-            //        return h.Any(x =>
-            //        {
-            //            var lastGame = store.Games.Where(g => g.Houses.Any(ho => ho.Name == x.Name)).OrderBy(q => q.Date).Last();
-
-            //            return CheckSameHouse(x, lastGame);
-            //        }) == false;
-            //    })
-            //    .ToList();
-
-            //Console.WriteLine("filteredByLastGame count: " + filteredByLastGame.Count);
-
+            
             foreach (var houses in enumerable)
             {
                 var sb = new StringBuilder();
@@ -82,12 +67,13 @@ namespace Tests
 
             var min = result.Min(x => x.MinusScore);
 
-            var best = result.Where(x => x.MinusScore == min).ToList();
+            var best = result.Where(x => Math.Abs(x.MinusScore - min) < 0.001).ToList();
 
             Console.WriteLine("best count: " + best.Count);
 
-            foreach (var item in best)
+            foreach (var item in result.OrderBy(x=>x.MinusScore).Take(best.Count + 3))
             {
+                Console.WriteLine("minus score: " + item.MinusScore);
                 foreach (var house in item.Houses.OrderBy(x=>x.HouseType))
                 {
                     Console.WriteLine(house.HouseType + " " + house.Name);
@@ -152,11 +138,27 @@ namespace Tests
             });
         }
 
-        private int MinusMutual(List<House> houses, List<Game> games, StringBuilder sb)
+        private double MinusMutual(List<House> houses, List<Game> games, StringBuilder sb)
         {
-            var result = 0;
-            foreach (var game in games)
+            double result = 0;
+            games = games.OrderByDescending(x => x.Date).ToList();
+            for (int index = 0; index < games.Count; index++)
             {
+                double koef;
+                switch (index)
+                {
+                    case 0:
+                        koef = 2;
+                        break;
+                    case 1:
+                        koef = 1.7;
+                        break;
+                    default:
+                        koef = 1 + 1d / index;
+                        break;
+                }
+
+                var game = games[index];
                 var pairs = Helper.GetPairs(game.Houses);
                 result += Helper.GetPairs(houses).Count(p =>
                 {
@@ -166,7 +168,7 @@ namespace Tests
                         sb.AppendLine($"Repeat pair {p[0]}-{p[1]} with the game at {game.Date.ToShortDateString()}");
                     }
                     return b;
-                });
+                }) * koef;
             }
             return result;
         }
