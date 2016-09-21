@@ -215,7 +215,7 @@ namespace Tests
                             koef = 15;
                             break;
                         case 1:
-                            koef = 9;
+                            koef = 12;
                             break;
                         case 2:
                             koef = 8;
@@ -262,7 +262,7 @@ namespace Tests
                 switch (index)
                 {
                     case 0:
-                        koef = 5;
+                        koef = 7;
                         break;
                     case 1:
                         koef = 2;
