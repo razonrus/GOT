@@ -78,13 +78,13 @@ namespace Tests
             {
                 Console.WriteLine(player);
 
-                var games = store.Games.Where(x => x.Houses.Any(h => h.Name == player)).ToList();
-                var wins = games.Where(x=>x.Winner == player).ToList();
-                Console.WriteLine($"Games: {games.Count} | Wins: {wins.Count} ({wins.Count*100/games.Count}%) ({wins.Count(x => x.WinType == WinType.Seven)} - {wins.Count(x => x.WinType == WinType.Score)})");
+                var stat = GetPlayerWinStat(store, player);
 
-                var nWins = games.Count(g=>AreNeighbors(player, g.Winner, g));
-                var looses = games.Count(g=>g.Winner != player);
-                Console.WriteLine($"Neighbor wins: {nWins}/{looses} {nWins*100/looses}%");
+                Console.WriteLine($"Games: {stat.GamesCount} | Wins: {stat.WinsCount} ({stat.WinsPercent}%) ({stat.WinsSevenCount} - {stat.WinsScoreCount})");
+
+                var nStat = GetNeighborWinStat(store, player);
+
+                Console.WriteLine($"Neighbor wins: {nStat.WinsCount}/{nStat.GamesCount} {nStat.WinsPercent}%");
 
                 Console.WriteLine("___________________");
             }
@@ -95,12 +95,66 @@ namespace Tests
             {
                 Console.WriteLine(type);
 
-                var games = store.Games.Where(x => x.Houses.Any(h => h.HouseType == type)).ToList();
-                var wins = games.Where(x => x.Houses.Single(h=>h.Name == x.Winner).HouseType == type).ToList();
-                Console.WriteLine($"Games: {games.Count} | Wins: {wins.Count} ({wins.Count * 100 / games.Count}%) ({wins.Count(x => x.WinType == WinType.Seven)} - {wins.Count(x => x.WinType == WinType.Score)})");
+                var stat = GetHouseWinStat(store, type);
+
+                Console.WriteLine($"Games: {stat.GamesCount} | Wins: {stat.WinsCount} ({stat.WinsPercent}%) ({stat.WinsSevenCount} - {stat.WinsScoreCount})");
 
                 Console.WriteLine("___________________");
             }
+        }
+
+        private static WinStat GetHouseWinStat(Store store, HouseType type)
+        {
+            var games = store.Games.Where(x => x.Houses.Any(h => h.HouseType == type)).ToList();
+            var wins = games.Where(x => x.Houses.Single(h => h.Name == x.Winner).HouseType == type).ToList();
+
+            return new WinStat
+            {
+                GamesCount = games.Count,
+                WinsCount = wins.Count,
+                WinsPercent = wins.Count * 100 / (double)games.Count,
+                WinsScoreCount = wins.Count(x => x.WinType == WinType.Seven),
+                WinsSevenCount = wins.Count(x => x.WinType == WinType.Score)
+            };
+        }
+
+        private static WinStat GetNeighborWinStat(Store store, string player)
+        {
+            var games = store.Games.Where(x => x.Houses.Any(h => h.Name == player)).ToList();
+
+            var nWins = games.Count(g => AreNeighbors(player, g.Winner, g));
+            var looses = games.Count(g => g.Winner != player);
+
+            return new WinStat
+            {
+                GamesCount = looses,
+                WinsCount = nWins,
+                WinsPercent = nWins * 100 / (double)looses
+            };
+        }
+
+        private static WinStat GetPlayerWinStat(Store store, string player)
+        {
+            var games = store.Games.Where(x => x.Houses.Any(h => h.Name == player)).ToList();
+            var wins = games.Where(x => x.Winner == player).ToList();
+
+            return new WinStat
+            {
+                GamesCount = games.Count,
+                WinsCount = wins.Count,
+                WinsPercent = wins.Count*100/(double) games.Count,
+                WinsScoreCount = wins.Count(x => x.WinType == WinType.Seven),
+                WinsSevenCount = wins.Count(x => x.WinType == WinType.Score)
+            };
+        }
+
+        public class WinStat
+        {
+            public int GamesCount { get; set; }
+            public int WinsCount { get; set; }
+            public int WinsSevenCount { get; set; }
+            public int WinsScoreCount { get; set; }
+            public double WinsPercent{ get; set; }
         }
 
         [Test]
