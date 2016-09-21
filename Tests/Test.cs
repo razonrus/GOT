@@ -58,6 +58,23 @@ namespace Tests
         }
 
         [Test]
+        public void WinnersStats()
+        {
+            var store = new Store();
+
+            foreach (var player in players)
+            {
+                Console.WriteLine(player);
+
+                var games = store.Games.Where(x => x.Houses.Any(h => h.Name == player)).ToList();
+                var wins = games.Where(x=>x.Winner == player).ToList();
+                Console.WriteLine($"Games: {games.Count} | Wins: {wins.Count} ({wins.Count*100/games.Count}) ({wins.Count(x => x.WinType == WinType.Seven)} - {wins.Count(x => x.WinType == WinType.Score)})");
+                
+                Console.WriteLine("___________________");
+            }
+        }
+
+        [Test]
         public void CountWithoutRepeatPairs()
         {
             var store = new Store();
