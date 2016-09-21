@@ -88,6 +88,19 @@ namespace Tests
 
                 Console.WriteLine("___________________");
             }
+
+            Console.WriteLine("_______________________________");
+
+            foreach (HouseType type in Enum.GetValues(typeof(HouseType)))
+            {
+                Console.WriteLine(type);
+
+                var games = store.Games.Where(x => x.Houses.Any(h => h.HouseType == type)).ToList();
+                var wins = games.Where(x => x.Houses.Single(h=>h.Name == x.Winner).HouseType == type).ToList();
+                Console.WriteLine($"Games: {games.Count} | Wins: {wins.Count} ({wins.Count * 100 / games.Count}%) ({wins.Count(x => x.WinType == WinType.Seven)} - {wins.Count(x => x.WinType == WinType.Score)})");
+
+                Console.WriteLine("___________________");
+            }
         }
 
         [Test]
