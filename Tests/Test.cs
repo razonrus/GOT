@@ -245,13 +245,12 @@ namespace Tests
 
             foreach (var item in result.OrderBy(x=>x.MinusScore).Take(best.Count + 3))
             {
-                Console.WriteLine("minus score: " + item.MinusScore);
-                foreach (var house in item.Houses.OrderBy(x=>x.HouseType))
-                {
-                    Console.WriteLine(house.HouseType + " " + house.Name);
 
-                    var neighbors = players.Where(p => AreNeighbors(p, house.Name, item.Houses));
-                    var percents = new[]
+                var winScores = item.Houses.ToDictionary(x => x,
+                    house =>
+                    {
+                        var neighbors = players.Where(p => AreNeighbors(p, house.Name, item.Houses));
+                        var percents = new[]
                         {
                             100/6d,
 
@@ -263,8 +262,16 @@ namespace Tests
 
                             neighbors.Sum(n => neighborStats[n].WinsPercent)/2
                         };
+                        return percents.Sum(x => x);
+                    });
 
-                    var winwith = percents.Sum(x=>x) / percents.Length;
+
+                Console.WriteLine("minus score: " + item.MinusScore);
+                foreach (var house in item.Houses.OrderBy(x=>x.HouseType))
+                {
+                    Console.WriteLine(house.HouseType + " " + house.Name);
+
+                    var winwith = winScores[house]*100/winScores.Sum(x=>x.Value);
                     Console.WriteLine($"Wins with: {winwith:0.##}%");
                 }
                 Console.WriteLine(item.Sb.ToString());
