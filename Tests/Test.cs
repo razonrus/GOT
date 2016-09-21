@@ -58,6 +58,52 @@ namespace Tests
         }
 
         [Test]
+        public void CountWithoutRepeatPairs()
+        {
+            var store = new Store();
+            
+            var result = new List<Variant>();
+            var permutations = GetPermutations(players, players.Count).ToList();
+
+            Console.WriteLine("permutations count: " + permutations.Count);
+
+            var enumerable = permutations.Select(p => p.Select((n, i) =>
+                new House
+                {
+                    Name = n,
+                    HouseType = (HouseType)i
+                }).ToList())
+                .ToList();
+
+            foreach (var houses in enumerable)
+            {
+                var sb = new StringBuilder();
+
+                var minusScore = MinusMutual(houses, store.Games.OrderByDescending(x => x.Date).Take(1).ToList(), sb)
+                    ;
+
+                result.Add(new Variant(houses, minusScore, sb));
+            }
+
+            var min = result.Min(x => x.MinusScore);
+
+            var best = result.Where(x => Math.Abs(x.MinusScore - min) < 0.001).ToList();
+
+            Console.WriteLine("best count: " + best.Count);
+
+            foreach (var item in result.OrderBy(x => x.MinusScore).Take(best.Count + 3))
+            {
+                Console.WriteLine("minus score: " + item.MinusScore);
+                foreach (var house in item.Houses.OrderBy(x => x.HouseType))
+                {
+                    Console.WriteLine(house.HouseType + " " + house.Name);
+                }
+                Console.WriteLine(item.Sb.ToString());
+                Console.WriteLine("_____________________________");
+            }
+        }
+
+        [Test]
         public void M1()
         {
             var store = new Store();
