@@ -58,15 +58,15 @@ namespace Tests
 
         private static int GetCountOfGamesWithPair(string player, string sosed, List<Game> games)
         {
-            return games.Count(g => AreNeighbors(player, sosed, g));
+            return games.Count(g => AreNeighbors(player, sosed, g.Houses));
         }
 
-        private static bool AreNeighbors(string player, string neighbor, Game game)
+        private static bool AreNeighbors(string player, string neighbor, List<House> houses)
         {
             if (player == neighbor)
                 return false;
 
-            return Helper.GetPairs(game.Houses).Any(x => x.Contains(player) && x.Contains(neighbor));
+            return Helper.GetPairs(houses).Any(x => x.Contains(player) && x.Contains(neighbor));
         }
 
         [Test]
@@ -80,11 +80,11 @@ namespace Tests
 
                 var stat = GetPlayerWinStat(store, player);
 
-                Console.WriteLine($"Games: {stat.GamesCount} | Wins: {stat.WinsCount} ({stat.WinsPercent}%) ({stat.WinsSevenCount} - {stat.WinsScoreCount})");
+                Console.WriteLine($"Games: {stat.GamesCount} | Wins: {stat.WinsCount} ({stat.WinsPercent:0.##}%) ({stat.WinsSevenCount} - {stat.WinsScoreCount})");
 
                 var nStat = GetNeighborWinStat(store, player);
 
-                Console.WriteLine($"Neighbor wins: {nStat.WinsCount}/{nStat.GamesCount} {nStat.WinsPercent}%");
+                Console.WriteLine($"Neighbor wins: {nStat.WinsCount}/{nStat.GamesCount} {nStat.WinsPercent:0.##}%");
 
                 Console.WriteLine("___________________");
             }
@@ -97,7 +97,7 @@ namespace Tests
 
                 var stat = GetHouseWinStat(store, type);
 
-                Console.WriteLine($"Games: {stat.GamesCount} | Wins: {stat.WinsCount} ({stat.WinsPercent}%) ({stat.WinsSevenCount} - {stat.WinsScoreCount})");
+                Console.WriteLine($"Games: {stat.GamesCount} | Wins: {stat.WinsCount} ({stat.WinsPercent:0.##}%) ({stat.WinsSevenCount} - {stat.WinsScoreCount})");
 
                 Console.WriteLine("___________________");
             }
@@ -122,7 +122,7 @@ namespace Tests
         {
             var games = store.Games.Where(x => x.Houses.Any(h => h.Name == player)).ToList();
 
-            var nWins = games.Count(g => AreNeighbors(player, g.Winner, g));
+            var nWins = games.Count(g => AreNeighbors(player, g.Winner, g.Houses));
             var looses = games.Count(g => g.Winner != player);
 
             return new WinStat
@@ -239,15 +239,38 @@ namespace Tests
 
             Console.WriteLine("best count: " + best.Count);
 
+            var playerStats = players.ToDictionary(x => x, x => GetPlayerWinStat(store, x));
+            var neighborStats = players.ToDictionary(x => x, x => GetNeighborWinStat(store, x));
+            var houseStats = Enum.GetValues(typeof (HouseType)).Cast<HouseType>().ToDictionary(x => x, x => GetHouseWinStat(store, x));
+
             foreach (var item in result.OrderBy(x=>x.MinusScore).Take(best.Count + 3))
             {
                 Console.WriteLine("minus score: " + item.MinusScore);
                 foreach (var house in item.Houses.OrderBy(x=>x.HouseType))
                 {
                     Console.WriteLine(house.HouseType + " " + house.Name);
+
+                    var neighbors = players.Where(p => AreNeighbors(p, house.Name, item.Houses));
+                    var percents = new[]
+                        {
+                            100/6d,
+
+                            playerStats[house.Name].WinsPercent,
+                            playerStats[house.Name].WinsPercent,
+
+                            houseStats[house.HouseType].WinsPercent,
+                            houseStats[house.HouseType].WinsPercent,
+
+                            neighbors.Sum(n => neighborStats[n].WinsPercent)/2
+                        };
+
+                    var winwith = percents.Sum(x=>x) / percents.Length;
+                    Console.WriteLine($"Wins with: {winwith:0.##}%");
                 }
                 Console.WriteLine(item.Sb.ToString());
                 Console.WriteLine("_____________________________");
+
+
             }
         }
 
