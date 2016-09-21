@@ -48,13 +48,25 @@ namespace Tests
                 {
                     Console.WriteLine(type + " " + store.Games.Count(x=>x.Houses.Any(h=>h.HouseType == type && h.Name == player)));
                 }
-                foreach (var sosed in players.Where(x => x != player))
+                foreach (var neighbor in players.Where(x => x != player))
                 {
-                    Console.WriteLine("pair with " + sosed + " " + store.Games
-                        .Count(g=> Helper.GetPairs(g.Houses).Any(x=>x.Contains(player) && x.Contains(sosed))));
+                    Console.WriteLine("pair with " + neighbor + " " + GetCountOfGamesWithPair(player, neighbor, store.Games));
                 }
                 Console.WriteLine("___________________");
             }
+        }
+
+        private static int GetCountOfGamesWithPair(string player, string sosed, List<Game> games)
+        {
+            return games.Count(g => AreNeighbors(player, sosed, g));
+        }
+
+        private static bool AreNeighbors(string player, string neighbor, Game game)
+        {
+            if (player == neighbor)
+                return false;
+
+            return Helper.GetPairs(game.Houses).Any(x => x.Contains(player) && x.Contains(neighbor));
         }
 
         [Test]
@@ -69,7 +81,11 @@ namespace Tests
                 var games = store.Games.Where(x => x.Houses.Any(h => h.Name == player)).ToList();
                 var wins = games.Where(x=>x.Winner == player).ToList();
                 Console.WriteLine($"Games: {games.Count} | Wins: {wins.Count} ({wins.Count*100/games.Count}%) ({wins.Count(x => x.WinType == WinType.Seven)} - {wins.Count(x => x.WinType == WinType.Score)})");
-                
+
+                var nWins = games.Count(g=>AreNeighbors(player, g.Winner, g));
+                var looses = games.Count(g=>g.Winner != player);
+                Console.WriteLine($"Neighbor wins: {nWins}/{looses} {nWins*100/looses}%");
+
                 Console.WriteLine("___________________");
             }
         }
