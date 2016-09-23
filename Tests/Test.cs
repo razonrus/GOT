@@ -12,7 +12,8 @@ namespace Tests
     {
         private readonly List<string> players = new List<string>()
         {
-            Players.Ruslan,
+            Players.Dimon,
+            //Players.Ruslan,
             Players.Gleb,
             Players.Semen,
             Players.Anotron,

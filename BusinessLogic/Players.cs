@@ -9,5 +9,6 @@ namespace BusinessLogic
         public static string Igor = "Igor";
         public static string Levch = "Levch";
         public static string Serega = "Serega";
+        public static string Dimon = "Dimon";
     }
 }
