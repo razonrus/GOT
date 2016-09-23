@@ -130,7 +130,7 @@ namespace Tests
             {
                 GamesCount = looses,
                 WinsCount = nWins,
-                WinsPercent = nWins * 100 / (double)looses
+                WinsPercent = looses == 0 ? 0 : nWins * 100 / (double)looses
             };
         }
 
@@ -143,7 +143,7 @@ namespace Tests
             {
                 GamesCount = games.Count,
                 WinsCount = wins.Count,
-                WinsPercent = wins.Count*100/(double) games.Count,
+                WinsPercent = games.Any() ? wins.Count*100/(double) games.Count : 0,
                 WinsScoreCount = wins.Count(x => x.WinType == WinType.Seven),
                 WinsSevenCount = wins.Count(x => x.WinType == WinType.Score)
             };
