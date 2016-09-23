@@ -249,20 +249,31 @@ namespace Tests
                 var winScores = item.Houses.ToDictionary(x => x,
                     house =>
                     {
-                        var neighbors = players.Where(p => AreNeighbors(p, house.Name, item.Houses));
-                        var percents = new[]
-                        {
-                            100/6d,
+                        var neighbors = players.Where(p => AreNeighbors(p, house.Name, item.Houses)).ToList();
 
-                            playerStats[house.Name].WinsPercent,
-                            playerStats[house.Name].WinsPercent,
 
-                            houseStats[house.HouseType].WinsPercent,
-                            houseStats[house.HouseType].WinsPercent,
+                        var playerStat = playerStats[house.Name];
+                        var houseStat = houseStats[house.HouseType];
 
-                            neighbors.Sum(n => neighborStats[n].WinsPercent)/2
-                        };
-                        return percents.Sum(x => x);
+                        double neighborsAvgGames = neighbors.Sum(n => neighborStats[n].GamesCount) /2d;
+                        return (100/6d + playerStat.WinsPercent*playerStat.GamesCount + houseStat.WinsPercent*houseStat.GamesCount + neighbors.Sum(n => neighborStats[n].WinsPercent)/4*neighborsAvgGames)/
+                               (1 + playerStat.GamesCount + houseStat.GamesCount + neighborsAvgGames);
+
+                        //var count = 1 + playerStats[house.Name].GamesCount + 
+
+                        //var percents = new[]
+                        //{
+                        //    100/6d,
+
+                        //    playerStats[house.Name].WinsPercent,
+                        //    playerStats[house.Name].WinsPercent,
+
+                        //    houseStats[house.HouseType].WinsPercent,
+                        //    houseStats[house.HouseType].WinsPercent,
+
+                        //    neighbors.Sum(n => neighborStats[n].WinsPercent)/2
+                        //};
+                        //return percents.Sum(x => x);
                     });
 
 
