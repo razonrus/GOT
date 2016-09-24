@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using BusinessLogic;
 using Newtonsoft.Json;
@@ -30,6 +32,9 @@ namespace Tests
         public void ToJson()
         {
             string json = JsonConvert.SerializeObject(new Store(), Formatting.Indented);
+            
+            File.WriteAllText(@"D:\Projects\GOT\json\store.json", json);
+
            Console.WriteLine(json);
         }
 
