@@ -1,252 +1,252 @@
 {
-  "Games": [
+  "games": [
     {
-      "Houses": [
+      "houses": [
         {
-          "Name": "Ruslan",
-          "HouseType": "Stark"
+          "name": "Ruslan",
+          "houseType": "Stark"
         },
         {
-          "Name": "Serega",
-          "HouseType": "Greyjoy"
+          "name": "Serega",
+          "houseType": "Greyjoy"
         },
         {
-          "Name": "Gleb",
-          "HouseType": "Lannister"
+          "name": "Gleb",
+          "houseType": "Lannister"
         },
         {
-          "Name": "Semen",
-          "HouseType": "Tyrell"
+          "name": "Semen",
+          "houseType": "Tyrell"
         },
         {
-          "Name": "Igor",
-          "HouseType": "Martell"
+          "name": "Igor",
+          "houseType": "Martell"
         },
         {
-          "Name": "AnotrOn",
-          "HouseType": "Baratheon"
+          "name": "AnotrOn",
+          "houseType": "Baratheon"
         }
       ],
-      "Date": "2016-08-12T00:00:00",
-      "Winner": "Ruslan",
-      "WinType": 0
+      "date": "2016-08-12T00:00:00",
+      "winner": "Ruslan",
+      "winType": 0
     },
     {
-      "Houses": [
+      "houses": [
         {
-          "Name": "Ruslan",
-          "HouseType": "Stark"
+          "name": "Ruslan",
+          "houseType": "Stark"
         },
         {
-          "Name": "Gleb",
-          "HouseType": "Greyjoy"
+          "name": "Gleb",
+          "houseType": "Greyjoy"
         },
         {
-          "Name": "Igor",
-          "HouseType": "Lannister"
+          "name": "Igor",
+          "houseType": "Lannister"
         },
         {
-          "Name": "Semen",
-          "HouseType": "Tyrell"
+          "name": "Semen",
+          "houseType": "Tyrell"
         },
         {
-          "Name": "Serega",
-          "HouseType": "Martell"
+          "name": "Serega",
+          "houseType": "Martell"
         },
         {
-          "Name": "Levch",
-          "HouseType": "Baratheon"
+          "name": "Levch",
+          "houseType": "Baratheon"
         }
       ],
-      "Date": "2016-08-19T00:00:00",
-      "Winner": "Semen",
-      "WinType": 1
+      "date": "2016-08-19T00:00:00",
+      "winner": "Semen",
+      "winType": 1
     },
     {
-      "Houses": [
+      "houses": [
         {
-          "Name": "Ruslan",
-          "HouseType": "Martell"
+          "name": "Ruslan",
+          "houseType": "Martell"
         },
         {
-          "Name": "Serega",
-          "HouseType": "Lannister"
+          "name": "Serega",
+          "houseType": "Lannister"
         },
         {
-          "Name": "Gleb",
-          "HouseType": "Stark"
+          "name": "Gleb",
+          "houseType": "Stark"
         },
         {
-          "Name": "Semen",
-          "HouseType": "Baratheon"
+          "name": "Semen",
+          "houseType": "Baratheon"
         },
         {
-          "Name": "Igor",
-          "HouseType": "Tyrell"
+          "name": "Igor",
+          "houseType": "Tyrell"
         },
         {
-          "Name": "AnotrOn",
-          "HouseType": "Greyjoy"
+          "name": "AnotrOn",
+          "houseType": "Greyjoy"
         }
       ],
-      "Date": "2016-08-26T00:00:00",
-      "Winner": "Ruslan",
-      "WinType": 1
+      "date": "2016-08-26T00:00:00",
+      "winner": "Ruslan",
+      "winType": 1
     },
     {
-      "Houses": [
+      "houses": [
         {
-          "Name": "Ruslan",
-          "HouseType": "Lannister"
+          "name": "Ruslan",
+          "houseType": "Lannister"
         },
         {
-          "Name": "Serega",
-          "HouseType": "Tyrell"
+          "name": "Serega",
+          "houseType": "Tyrell"
         },
         {
-          "Name": "Gleb",
-          "HouseType": "Martell"
+          "name": "Gleb",
+          "houseType": "Martell"
         },
         {
-          "Name": "Igor",
-          "HouseType": "Baratheon"
+          "name": "Igor",
+          "houseType": "Baratheon"
         },
         {
-          "Name": "AnotrOn",
-          "HouseType": "Stark"
+          "name": "AnotrOn",
+          "houseType": "Stark"
         },
         {
-          "Name": "Semen",
-          "HouseType": "Greyjoy"
+          "name": "Semen",
+          "houseType": "Greyjoy"
         }
       ],
-      "Date": "2016-09-02T00:00:00",
-      "Winner": "Semen",
-      "WinType": 1
+      "date": "2016-09-02T00:00:00",
+      "winner": "Semen",
+      "winType": 1
     },
     {
-      "Houses": [
+      "houses": [
         {
-          "Name": "AnotrOn",
-          "HouseType": "Lannister"
+          "name": "AnotrOn",
+          "houseType": "Lannister"
         },
         {
-          "Name": "Gleb",
-          "HouseType": "Tyrell"
+          "name": "Gleb",
+          "houseType": "Tyrell"
         },
         {
-          "Name": "Semen",
-          "HouseType": "Martell"
+          "name": "Semen",
+          "houseType": "Martell"
         },
         {
-          "Name": "Serega",
-          "HouseType": "Baratheon"
+          "name": "Serega",
+          "houseType": "Baratheon"
         },
         {
-          "Name": "Igor",
-          "HouseType": "Stark"
+          "name": "Igor",
+          "houseType": "Stark"
         },
         {
-          "Name": "Ruslan",
-          "HouseType": "Greyjoy"
+          "name": "Ruslan",
+          "houseType": "Greyjoy"
         }
       ],
-      "Date": "2016-09-08T00:00:00",
-      "Winner": "Ruslan",
-      "WinType": 0
+      "date": "2016-09-08T00:00:00",
+      "winner": "Ruslan",
+      "winType": 0
     },
     {
-      "Houses": [
+      "houses": [
         {
-          "Name": "Semen",
-          "HouseType": "Lannister"
+          "name": "Semen",
+          "houseType": "Lannister"
         },
         {
-          "Name": "Ruslan",
-          "HouseType": "Tyrell"
+          "name": "Ruslan",
+          "houseType": "Tyrell"
         },
         {
-          "Name": "AnotrOn",
-          "HouseType": "Martell"
+          "name": "AnotrOn",
+          "houseType": "Martell"
         },
         {
-          "Name": "Gleb",
-          "HouseType": "Baratheon"
+          "name": "Gleb",
+          "houseType": "Baratheon"
         },
         {
-          "Name": "Serega",
-          "HouseType": "Stark"
+          "name": "Serega",
+          "houseType": "Stark"
         },
         {
-          "Name": "Igor",
-          "HouseType": "Greyjoy"
+          "name": "Igor",
+          "houseType": "Greyjoy"
         }
       ],
-      "Date": "2016-09-14T00:00:00",
-      "Winner": "Igor",
-      "WinType": 1
+      "date": "2016-09-14T00:00:00",
+      "winner": "Igor",
+      "winType": 1
     },
     {
-      "Houses": [
+      "houses": [
         {
-          "Name": "Serega",
-          "HouseType": "Lannister"
+          "name": "Serega",
+          "houseType": "Lannister"
         },
         {
-          "Name": "AnotrOn",
-          "HouseType": "Tyrell"
+          "name": "AnotrOn",
+          "houseType": "Tyrell"
         },
         {
-          "Name": "Igor",
-          "HouseType": "Martell"
+          "name": "Igor",
+          "houseType": "Martell"
         },
         {
-          "Name": "Ruslan",
-          "HouseType": "Baratheon"
+          "name": "Ruslan",
+          "houseType": "Baratheon"
         },
         {
-          "Name": "Gleb",
-          "HouseType": "Stark"
+          "name": "Gleb",
+          "houseType": "Stark"
         },
         {
-          "Name": "Semen",
-          "HouseType": "Greyjoy"
+          "name": "Semen",
+          "houseType": "Greyjoy"
         }
       ],
-      "Date": "2016-09-23T00:00:00",
-      "Winner": "Gleb",
-      "WinType": 1
+      "date": "2016-09-23T00:00:00",
+      "winner": "Gleb",
+      "winType": 1
     },
     {
-      "Houses": [
+      "houses": [
         {
-          "Name": "Gleb",
-          "HouseType": "Lannister"
+          "name": "Gleb",
+          "houseType": "Lannister"
         },
         {
-          "Name": "Igor",
-          "HouseType": "Tyrell"
+          "name": "Igor",
+          "houseType": "Tyrell"
         },
         {
-          "Name": "Serega",
-          "HouseType": "Martell"
+          "name": "Serega",
+          "houseType": "Martell"
         },
         {
-          "Name": "AnotrOn",
-          "HouseType": "Baratheon"
+          "name": "AnotrOn",
+          "houseType": "Baratheon"
         },
         {
-          "Name": "Semen",
-          "HouseType": "Stark"
+          "name": "Semen",
+          "houseType": "Stark"
         },
         {
-          "Name": "Dimon",
-          "HouseType": "Greyjoy"
+          "name": "Dimon",
+          "houseType": "Greyjoy"
         }
       ],
-      "Date": "2016-09-24T00:00:00",
-      "Winner": "Gleb",
-      "WinType": 1
+      "date": "2016-09-24T00:00:00",
+      "winner": "Gleb",
+      "winType": 1
     }
   ]
 }

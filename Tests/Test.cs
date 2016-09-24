@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using BusinessLogic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using NUnit.Framework;
 
 namespace Tests
@@ -110,7 +111,12 @@ namespace Tests
 
         private static void SaveJson(object value, string fileName)
         {
-            string json = JsonConvert.SerializeObject(value, Formatting.Indented);
+            var serializerSettings = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
+
+            string json = JsonConvert.SerializeObject(value, Formatting.Indented, serializerSettings);
             File.WriteAllText(BasePath + fileName + @".json", json);
         }
 
