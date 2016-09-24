@@ -10,17 +10,6 @@ namespace Tests
     [TestFixture]
     public class Test
     {
-        private readonly List<string> players = new List<string>()
-        {
-            Players.Dimon,
-            //Players.Ruslan,
-            Players.Gleb,
-            Players.Semen,
-            Players.Anotron,
-            Players.Serega,
-            Players.Igor
-        };
-
         public class Variant
         {
             public List<House> Houses { get; }
@@ -41,6 +30,17 @@ namespace Tests
         {
             var store = new Store();
 
+            var players = new List<string>()
+            {
+                Players.Dimon,
+                Players.Ruslan,
+                Players.Levch,
+                Players.Gleb,
+                Players.Semen,
+                Players.Anotron,
+                Players.Serega,
+                Players.Igor
+            };
             foreach (var player in players)
             {
                 Console.WriteLine(player);
@@ -75,7 +75,17 @@ namespace Tests
         {
             var store = new Store();
 
-            foreach (var player in players)
+            foreach (var player in new List<string>()
+            {
+                Players.Dimon,
+                Players.Ruslan,
+                Players.Levch,
+                Players.Gleb,
+                Players.Semen,
+                Players.Anotron,
+                Players.Serega,
+                Players.Igor
+            })
             {
                 Console.WriteLine(player);
 
@@ -164,6 +174,17 @@ namespace Tests
             var store = new Store();
             
             var result = new List<Variant>();
+            var players = new List<string>()
+            {
+                Players.Dimon,
+                Players.Ruslan,
+                Players.Gleb,
+                Players.Levch,
+                Players.Semen,
+                Players.Anotron,
+                Players.Serega,
+                Players.Igor
+            };
             var permutations = GetPermutations(players, players.Count).ToList();
 
             Console.WriteLine("permutations count: " + permutations.Count);
@@ -211,6 +232,16 @@ namespace Tests
 
 
             var result = new List<Variant>();
+            var players = new List<string>()
+            {
+                Players.Dimon,
+                //Players.Ruslan,
+                Players.Gleb,
+                Players.Semen,
+                Players.Anotron,
+                Players.Serega,
+                Players.Igor
+            };
             var permutations = GetPermutations(players, players.Count).ToList();
 
             Console.WriteLine("permutations count: " + permutations.Count);
