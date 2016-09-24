@@ -13,6 +13,8 @@ namespace Tests
     [TestFixture]
     public class Test
     {
+        private const string BasePath = @"D:\Projects\GOT\json\";
+
         public class Variant
         {
             public List<House> Houses { get; }
@@ -31,11 +33,7 @@ namespace Tests
         [Test]
         public void ToJson()
         {
-            string json = JsonConvert.SerializeObject(new Store(), Formatting.Indented);
-            
-            File.WriteAllText(@"D:\Projects\GOT\json\store.json", json);
-
-           Console.WriteLine(json);
+            SaveJson(new Store(), @"store");
         }
 
         [Test]
@@ -43,7 +41,7 @@ namespace Tests
         {
             var store = new Store();
 
-            var players = new List<string>()
+            var players = new List<string>
             {
                 Players.Dimon,
                 Players.Ruslan,
@@ -54,20 +52,50 @@ namespace Tests
                 Players.Serega,
                 Players.Igor
             };
+
+            var playerStats = new List<PlayerStat>();
+
             foreach (var player in players)
             {
+                var stat = new PlayerStat
+                {
+                    Player = player,
+                    Houses =
+                        Enum.GetValues(typeof (HouseType)).Cast<HouseType>()
+                            .ToDictionary(x => x, type =>
+                                new PlayerHouseStat
+                                {
+                                    GamesCount = store.Games.Count(x => x.Houses.Any(h => h.HouseType == type && h.Name == player))
+                                }),
+                    Neighbors = players.Where(x => x != player)
+                        .ToDictionary(x => x, p => new PlayerNeighborStat
+                        {
+                            GamesCountWithPair = GetCountOfGamesWithPair(player, p, store.Games)
+                        })
+                };
+                playerStats.Add(stat);
+
                 Console.WriteLine(player);
 
-                foreach (HouseType type in Enum.GetValues(typeof(HouseType)))
+                foreach (var houseStat in stat.Houses)
+                    Console.WriteLine(houseStat.Key + " " + houseStat.Value.GamesCount);
+
+                foreach (var neighbor in stat.Neighbors)
                 {
-                    Console.WriteLine(type + " " + store.Games.Count(x=>x.Houses.Any(h=>h.HouseType == type && h.Name == player)));
-                }
-                foreach (var neighbor in players.Where(x => x != player))
-                {
-                    Console.WriteLine("pair with " + neighbor + " " + GetCountOfGamesWithPair(player, neighbor, store.Games));
+                    Console.WriteLine("pair with " + neighbor.Key + " " + neighbor.Value.GamesCountWithPair);
                 }
                 Console.WriteLine("___________________");
             }
+
+            SaveJson(playerStats, @"playerStats");
+        }
+
+        private static void SaveJson(object value, string fileName)
+        {
+            string json = JsonConvert.SerializeObject(value, Formatting.Indented);
+            File.WriteAllText(BasePath + fileName + @".json", json);
+
+            Console.WriteLine(json);
         }
 
         private static int GetCountOfGamesWithPair(string player, string sosed, List<Game> games)
@@ -384,5 +412,10 @@ namespace Tests
                 .SelectMany(t => list.Where(e => !t.Contains(e)),
                     (t1, t2) => t1.Concat(new T[] { t2 }));
         }
+    }
+
+    public class PlayerHouseStat
+    {
+        public int GamesCount { get; set; }
     }
 }
