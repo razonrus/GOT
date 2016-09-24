@@ -43,14 +43,14 @@ namespace Tests
 
             var players = new List<string>
             {
-                Players.Dimon,
                 Players.Ruslan,
-                Players.Levch,
                 Players.Gleb,
                 Players.Semen,
                 Players.Anotron,
                 Players.Serega,
-                Players.Igor
+                Players.Igor,
+                Players.Dimon,
+                Players.Levch
             };
 
             var playerStats = new List<PlayerStat>();
@@ -60,19 +60,23 @@ namespace Tests
                 var stat = new PlayerStat
                 {
                     Player = player,
+                    WinStat = GetPlayerWinStat(store, player),
                     Houses =
                         Enum.GetValues(typeof (HouseType)).Cast<HouseType>()
-                            .ToDictionary(x => x, type =>
-                                new PlayerHouseStat
-                                {
-                                    GamesCount = store.Games.Count(x => x.Houses.Any(h => h.HouseType == type && h.Name == player))
-                                }),
+                            .ToDictionary(x => x,
+                                type =>
+                                    new PlayerHouseStat
+                                    {
+                                        GamesCount = store.Games.Count(x => x.Houses.Any(h => h.HouseType == type && h.Name == player))
+                                    }),
                     Neighbors = players.Where(x => x != player)
                         .ToDictionary(x => x, p => new PlayerNeighborStat
                         {
                             GamesCountWithPair = GetCountOfGamesWithPair(player, p, store.Games)
-                        })
+                        }),
+                    NeighborWinStat = GetNeighborWinStat(store, player)
                 };
+
                 playerStats.Add(stat);
 
                 Console.WriteLine(player);
@@ -87,7 +91,15 @@ namespace Tests
                 Console.WriteLine("___________________");
             }
 
-            SaveJson(playerStats, @"playerStats");
+
+            var houseStats = Enum.GetValues(typeof(HouseType)).Cast<HouseType>()
+                .ToDictionary(x=>x, x=> GetHouseWinStat(store, x));
+
+            SaveJson(new
+            {
+                PlayerStats = playerStats,
+                HouseStats = houseStats
+            }, @"statistic");
         }
 
         private static void SaveJson(object value, string fileName)

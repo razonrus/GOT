@@ -1,0 +1,528 @@
+{
+  "PlayerStats": [
+    {
+      "Player": "Ruslan",
+      "Houses": {
+        "Greyjoy": {
+          "GamesCount": 1
+        },
+        "Stark": {
+          "GamesCount": 2
+        },
+        "Baratheon": {
+          "GamesCount": 1
+        },
+        "Martell": {
+          "GamesCount": 1
+        },
+        "Tyrell": {
+          "GamesCount": 1
+        },
+        "Lannister": {
+          "GamesCount": 1
+        }
+      },
+      "Neighbors": {
+        "Gleb": {
+          "GamesCountWithPair": 2
+        },
+        "Semen": {
+          "GamesCountWithPair": 3
+        },
+        "AnotrOn": {
+          "GamesCountWithPair": 3
+        },
+        "Serega": {
+          "GamesCountWithPair": 2
+        },
+        "Igor": {
+          "GamesCountWithPair": 3
+        },
+        "Dimon": {
+          "GamesCountWithPair": 0
+        },
+        "Levch": {
+          "GamesCountWithPair": 1
+        }
+      },
+      "WinStat": {
+        "GamesCount": 7,
+        "WinsCount": 3,
+        "WinsSevenCount": 1,
+        "WinsScoreCount": 2,
+        "WinsPercent": 42.857142857142854
+      },
+      "NeighborWinStat": {
+        "GamesCount": 4,
+        "WinsCount": 2,
+        "WinsSevenCount": 0,
+        "WinsScoreCount": 0,
+        "WinsPercent": 50.0
+      }
+    },
+    {
+      "Player": "Gleb",
+      "Houses": {
+        "Greyjoy": {
+          "GamesCount": 1
+        },
+        "Stark": {
+          "GamesCount": 2
+        },
+        "Baratheon": {
+          "GamesCount": 1
+        },
+        "Martell": {
+          "GamesCount": 1
+        },
+        "Tyrell": {
+          "GamesCount": 1
+        },
+        "Lannister": {
+          "GamesCount": 1
+        }
+      },
+      "Neighbors": {
+        "Ruslan": {
+          "GamesCountWithPair": 2
+        },
+        "Semen": {
+          "GamesCountWithPair": 4
+        },
+        "AnotrOn": {
+          "GamesCountWithPair": 3
+        },
+        "Serega": {
+          "GamesCountWithPair": 3
+        },
+        "Igor": {
+          "GamesCountWithPair": 2
+        },
+        "Dimon": {
+          "GamesCountWithPair": 0
+        },
+        "Levch": {
+          "GamesCountWithPair": 0
+        }
+      },
+      "WinStat": {
+        "GamesCount": 7,
+        "WinsCount": 1,
+        "WinsSevenCount": 1,
+        "WinsScoreCount": 0,
+        "WinsPercent": 14.285714285714286
+      },
+      "NeighborWinStat": {
+        "GamesCount": 6,
+        "WinsCount": 0,
+        "WinsSevenCount": 0,
+        "WinsScoreCount": 0,
+        "WinsPercent": 0.0
+      }
+    },
+    {
+      "Player": "Semen",
+      "Houses": {
+        "Greyjoy": {
+          "GamesCount": 2
+        },
+        "Stark": {
+          "GamesCount": 0
+        },
+        "Baratheon": {
+          "GamesCount": 1
+        },
+        "Martell": {
+          "GamesCount": 1
+        },
+        "Tyrell": {
+          "GamesCount": 2
+        },
+        "Lannister": {
+          "GamesCount": 1
+        }
+      },
+      "Neighbors": {
+        "Ruslan": {
+          "GamesCountWithPair": 3
+        },
+        "Gleb": {
+          "GamesCountWithPair": 4
+        },
+        "AnotrOn": {
+          "GamesCountWithPair": 1
+        },
+        "Serega": {
+          "GamesCountWithPair": 3
+        },
+        "Igor": {
+          "GamesCountWithPair": 3
+        },
+        "Dimon": {
+          "GamesCountWithPair": 0
+        },
+        "Levch": {
+          "GamesCountWithPair": 0
+        }
+      },
+      "WinStat": {
+        "GamesCount": 7,
+        "WinsCount": 2,
+        "WinsSevenCount": 2,
+        "WinsScoreCount": 0,
+        "WinsPercent": 28.571428571428573
+      },
+      "NeighborWinStat": {
+        "GamesCount": 5,
+        "WinsCount": 3,
+        "WinsSevenCount": 0,
+        "WinsScoreCount": 0,
+        "WinsPercent": 60.0
+      }
+    },
+    {
+      "Player": "AnotrOn",
+      "Houses": {
+        "Greyjoy": {
+          "GamesCount": 1
+        },
+        "Stark": {
+          "GamesCount": 1
+        },
+        "Baratheon": {
+          "GamesCount": 1
+        },
+        "Martell": {
+          "GamesCount": 1
+        },
+        "Tyrell": {
+          "GamesCount": 1
+        },
+        "Lannister": {
+          "GamesCount": 1
+        }
+      },
+      "Neighbors": {
+        "Ruslan": {
+          "GamesCountWithPair": 3
+        },
+        "Gleb": {
+          "GamesCountWithPair": 3
+        },
+        "Semen": {
+          "GamesCountWithPair": 1
+        },
+        "Serega": {
+          "GamesCountWithPair": 2
+        },
+        "Igor": {
+          "GamesCountWithPair": 3
+        },
+        "Dimon": {
+          "GamesCountWithPair": 0
+        },
+        "Levch": {
+          "GamesCountWithPair": 0
+        }
+      },
+      "WinStat": {
+        "GamesCount": 6,
+        "WinsCount": 0,
+        "WinsSevenCount": 0,
+        "WinsScoreCount": 0,
+        "WinsPercent": 0.0
+      },
+      "NeighborWinStat": {
+        "GamesCount": 6,
+        "WinsCount": 3,
+        "WinsSevenCount": 0,
+        "WinsScoreCount": 0,
+        "WinsPercent": 50.0
+      }
+    },
+    {
+      "Player": "Serega",
+      "Houses": {
+        "Greyjoy": {
+          "GamesCount": 1
+        },
+        "Stark": {
+          "GamesCount": 1
+        },
+        "Baratheon": {
+          "GamesCount": 1
+        },
+        "Martell": {
+          "GamesCount": 1
+        },
+        "Tyrell": {
+          "GamesCount": 1
+        },
+        "Lannister": {
+          "GamesCount": 2
+        }
+      },
+      "Neighbors": {
+        "Ruslan": {
+          "GamesCountWithPair": 2
+        },
+        "Gleb": {
+          "GamesCountWithPair": 3
+        },
+        "Semen": {
+          "GamesCountWithPair": 3
+        },
+        "AnotrOn": {
+          "GamesCountWithPair": 2
+        },
+        "Igor": {
+          "GamesCountWithPair": 3
+        },
+        "Dimon": {
+          "GamesCountWithPair": 0
+        },
+        "Levch": {
+          "GamesCountWithPair": 1
+        }
+      },
+      "WinStat": {
+        "GamesCount": 7,
+        "WinsCount": 0,
+        "WinsSevenCount": 0,
+        "WinsScoreCount": 0,
+        "WinsPercent": 0.0
+      },
+      "NeighborWinStat": {
+        "GamesCount": 7,
+        "WinsCount": 3,
+        "WinsSevenCount": 0,
+        "WinsScoreCount": 0,
+        "WinsPercent": 42.857142857142854
+      }
+    },
+    {
+      "Player": "Igor",
+      "Houses": {
+        "Greyjoy": {
+          "GamesCount": 1
+        },
+        "Stark": {
+          "GamesCount": 1
+        },
+        "Baratheon": {
+          "GamesCount": 1
+        },
+        "Martell": {
+          "GamesCount": 2
+        },
+        "Tyrell": {
+          "GamesCount": 1
+        },
+        "Lannister": {
+          "GamesCount": 1
+        }
+      },
+      "Neighbors": {
+        "Ruslan": {
+          "GamesCountWithPair": 3
+        },
+        "Gleb": {
+          "GamesCountWithPair": 2
+        },
+        "Semen": {
+          "GamesCountWithPair": 3
+        },
+        "AnotrOn": {
+          "GamesCountWithPair": 3
+        },
+        "Serega": {
+          "GamesCountWithPair": 3
+        },
+        "Dimon": {
+          "GamesCountWithPair": 0
+        },
+        "Levch": {
+          "GamesCountWithPair": 0
+        }
+      },
+      "WinStat": {
+        "GamesCount": 7,
+        "WinsCount": 1,
+        "WinsSevenCount": 1,
+        "WinsScoreCount": 0,
+        "WinsPercent": 14.285714285714286
+      },
+      "NeighborWinStat": {
+        "GamesCount": 6,
+        "WinsCount": 3,
+        "WinsSevenCount": 0,
+        "WinsScoreCount": 0,
+        "WinsPercent": 50.0
+      }
+    },
+    {
+      "Player": "Dimon",
+      "Houses": {
+        "Greyjoy": {
+          "GamesCount": 0
+        },
+        "Stark": {
+          "GamesCount": 0
+        },
+        "Baratheon": {
+          "GamesCount": 0
+        },
+        "Martell": {
+          "GamesCount": 0
+        },
+        "Tyrell": {
+          "GamesCount": 0
+        },
+        "Lannister": {
+          "GamesCount": 0
+        }
+      },
+      "Neighbors": {
+        "Ruslan": {
+          "GamesCountWithPair": 0
+        },
+        "Gleb": {
+          "GamesCountWithPair": 0
+        },
+        "Semen": {
+          "GamesCountWithPair": 0
+        },
+        "AnotrOn": {
+          "GamesCountWithPair": 0
+        },
+        "Serega": {
+          "GamesCountWithPair": 0
+        },
+        "Igor": {
+          "GamesCountWithPair": 0
+        },
+        "Levch": {
+          "GamesCountWithPair": 0
+        }
+      },
+      "WinStat": {
+        "GamesCount": 0,
+        "WinsCount": 0,
+        "WinsSevenCount": 0,
+        "WinsScoreCount": 0,
+        "WinsPercent": 0.0
+      },
+      "NeighborWinStat": {
+        "GamesCount": 0,
+        "WinsCount": 0,
+        "WinsSevenCount": 0,
+        "WinsScoreCount": 0,
+        "WinsPercent": 0.0
+      }
+    },
+    {
+      "Player": "Levch",
+      "Houses": {
+        "Greyjoy": {
+          "GamesCount": 0
+        },
+        "Stark": {
+          "GamesCount": 0
+        },
+        "Baratheon": {
+          "GamesCount": 1
+        },
+        "Martell": {
+          "GamesCount": 0
+        },
+        "Tyrell": {
+          "GamesCount": 0
+        },
+        "Lannister": {
+          "GamesCount": 0
+        }
+      },
+      "Neighbors": {
+        "Ruslan": {
+          "GamesCountWithPair": 1
+        },
+        "Gleb": {
+          "GamesCountWithPair": 0
+        },
+        "Semen": {
+          "GamesCountWithPair": 0
+        },
+        "AnotrOn": {
+          "GamesCountWithPair": 0
+        },
+        "Serega": {
+          "GamesCountWithPair": 1
+        },
+        "Igor": {
+          "GamesCountWithPair": 0
+        },
+        "Dimon": {
+          "GamesCountWithPair": 0
+        }
+      },
+      "WinStat": {
+        "GamesCount": 1,
+        "WinsCount": 0,
+        "WinsSevenCount": 0,
+        "WinsScoreCount": 0,
+        "WinsPercent": 0.0
+      },
+      "NeighborWinStat": {
+        "GamesCount": 1,
+        "WinsCount": 0,
+        "WinsSevenCount": 0,
+        "WinsScoreCount": 0,
+        "WinsPercent": 0.0
+      }
+    }
+  ],
+  "HouseStats": {
+    "Greyjoy": {
+      "GamesCount": 7,
+      "WinsCount": 3,
+      "WinsSevenCount": 2,
+      "WinsScoreCount": 1,
+      "WinsPercent": 42.857142857142854
+    },
+    "Stark": {
+      "GamesCount": 7,
+      "WinsCount": 2,
+      "WinsSevenCount": 1,
+      "WinsScoreCount": 1,
+      "WinsPercent": 28.571428571428573
+    },
+    "Baratheon": {
+      "GamesCount": 7,
+      "WinsCount": 0,
+      "WinsSevenCount": 0,
+      "WinsScoreCount": 0,
+      "WinsPercent": 0.0
+    },
+    "Martell": {
+      "GamesCount": 7,
+      "WinsCount": 1,
+      "WinsSevenCount": 1,
+      "WinsScoreCount": 0,
+      "WinsPercent": 14.285714285714286
+    },
+    "Tyrell": {
+      "GamesCount": 7,
+      "WinsCount": 1,
+      "WinsSevenCount": 1,
+      "WinsScoreCount": 0,
+      "WinsPercent": 14.285714285714286
+    },
+    "Lannister": {
+      "GamesCount": 7,
+      "WinsCount": 0,
+      "WinsSevenCount": 0,
+      "WinsScoreCount": 0,
+      "WinsPercent": 0.0
+    }
+  }
+}
