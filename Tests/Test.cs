@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using BusinessLogic;
+using Newtonsoft.Json;
 using NUnit.Framework;
 
 namespace Tests
@@ -23,6 +24,13 @@ namespace Tests
                 MinusScore = minusScore;
                 Sb = sb;
             }
+        }
+
+        [Test]
+        public void ToJson()
+        {
+            string json = JsonConvert.SerializeObject(new Store(), Formatting.Indented);
+           Console.WriteLine(json);
         }
 
         [Test]
