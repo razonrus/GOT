@@ -233,8 +233,7 @@ namespace Tests
             var result = new List<Variant>();
             var players = new List<string>()
             {
-                Players.Dimon,
-                //Players.Ruslan,
+                Players.Ruslan,
                 Players.Gleb,
                 Players.Semen,
                 Players.Anotron,
