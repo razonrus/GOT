@@ -112,8 +112,6 @@ namespace Tests
         {
             string json = JsonConvert.SerializeObject(value, Formatting.Indented);
             File.WriteAllText(BasePath + fileName + @".json", json);
-
-            Console.WriteLine(json);
         }
 
         private static int GetCountOfGamesWithPair(string player, string sosed, List<Game> games)
