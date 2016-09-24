@@ -6,6 +6,12 @@ using Newtonsoft.Json.Converters;
 
 namespace BusinessLogic
 {
+    public class HouseDto
+    {
+        public House House { get; set; }
+
+        public double WinsWith { get; set; }
+    }
     public class House
     {
         public string Name { get; set; }

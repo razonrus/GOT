@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NextGame.cs" />
     <Compile Include="PlayerNeighborStat.cs" />
     <Compile Include="PlayerStat.cs" />
     <Compile Include="Test.cs" />

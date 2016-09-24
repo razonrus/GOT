@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using BusinessLogic;
 using Newtonsoft.Json;
@@ -17,14 +16,21 @@ namespace Tests
 
         public class Variant
         {
-            public List<House> Houses { get; }
+            public List<HouseDto> Houses { get; }
 
             public double MinusScore { get; }
-            public StringBuilder Sb { get; set; }
+
+            [JsonIgnore]
+            private StringBuilder Sb { get; }
+
+            public string Description => Sb.ToString();
 
             public Variant(List<House> houses, double minusScore, StringBuilder sb)
             {
-                Houses = houses;
+                Houses = houses.Select(h => new HouseDto()
+                {
+                    House = h
+                }).ToList();
                 MinusScore = minusScore;
                 Sb = sb;
             }
@@ -225,8 +231,7 @@ namespace Tests
         public void M1()
         {
             var store = new Store();
-
-
+            
             var result = new List<Variant>();
             var players = new List<string>()
             {
@@ -238,16 +243,14 @@ namespace Tests
                 Players.Serega,
                 Players.Igor
             };
-            var permutations = GetPermutations(players, players.Count).ToList();
 
-            Console.WriteLine("permutations count: " + permutations.Count);
-
-            var enumerable = permutations.Select(p => p.Select((n, i) =>
-                new House
-                {
-                    Name = n,
-                    HouseType = (HouseType) i
-                }).ToList())
+            var enumerable = GetPermutations(players, players.Count).ToList()
+                .Select(p => p.Select((n, i) =>
+                    new House
+                    {
+                        Name = n,
+                        HouseType = (HouseType) i
+                    }).ToList())
                 .ToList();
             
             foreach (var houses in enumerable)
@@ -265,59 +268,52 @@ namespace Tests
 
             var best = result.Where(x => Math.Abs(x.MinusScore - min) < 0.001).ToList();
 
+            var nextGame = new NextGame
+            {
+                BestCount = best.Count,
+                Variants = new List<Variant>()
+            };
+
             Console.WriteLine("best count: " + best.Count);
 
             var playerStats = players.ToDictionary(x => x, x => GetPlayerWinStat(store, x));
             var neighborStats = players.ToDictionary(x => x, x => GetNeighborWinStat(store, x));
             var houseStats = Enum.GetValues(typeof (HouseType)).Cast<HouseType>().ToDictionary(x => x, x => GetHouseWinStat(store, x));
 
-            foreach (var item in result.OrderBy(x=>x.MinusScore).Take(best.Count + 3))
+            foreach (var item in result.OrderBy(x => x.MinusScore).Take(best.Count + 3))
             {
 
                 var winScores = item.Houses.ToDictionary(x => x,
-                    house =>
+                    dto =>
                     {
-                        var neighbors = players.Where(p => AreNeighbors(p, house.Name, item.Houses)).ToList();
+                        var neighbors = players.Where(p => AreNeighbors(p, dto.House.Name, item.Houses.Select(x=>x.House).ToList())).ToList();
 
 
-                        var playerStat = playerStats[house.Name];
-                        var houseStat = houseStats[house.HouseType];
+                        var playerStat = playerStats[dto.House.Name];
+                        var houseStat = houseStats[dto.House.HouseType];
 
-                        double neighborsAvgGames = neighbors.Sum(n => neighborStats[n].GamesCount) /2d;
+                        double neighborsAvgGames = neighbors.Sum(n => neighborStats[n].GamesCount)/2d;
                         return (100/6d + playerStat.WinsPercent*playerStat.GamesCount + houseStat.WinsPercent*houseStat.GamesCount + neighbors.Sum(n => neighborStats[n].WinsPercent)/4*neighborsAvgGames)/
                                (1 + playerStat.GamesCount + houseStat.GamesCount + neighborsAvgGames);
-
-                        //var count = 1 + playerStats[house.Name].GamesCount + 
-
-                        //var percents = new[]
-                        //{
-                        //    100/6d,
-
-                        //    playerStats[house.Name].WinsPercent,
-                        //    playerStats[house.Name].WinsPercent,
-
-                        //    houseStats[house.HouseType].WinsPercent,
-                        //    houseStats[house.HouseType].WinsPercent,
-
-                        //    neighbors.Sum(n => neighborStats[n].WinsPercent)/2
-                        //};
-                        //return percents.Sum(x => x);
                     });
 
+                
 
                 Console.WriteLine("minus score: " + item.MinusScore);
-                foreach (var house in item.Houses.OrderBy(x=>x.HouseType))
+                foreach (var house in item.Houses.OrderBy(x => x.House.HouseType))
                 {
-                    Console.WriteLine(house.HouseType + " " + house.Name);
+                    Console.WriteLine(house.House.HouseType + " " + house.House.Name);
 
-                    var winwith = winScores[house]*100/winScores.Sum(x=>x.Value);
-                    Console.WriteLine($"Wins with: {winwith:0.##}%");
+                    house.WinsWith = winScores[house]*100/winScores.Sum(x => x.Value);
+                    Console.WriteLine($"Wins with: {house.WinsWith:0.##}%");
                 }
-                Console.WriteLine(item.Sb.ToString());
+                Console.WriteLine(item.Description);
                 Console.WriteLine("_____________________________");
 
-
+                nextGame.Variants.Add(item);
             }
+
+            SaveJson(nextGame, "next game");
         }
 
         private static double MinusHouses(List<House> houses, Store store, StringBuilder sb)
