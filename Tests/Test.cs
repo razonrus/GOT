@@ -13,7 +13,7 @@ namespace Tests
     [TestFixture]
     public class Test
     {
-        private const string BasePath = @"D:\Projects\GOT\json\";
+        private const string BasePath = @"C:\Projects\my\got\json\";
 
         public class Variant
         {
@@ -62,7 +62,7 @@ namespace Tests
 
             var playerStats = new List<PlayerStat>();
 
-            foreach (var player in players)
+            foreach (var player in players.Where(p=>store.Games.Count(g=>g.Houses.Any(h=>h.Name == p)) > 1))
             {
                 var stat = new PlayerStat
                 {
