@@ -53,11 +53,11 @@
         "winsPercent": 42.857142857142854
       },
       "neighborWinStat": {
-        "gamesCount": 4,
+        "gamesCount": 7,
         "winsCount": 2,
         "winsSevenCount": 0,
         "winsScoreCount": 0,
-        "winsPercent": 50.0
+        "winsPercent": 28.571428571428573
       }
     },
     {
@@ -113,7 +113,7 @@
         "winsPercent": 25.0
       },
       "neighborWinStat": {
-        "gamesCount": 6,
+        "gamesCount": 8,
         "winsCount": 0,
         "winsSevenCount": 0,
         "winsScoreCount": 0,
@@ -173,11 +173,11 @@
         "winsPercent": 25.0
       },
       "neighborWinStat": {
-        "gamesCount": 6,
+        "gamesCount": 8,
         "winsCount": 3,
         "winsSevenCount": 0,
         "winsScoreCount": 0,
-        "winsPercent": 50.0
+        "winsPercent": 37.5
       }
     },
     {
@@ -353,11 +353,11 @@
         "winsPercent": 12.5
       },
       "neighborWinStat": {
-        "gamesCount": 7,
+        "gamesCount": 8,
         "winsCount": 4,
         "winsSevenCount": 0,
         "winsScoreCount": 0,
-        "winsPercent": 57.142857142857146
+        "winsPercent": 50.0
       }
     }
   ],
