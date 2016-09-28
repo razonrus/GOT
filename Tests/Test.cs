@@ -197,13 +197,12 @@ namespace Tests
             var games = store.Games.Where(x => x.Houses.Any(h => h.Name == player)).ToList();
 
             var nWins = games.Count(g => AreNeighbors(player, g.Winner, g.Houses));
-            var looses = games.Count(g => g.Winner != player);
 
             return new WinStat
             {
-                GamesCount = looses,
+                GamesCount = games.Count,
                 WinsCount = nWins,
-                WinsPercent = looses == 0 ? 0 : nWins * 100 / (double)looses
+                WinsPercent = nWins * 100 / (double)games.Count
             };
         }
 
