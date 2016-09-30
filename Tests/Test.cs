@@ -13,7 +13,7 @@ namespace Tests
     [TestFixture]
     public class Test
     {
-        private const string BasePath = @"C:\Projects\my\got\json\";
+        private const string BasePath = @"D:\Projects\GOT\json\";
 
         public class Variant
         {
