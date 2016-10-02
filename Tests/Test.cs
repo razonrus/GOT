@@ -19,7 +19,7 @@ namespace Tests
         {
             public List<HouseDto> Houses { get; }
 
-            public double MinusScore { get; }
+            public double MinusScore { get; set; }
 
             [JsonIgnore]
             private StringBuilder Sb { get; }
@@ -316,6 +316,87 @@ namespace Tests
             }
 
             SaveJson(nextGame, "next game");
+        }
+
+        [Test]
+        public void EqualChanсes()
+        {
+            var store = new Store();
+            
+            var result = new List<Variant>();
+            var players = new List<string>()
+            {
+                Players.Ruslan,
+                Players.Gleb,
+                Players.Semen,
+                Players.Anotron,
+                Players.Serega,
+                Players.Igor
+            };
+
+            var enumerable = GetPermutations(players, players.Count).ToList()
+                .Select(p => p.Select((n, i) =>
+                    new House
+                    {
+                        Name = n,
+                        HouseType = (HouseType) i
+                    }).ToList())
+                .ToList();
+            
+            foreach (var houses in enumerable)
+            {
+                var sb = new StringBuilder();
+                
+                result.Add(new Variant(houses, 0, sb));
+            }
+
+            var playerStats = players.ToDictionary(x => x, x => GetPlayerWinStat(store, x));
+            var neighborStats = players.ToDictionary(x => x, x => GetNeighborWinStat(store, x));
+            var houseStats = Enum.GetValues(typeof (HouseType)).Cast<HouseType>().ToDictionary(x => x, x => GetHouseWinStat(store, x));
+
+            foreach (var item in result)
+            {
+                var winScores = item.Houses.ToDictionary(x => x,
+                    dto =>
+                    {
+                        var neighbors = players.Where(p => AreNeighbors(p, dto.House.Name, item.Houses.Select(x=>x.House).ToList())).ToList();
+
+
+                        var playerStat = playerStats[dto.House.Name];
+                        var houseStat = houseStats[dto.House.HouseType];
+
+                        double neighborsAvgGames = neighbors.Sum(n => neighborStats[n].GamesCount)/2d;
+                        return (100/6d + playerStat.WinsPercent*playerStat.GamesCount + houseStat.WinsPercent*houseStat.GamesCount + neighbors.Sum(n => neighborStats[n].WinsPercent)/4*neighborsAvgGames)/
+                               (1 + playerStat.GamesCount + houseStat.GamesCount + neighborsAvgGames);
+                    });
+                
+                foreach (var house in item.Houses.OrderBy(x => x.House.HouseType))
+                {
+                    house.WinsWith = winScores[house]*100/winScores.Sum(x => x.Value);
+                }
+
+                item.MinusScore = item.Houses.Sum(h => Math.Abs(h.WinsWith - 100/6d));
+            }
+
+            var min = result.Min(x => x.MinusScore);
+
+            var best = result.Where(x => Math.Abs(x.MinusScore - min) < 0.001).ToList();
+
+
+            Console.WriteLine("best count: " + best.Count);
+
+            foreach (var item in result.OrderBy(x => x.MinusScore).Take(best.Count + 3))
+            {
+                Console.WriteLine("minus score: " + item.MinusScore);
+                foreach (var house in item.Houses.OrderBy(x => x.House.HouseType))
+                {
+                    Console.WriteLine(house.House.HouseType + " " + house.House.Name);
+                    
+                    Console.WriteLine($"Wins with: {house.WinsWith:0.##}%");
+                }
+                Console.WriteLine("_____________________________");
+                
+            }
         }
 
         private static double MinusHouses(List<House> houses, Store store, StringBuilder sb)
