@@ -414,7 +414,7 @@ namespace Tests
                     switch (i)
                     {
                         case 0:
-                            koef = 15;
+                            koef = 20;
                             break;
                         case 1:
                             koef = 12;
