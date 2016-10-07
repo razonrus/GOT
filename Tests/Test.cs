@@ -186,7 +186,7 @@ namespace Tests
             {
                 GamesCount = games.Count,
                 WinsCount = wins.Count,
-                WinsPercent = wins.Count * 100 / (double)games.Count,
+                WinsPercent = games.Count == 0 ? 0 : wins.Count * 100 / (double)games.Count,
                 WinsScoreCount = wins.Count(x => x.WinType == WinType.Seven),
                 WinsSevenCount = wins.Count(x => x.WinType == WinType.Score)
             };
@@ -202,7 +202,7 @@ namespace Tests
             {
                 GamesCount = games.Count,
                 WinsCount = nWins,
-                WinsPercent = nWins * 100 / (double)games.Count
+                WinsPercent = games.Count == 0 ? 0 : nWins * 100 / (double)games.Count
             };
         }
 
@@ -241,7 +241,7 @@ namespace Tests
                 Players.Ruslan,
                 Players.Gleb,
                 Players.Semen,
-                Players.Anotron,
+                Players.Edele,
                 Players.Serega,
                 Players.Igor
             };
