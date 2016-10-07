@@ -278,6 +278,37 @@
       "date": "2016-09-30T00:00:00",
       "winner": "Ruslan",
       "winType": 0
+    },
+    {
+      "houses": [
+        {
+          "name": "AnotrOn",
+          "houseType": "Lannister"
+        },
+        {
+          "name": "Gleb",
+          "houseType": "Tyrell"
+        },
+        {
+          "name": "Ruslan",
+          "houseType": "Martell"
+        },
+        {
+          "name": "Semen",
+          "houseType": "Baratheon"
+        },
+        {
+          "name": "Igor",
+          "houseType": "Stark"
+        },
+        {
+          "name": "Serega",
+          "houseType": "Greyjoy"
+        }
+      ],
+      "date": "2016-10-07T00:00:00",
+      "winner": "Igor",
+      "winType": 0
     }
   ]
 }

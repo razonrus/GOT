@@ -13,7 +13,7 @@
           "gamesCount": 1
         },
         "martell": {
-          "gamesCount": 1
+          "gamesCount": 2
         },
         "tyrell": {
           "gamesCount": 1
@@ -24,10 +24,10 @@
       },
       "neighbors": {
         "gleb": {
-          "gamesCountWithPair": 2
+          "gamesCountWithPair": 3
         },
         "semen": {
-          "gamesCountWithPair": 3
+          "gamesCountWithPair": 4
         },
         "anotrOn": {
           "gamesCountWithPair": 4
@@ -46,18 +46,18 @@
         }
       },
       "winStat": {
-        "gamesCount": 8,
+        "gamesCount": 9,
         "winsCount": 4,
         "winsSevenCount": 1,
         "winsScoreCount": 3,
-        "winsPercent": 50.0
+        "winsPercent": 44.444444444444443
       },
       "neighborWinStat": {
-        "gamesCount": 8,
+        "gamesCount": 9,
         "winsCount": 2,
         "winsSevenCount": 0,
         "winsScoreCount": 0,
-        "winsPercent": 25.0
+        "winsPercent": 22.222222222222221
       }
     },
     {
@@ -76,7 +76,7 @@
           "gamesCount": 2
         },
         "tyrell": {
-          "gamesCount": 1
+          "gamesCount": 2
         },
         "lannister": {
           "gamesCount": 2
@@ -84,13 +84,13 @@
       },
       "neighbors": {
         "ruslan": {
-          "gamesCountWithPair": 2
+          "gamesCountWithPair": 3
         },
         "semen": {
           "gamesCountWithPair": 5
         },
         "anotrOn": {
-          "gamesCountWithPair": 3
+          "gamesCountWithPair": 4
         },
         "serega": {
           "gamesCountWithPair": 4
@@ -106,14 +106,14 @@
         }
       },
       "winStat": {
-        "gamesCount": 9,
+        "gamesCount": 10,
         "winsCount": 2,
         "winsSevenCount": 2,
         "winsScoreCount": 0,
-        "winsPercent": 22.222222222222221
+        "winsPercent": 20.0
       },
       "neighborWinStat": {
-        "gamesCount": 9,
+        "gamesCount": 10,
         "winsCount": 0,
         "winsSevenCount": 0,
         "winsScoreCount": 0,
@@ -130,7 +130,7 @@
           "gamesCount": 1
         },
         "baratheon": {
-          "gamesCount": 1
+          "gamesCount": 2
         },
         "martell": {
           "gamesCount": 1
@@ -144,7 +144,7 @@
       },
       "neighbors": {
         "ruslan": {
-          "gamesCountWithPair": 3
+          "gamesCountWithPair": 4
         },
         "gleb": {
           "gamesCountWithPair": 5
@@ -156,7 +156,7 @@
           "gamesCountWithPair": 3
         },
         "igor": {
-          "gamesCountWithPair": 4
+          "gamesCountWithPair": 5
         },
         "dimon": {
           "gamesCountWithPair": 1
@@ -166,18 +166,18 @@
         }
       },
       "winStat": {
-        "gamesCount": 9,
+        "gamesCount": 10,
         "winsCount": 2,
         "winsSevenCount": 2,
         "winsScoreCount": 0,
-        "winsPercent": 22.222222222222221
+        "winsPercent": 20.0
       },
       "neighborWinStat": {
-        "gamesCount": 9,
-        "winsCount": 3,
+        "gamesCount": 10,
+        "winsCount": 4,
         "winsSevenCount": 0,
         "winsScoreCount": 0,
-        "winsPercent": 33.333333333333336
+        "winsPercent": 40.0
       }
     },
     {
@@ -199,7 +199,7 @@
           "gamesCount": 1
         },
         "lannister": {
-          "gamesCount": 1
+          "gamesCount": 2
         }
       },
       "neighbors": {
@@ -207,13 +207,13 @@
           "gamesCountWithPair": 4
         },
         "gleb": {
-          "gamesCountWithPair": 3
+          "gamesCountWithPair": 4
         },
         "semen": {
           "gamesCountWithPair": 2
         },
         "serega": {
-          "gamesCountWithPair": 3
+          "gamesCountWithPair": 4
         },
         "igor": {
           "gamesCountWithPair": 4
@@ -226,25 +226,25 @@
         }
       },
       "winStat": {
-        "gamesCount": 8,
+        "gamesCount": 9,
         "winsCount": 0,
         "winsSevenCount": 0,
         "winsScoreCount": 0,
         "winsPercent": 0.0
       },
       "neighborWinStat": {
-        "gamesCount": 8,
+        "gamesCount": 9,
         "winsCount": 4,
         "winsSevenCount": 0,
         "winsScoreCount": 0,
-        "winsPercent": 50.0
+        "winsPercent": 44.444444444444443
       }
     },
     {
       "player": "Serega",
       "houses": {
         "greyjoy": {
-          "gamesCount": 1
+          "gamesCount": 2
         },
         "stark": {
           "gamesCount": 1
@@ -273,10 +273,10 @@
           "gamesCountWithPair": 3
         },
         "anotrOn": {
-          "gamesCountWithPair": 3
+          "gamesCountWithPair": 4
         },
         "igor": {
-          "gamesCountWithPair": 4
+          "gamesCountWithPair": 5
         },
         "dimon": {
           "gamesCountWithPair": 0
@@ -286,18 +286,18 @@
         }
       },
       "winStat": {
-        "gamesCount": 9,
+        "gamesCount": 10,
         "winsCount": 0,
         "winsSevenCount": 0,
         "winsScoreCount": 0,
         "winsPercent": 0.0
       },
       "neighborWinStat": {
-        "gamesCount": 9,
-        "winsCount": 4,
+        "gamesCount": 10,
+        "winsCount": 5,
         "winsSevenCount": 0,
         "winsScoreCount": 0,
-        "winsPercent": 44.444444444444443
+        "winsPercent": 50.0
       }
     },
     {
@@ -307,7 +307,7 @@
           "gamesCount": 1
         },
         "stark": {
-          "gamesCount": 1
+          "gamesCount": 2
         },
         "baratheon": {
           "gamesCount": 1
@@ -330,13 +330,13 @@
           "gamesCountWithPair": 3
         },
         "semen": {
-          "gamesCountWithPair": 4
+          "gamesCountWithPair": 5
         },
         "anotrOn": {
           "gamesCountWithPair": 4
         },
         "serega": {
-          "gamesCountWithPair": 4
+          "gamesCountWithPair": 5
         },
         "dimon": {
           "gamesCountWithPair": 0
@@ -346,63 +346,63 @@
         }
       },
       "winStat": {
-        "gamesCount": 9,
-        "winsCount": 1,
+        "gamesCount": 10,
+        "winsCount": 2,
         "winsSevenCount": 1,
-        "winsScoreCount": 0,
-        "winsPercent": 11.111111111111111
+        "winsScoreCount": 1,
+        "winsPercent": 20.0
       },
       "neighborWinStat": {
-        "gamesCount": 9,
+        "gamesCount": 10,
         "winsCount": 4,
         "winsSevenCount": 0,
         "winsScoreCount": 0,
-        "winsPercent": 44.444444444444443
+        "winsPercent": 40.0
       }
     }
   ],
   "houseStats": {
     "greyjoy": {
-      "gamesCount": 9,
+      "gamesCount": 10,
       "winsCount": 3,
       "winsSevenCount": 2,
       "winsScoreCount": 1,
-      "winsPercent": 33.333333333333336
+      "winsPercent": 30.0
     },
     "stark": {
-      "gamesCount": 9,
-      "winsCount": 3,
+      "gamesCount": 10,
+      "winsCount": 4,
       "winsSevenCount": 1,
-      "winsScoreCount": 2,
-      "winsPercent": 33.333333333333336
+      "winsScoreCount": 3,
+      "winsPercent": 40.0
     },
     "baratheon": {
-      "gamesCount": 9,
+      "gamesCount": 10,
       "winsCount": 0,
       "winsSevenCount": 0,
       "winsScoreCount": 0,
       "winsPercent": 0.0
     },
     "martell": {
-      "gamesCount": 9,
+      "gamesCount": 10,
       "winsCount": 1,
       "winsSevenCount": 1,
       "winsScoreCount": 0,
-      "winsPercent": 11.111111111111111
+      "winsPercent": 10.0
     },
     "tyrell": {
-      "gamesCount": 9,
+      "gamesCount": 10,
       "winsCount": 1,
       "winsSevenCount": 1,
       "winsScoreCount": 0,
-      "winsPercent": 11.111111111111111
+      "winsPercent": 10.0
     },
     "lannister": {
-      "gamesCount": 9,
+      "gamesCount": 10,
       "winsCount": 1,
       "winsSevenCount": 1,
       "winsScoreCount": 0,
-      "winsPercent": 11.111111111111111
+      "winsPercent": 10.0
     }
   }
 }
