@@ -241,9 +241,9 @@ namespace Tests
                 Players.Ruslan,
                 Players.Gleb,
                 Players.Semen,
-                Players.Edele,
+                Players.Anotron,
                 Players.Serega,
-                Players.Igor
+                Players.Edele
             };
 
             var enumerable = GetPermutations(players, players.Count).ToList()
@@ -423,10 +423,10 @@ namespace Tests
                             koef = 8;
                             break;
                         case 3:
-                            koef = 7;
+                            koef = 5;
                             break;
                         case 4:
-                            koef = 6;
+                            koef = 4;
                             break;
                         default:
                             koef = 1+1d/i;
@@ -464,7 +464,7 @@ namespace Tests
                 switch (index)
                 {
                     case 0:
-                        koef = 7;
+                        koef = 10;
                         break;
                     case 1:
                         koef = 2;

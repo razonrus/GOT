@@ -5,97 +5,49 @@
       "houses": [
         {
           "house": {
-            "name": "Igor",
+            "name": "Edele",
             "houseType": "Greyjoy"
           },
-          "winsWith": 19.081953949123143
-        },
-        {
-          "house": {
-            "name": "Gleb",
-            "houseType": "Stark"
-          },
-          "winsWith": 26.20636077065317
-        },
-        {
-          "house": {
-            "name": "Edele",
-            "houseType": "Baratheon"
-          },
-          "winsWith": 5.67804483364152
-        },
-        {
-          "house": {
-            "name": "Semen",
-            "houseType": "Martell"
-          },
-          "winsWith": 14.904867688308991
+          "winsWith": 23.808616290799129
         },
         {
           "house": {
             "name": "Serega",
-            "houseType": "Tyrell"
-          },
-          "winsWith": 8.8614732485684069
-        },
-        {
-          "house": {
-            "name": "Ruslan",
-            "houseType": "Lannister"
-          },
-          "winsWith": 25.26729950970477
-        }
-      ],
-      "minusScore": 33.11349206349206,
-      "description": "Repeat Greyjoy - Igor with the game at 14.09.2016\r\nRepeat Stark - Gleb with the game at 23.09.2016\r\nRepeat Stark - Gleb with the game at 26.08.2016\r\nRepeat Martell - Semen with the game at 08.09.2016\r\nRepeat Tyrell - Serega with the game at 02.09.2016\r\nRepeat Lannister - Ruslan with the game at 02.09.2016\r\nRepeat pair Serega-Ruslan with the game at 30.09.2016\r\nRepeat pair Igor-Gleb with the game at 24.09.2016\r\nRepeat pair Serega-Semen with the game at 23.09.2016\r\nRepeat pair Igor-Ruslan with the game at 23.09.2016\r\nRepeat pair Serega-Semen with the game at 08.09.2016\r\nRepeat pair Igor-Ruslan with the game at 08.09.2016\r\nRepeat pair Serega-Ruslan with the game at 02.09.2016\r\nRepeat pair Igor-Gleb with the game at 02.09.2016\r\nRepeat pair Igor-Ruslan with the game at 26.08.2016\r\nRepeat pair Serega-Semen with the game at 19.08.2016\r\nRepeat pair Igor-Gleb with the game at 19.08.2016\r\nRepeat pair Serega-Ruslan with the game at 12.08.2016\r\n"
-    },
-    {
-      "houses": [
-        {
-          "house": {
-            "name": "Igor",
-            "houseType": "Greyjoy"
-          },
-          "winsWith": 20.475778244908781
-        },
-        {
-          "house": {
-            "name": "Edele",
             "houseType": "Stark"
           },
-          "winsWith": 23.715901395751494
+          "winsWith": 16.021773737653426
         },
         {
           "house": {
             "name": "Gleb",
             "houseType": "Baratheon"
           },
-          "winsWith": 9.8865296141098025
+          "winsWith": 14.243873684184784
         },
         {
           "house": {
             "name": "Semen",
             "houseType": "Martell"
           },
-          "winsWith": 13.733505855083976
+          "winsWith": 13.840010887695371
         },
         {
           "house": {
-            "name": "Serega",
+            "name": "AnotrOn",
             "houseType": "Tyrell"
           },
-          "winsWith": 8.3576291328021117
+          "winsWith": 8.962055221568308
         },
         {
           "house": {
             "name": "Ruslan",
             "houseType": "Lannister"
           },
-          "winsWith": 23.830655757343838
+          "winsWith": 23.123670178098987
         }
       ],
-      "minusScore": 33.966269841269835,
-      "description": "Repeat Greyjoy - Igor with the game at 14.09.2016\r\nRepeat Baratheon - Gleb with the game at 14.09.2016\r\nRepeat Martell - Semen with the game at 08.09.2016\r\nRepeat Tyrell - Serega with the game at 02.09.2016\r\nRepeat Lannister - Ruslan with the game at 02.09.2016\r\nRepeat pair Gleb-Semen with the game at 30.09.2016\r\nRepeat pair Serega-Ruslan with the game at 30.09.2016\r\nRepeat pair Gleb-Semen with the game at 23.09.2016\r\nRepeat pair Serega-Semen with the game at 23.09.2016\r\nRepeat pair Igor-Ruslan with the game at 23.09.2016\r\nRepeat pair Gleb-Semen with the game at 08.09.2016\r\nRepeat pair Serega-Semen with the game at 08.09.2016\r\nRepeat pair Igor-Ruslan with the game at 08.09.2016\r\nRepeat pair Serega-Ruslan with the game at 02.09.2016\r\nRepeat pair Gleb-Semen with the game at 26.08.2016\r\nRepeat pair Igor-Ruslan with the game at 26.08.2016\r\nRepeat pair Serega-Semen with the game at 19.08.2016\r\nRepeat pair Gleb-Semen with the game at 12.08.2016\r\nRepeat pair Serega-Ruslan with the game at 12.08.2016\r\n"
+      "minusScore": 35.942857142857136,
+      "description": "Repeat Stark - Serega with the game at 14.09.2016\r\nRepeat Baratheon - Gleb with the game at 14.09.2016\r\nRepeat Martell - Semen with the game at 08.09.2016\r\nRepeat Tyrell - AnotrOn with the game at 23.09.2016\r\nRepeat Lannister - Ruslan with the game at 02.09.2016\r\nRepeat pair Gleb-Serega with the game at 30.09.2016\r\nRepeat pair Gleb-Semen with the game at 30.09.2016\r\nRepeat pair AnotrOn-Ruslan with the game at 30.09.2016\r\nRepeat pair AnotrOn-Semen with the game at 24.09.2016\r\nRepeat pair Gleb-Semen with the game at 23.09.2016\r\nRepeat pair Gleb-Serega with the game at 14.09.2016\r\nRepeat pair AnotrOn-Ruslan with the game at 14.09.2016\r\nRepeat pair Gleb-Semen with the game at 08.09.2016\r\nRepeat pair AnotrOn-Ruslan with the game at 08.09.2016\r\nRepeat pair Gleb-Serega with the game at 02.09.2016\r\nRepeat pair AnotrOn-Semen with the game at 02.09.2016\r\nRepeat pair Gleb-Semen with the game at 26.08.2016\r\nRepeat pair Gleb-Serega with the game at 12.08.2016\r\nRepeat pair Gleb-Semen with the game at 12.08.2016\r\nRepeat pair AnotrOn-Ruslan with the game at 12.08.2016\r\n"
     },
     {
       "houses": [
@@ -104,46 +56,46 @@
             "name": "Gleb",
             "houseType": "Greyjoy"
           },
-          "winsWith": 20.49702322517102
+          "winsWith": 21.858514681085527
         },
         {
           "house": {
             "name": "Edele",
             "houseType": "Stark"
           },
-          "winsWith": 23.740508219044241
+          "winsWith": 26.213813478705198
         },
         {
           "house": {
-            "name": "Igor",
+            "name": "AnotrOn",
             "houseType": "Baratheon"
           },
-          "winsWith": 9.896787545408019
+          "winsWith": 2.7440843045793528
         },
         {
           "house": {
             "name": "Semen",
             "houseType": "Martell"
           },
-          "winsWith": 16.86045458844713
+          "winsWith": 18.251721937050167
         },
         {
           "house": {
             "name": "Serega",
             "houseType": "Tyrell"
           },
-          "winsWith": 8.3663007282766166
+          "winsWith": 8.922022738932867
         },
         {
           "house": {
             "name": "Ruslan",
             "houseType": "Lannister"
           },
-          "winsWith": 20.638925693652975
+          "winsWith": 22.009842859646891
         }
       ],
-      "minusScore": 35.738888888888894,
-      "description": "Repeat Greyjoy - Gleb with the game at 19.08.2016\r\nRepeat Baratheon - Igor with the game at 02.09.2016\r\nRepeat Martell - Semen with the game at 08.09.2016\r\nRepeat Tyrell - Serega with the game at 02.09.2016\r\nRepeat Lannister - Ruslan with the game at 02.09.2016\r\nRepeat pair Igor-Semen with the game at 07.10.2016\r\nRepeat pair Gleb-Ruslan with the game at 07.10.2016\r\nRepeat pair Igor-Semen with the game at 30.09.2016\r\nRepeat pair Serega-Ruslan with the game at 30.09.2016\r\nRepeat pair Serega-Semen with the game at 23.09.2016\r\nRepeat pair Gleb-Ruslan with the game at 23.09.2016\r\nRepeat pair Igor-Semen with the game at 14.09.2016\r\nRepeat pair Serega-Semen with the game at 08.09.2016\r\nRepeat pair Serega-Ruslan with the game at 02.09.2016\r\nRepeat pair Igor-Semen with the game at 19.08.2016\r\nRepeat pair Serega-Semen with the game at 19.08.2016\r\nRepeat pair Gleb-Ruslan with the game at 19.08.2016\r\nRepeat pair Igor-Semen with the game at 12.08.2016\r\nRepeat pair Serega-Ruslan with the game at 12.08.2016\r\n"
+      "minusScore": 36.877777777777773,
+      "description": "Repeat Greyjoy - Gleb with the game at 19.08.2016\r\nRepeat Baratheon - AnotrOn with the game at 24.09.2016\r\nRepeat Baratheon - AnotrOn with the game at 12.08.2016\r\nRepeat Martell - Semen with the game at 08.09.2016\r\nRepeat Tyrell - Serega with the game at 02.09.2016\r\nRepeat Lannister - Ruslan with the game at 02.09.2016\r\nRepeat pair Gleb-Ruslan with the game at 07.10.2016\r\nRepeat pair Serega-Ruslan with the game at 30.09.2016\r\nRepeat pair AnotrOn-Semen with the game at 24.09.2016\r\nRepeat pair Serega-Semen with the game at 23.09.2016\r\nRepeat pair Gleb-Ruslan with the game at 23.09.2016\r\nRepeat pair Serega-Semen with the game at 08.09.2016\r\nRepeat pair AnotrOn-Semen with the game at 02.09.2016\r\nRepeat pair Serega-Ruslan with the game at 02.09.2016\r\nRepeat pair Serega-Semen with the game at 19.08.2016\r\nRepeat pair Gleb-Ruslan with the game at 19.08.2016\r\nRepeat pair Serega-Ruslan with the game at 12.08.2016\r\n"
     },
     {
       "houses": [
@@ -152,46 +104,94 @@
             "name": "Edele",
             "houseType": "Greyjoy"
           },
-          "winsWith": 17.464923902895666
+          "winsWith": 23.388599360908334
+        },
+        {
+          "house": {
+            "name": "AnotrOn",
+            "houseType": "Stark"
+          },
+          "winsWith": 16.706142400648812
         },
         {
           "house": {
             "name": "Gleb",
-            "houseType": "Stark"
-          },
-          "winsWith": 24.848879584224026
-        },
-        {
-          "house": {
-            "name": "Igor",
             "houseType": "Baratheon"
           },
-          "winsWith": 9.8994729956505374
+          "winsWith": 13.711817423920499
         },
         {
           "house": {
             "name": "Semen",
             "houseType": "Martell"
           },
-          "winsWith": 16.9333090715075
+          "winsWith": 14.281057213457853
         },
         {
           "house": {
             "name": "Serega",
             "houseType": "Tyrell"
           },
-          "winsWith": 8.402451741375863
+          "winsWith": 8.69084566416266
         },
         {
           "house": {
             "name": "Ruslan",
             "houseType": "Lannister"
           },
-          "winsWith": 22.450962704346413
+          "winsWith": 23.22153793690185
         }
       ],
-      "minusScore": 37.090079365079362,
-      "description": "Repeat Stark - Gleb with the game at 23.09.2016\r\nRepeat Stark - Gleb with the game at 26.08.2016\r\nRepeat Baratheon - Igor with the game at 02.09.2016\r\nRepeat Martell - Semen with the game at 08.09.2016\r\nRepeat Tyrell - Serega with the game at 02.09.2016\r\nRepeat Lannister - Ruslan with the game at 02.09.2016\r\nRepeat pair Igor-Semen with the game at 07.10.2016\r\nRepeat pair Igor-Semen with the game at 30.09.2016\r\nRepeat pair Serega-Ruslan with the game at 30.09.2016\r\nRepeat pair Igor-Gleb with the game at 24.09.2016\r\nRepeat pair Serega-Semen with the game at 23.09.2016\r\nRepeat pair Igor-Semen with the game at 14.09.2016\r\nRepeat pair Serega-Semen with the game at 08.09.2016\r\nRepeat pair Igor-Gleb with the game at 02.09.2016\r\nRepeat pair Serega-Ruslan with the game at 02.09.2016\r\nRepeat pair Igor-Gleb with the game at 19.08.2016\r\nRepeat pair Igor-Semen with the game at 19.08.2016\r\nRepeat pair Serega-Semen with the game at 19.08.2016\r\nRepeat pair Igor-Semen with the game at 12.08.2016\r\nRepeat pair Serega-Ruslan with the game at 12.08.2016\r\n"
+      "minusScore": 37.049603174603178,
+      "description": "Repeat Stark - AnotrOn with the game at 02.09.2016\r\nRepeat Baratheon - Gleb with the game at 14.09.2016\r\nRepeat Martell - Semen with the game at 08.09.2016\r\nRepeat Tyrell - Serega with the game at 02.09.2016\r\nRepeat Lannister - Ruslan with the game at 02.09.2016\r\nRepeat pair Gleb-AnotrOn with the game at 07.10.2016\r\nRepeat pair Gleb-Semen with the game at 30.09.2016\r\nRepeat pair Serega-Ruslan with the game at 30.09.2016\r\nRepeat pair Gleb-Semen with the game at 23.09.2016\r\nRepeat pair Serega-Semen with the game at 23.09.2016\r\nRepeat pair Gleb-AnotrOn with the game at 14.09.2016\r\nRepeat pair Gleb-AnotrOn with the game at 08.09.2016\r\nRepeat pair Gleb-Semen with the game at 08.09.2016\r\nRepeat pair Serega-Semen with the game at 08.09.2016\r\nRepeat pair Serega-Ruslan with the game at 02.09.2016\r\nRepeat pair Gleb-AnotrOn with the game at 26.08.2016\r\nRepeat pair Gleb-Semen with the game at 26.08.2016\r\nRepeat pair Serega-Semen with the game at 19.08.2016\r\nRepeat pair Gleb-Semen with the game at 12.08.2016\r\nRepeat pair Serega-Ruslan with the game at 12.08.2016\r\n"
+    },
+    {
+      "houses": [
+        {
+          "house": {
+            "name": "Ruslan",
+            "houseType": "Greyjoy"
+          },
+          "winsWith": 32.928697339664232
+        },
+        {
+          "house": {
+            "name": "Serega",
+            "houseType": "Stark"
+          },
+          "winsWith": 16.261797873829678
+        },
+        {
+          "house": {
+            "name": "Gleb",
+            "houseType": "Baratheon"
+          },
+          "winsWith": 15.052794195292426
+        },
+        {
+          "house": {
+            "name": "Semen",
+            "houseType": "Martell"
+          },
+          "winsWith": 14.625995720840894
+        },
+        {
+          "house": {
+            "name": "AnotrOn",
+            "houseType": "Tyrell"
+          },
+          "winsWith": 7.04357162345759
+        },
+        {
+          "house": {
+            "name": "Edele",
+            "houseType": "Lannister"
+          },
+          "winsWith": 14.087143246915177
+        }
+      ],
+      "minusScore": 37.459523809523809,
+      "description": "Repeat Greyjoy - Ruslan with the game at 08.09.2016\r\nRepeat Stark - Serega with the game at 14.09.2016\r\nRepeat Baratheon - Gleb with the game at 14.09.2016\r\nRepeat Martell - Semen with the game at 08.09.2016\r\nRepeat Tyrell - AnotrOn with the game at 23.09.2016\r\nRepeat pair Gleb-Serega with the game at 30.09.2016\r\nRepeat pair Gleb-Semen with the game at 30.09.2016\r\nRepeat pair Ruslan-Serega with the game at 30.09.2016\r\nRepeat pair AnotrOn-Semen with the game at 24.09.2016\r\nRepeat pair Gleb-Semen with the game at 23.09.2016\r\nRepeat pair Gleb-Serega with the game at 14.09.2016\r\nRepeat pair Gleb-Semen with the game at 08.09.2016\r\nRepeat pair Gleb-Serega with the game at 02.09.2016\r\nRepeat pair AnotrOn-Semen with the game at 02.09.2016\r\nRepeat pair Ruslan-Serega with the game at 02.09.2016\r\nRepeat pair Gleb-Semen with the game at 26.08.2016\r\nRepeat pair Gleb-Serega with the game at 12.08.2016\r\nRepeat pair Gleb-Semen with the game at 12.08.2016\r\nRepeat pair Ruslan-Serega with the game at 12.08.2016\r\n"
     }
   ]
 }
