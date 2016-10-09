@@ -56,6 +56,7 @@ namespace Tests
                 Players.Anotron,
                 Players.Serega,
                 Players.Igor,
+                Players.Edele,
                 Players.Dimon,
                 Players.Levch
             };
@@ -147,7 +148,8 @@ namespace Tests
                 Players.Semen,
                 Players.Anotron,
                 Players.Serega,
-                Players.Igor
+                Players.Igor,
+                Players.Edele
             })
             {
                 Console.WriteLine(player);
@@ -240,7 +242,7 @@ namespace Tests
                 Players.Semen,
                 Players.Anotron,
                 Players.Serega,
-                Players.Edele
+                Players.Igor
             };
             Store store = new Store();
             var nextGame = GetNextGame(players, store.Games);
@@ -258,7 +260,7 @@ namespace Tests
                 Players.Semen,
                 Players.Anotron,
                 Players.Serega,
-                Players.Edele
+                Players.Igor
             };
             Store store = new Store();
             var nextGame = GetNextGame(players1, store.Games);
