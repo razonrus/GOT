@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using BusinessLogic;
 using Newtonsoft.Json;
@@ -540,6 +541,38 @@ namespace Tests
             return GetPermutations(list, length - 1)
                 .SelectMany(t => list.Where(e => !t.Contains(e)),
                     (t1, t2) => t1.Concat(new T[] { t2 }));
+        }
+
+
+        [Test]
+        public void Facts()
+        {
+            var store = new Store();
+
+            var predicates =
+                Players.All().Select(p => new { Name = $"Winner {p}", Function = new Func<Game, bool> (x => x.Winner == p)})
+                    .Concat(
+                        Players.All().SelectMany(p => Enum.GetValues(typeof (HouseType)).
+                            Cast<HouseType>()
+                            .Select(h => new { Name = $"{h} - {p}", Function = new Func<Game, bool> (x => x.GetHousePlayer(h) == p)})
+                            )
+                    )
+                    .ToList();
+
+            foreach (var predicate1 in predicates)
+            {
+                foreach (var predicate2 in predicates)
+                {
+                    if (predicate1 == predicate2)
+                        continue;
+
+                    var count = store.Games.Count(predicate1.Function);
+                    if (count > 1 && store.Games.Where(predicate1.Function).All(predicate2.Function))
+                    {
+                        Console.WriteLine($"if {predicate1.Name} ({count} games) then {predicate2.Name}");
+                    }
+                }
+            }
         }
     }
 
