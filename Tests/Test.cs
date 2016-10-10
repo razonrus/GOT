@@ -568,11 +568,18 @@ namespace Tests
                     .ToList();
 
             var result = new List<string>();
+            var predicate2s = Players.All().Select(p => new {Name = $"WINNER {p}", Function = new Func<Game, bool>(x => x.Winner == p)})
+                .Concat(predicates)
+                .Concat(
+                    Players.All().Select(p => new {Name = $"neigbor({p}, WINNER)", Function = new Func<Game, bool>(x => AreNeighbors(p, x.Winner, x.Houses))})
+
+                )
+
+                ;
+
             foreach (var predicate1 in predicates)
             {
-                foreach (var predicate2 in Players.All().Select(p => new {Name = $"WINNER {p}", Function = new Func<Game, bool>(x => x.Winner == p)})
-                    .Concat(predicates)
-                    )
+                foreach (var predicate2 in predicate2s)
                 {
                     if (predicate1 == predicate2)
                         continue;
