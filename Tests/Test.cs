@@ -533,35 +533,46 @@ namespace Tests
             return pair1.Contains(pair2.First()) && pair1.Contains(pair2.Last());
         }
 
-        static IEnumerable<IEnumerable<T>> GetPermutations<T>(List<T> list, int length)
+        static List<List<T>> GetPermutations<T>(List<T> list, int length)
         {
             if (length == 1)
-                return list.Select(t => new[] { t });
+                return list.Select(t => new List<T> {t}).ToList();
 
             return GetPermutations(list, length - 1)
                 .SelectMany(t => list.Where(e => !t.Contains(e)),
-                    (t1, t2) => t1.Concat(new T[] { t2 }));
+                    (t1, t2) => t1.Concat(new[] {t2}).ToList())
+                    .ToList();
         }
-
-
+        
         [Test]
         public void Facts()
         {
             var store = new Store();
 
             var predicates =
-                Players.All().Select(p => new { Name = $"Winner {p}", Function = new Func<Game, bool> (x => x.Winner == p)})
+
+                Players.All().SelectMany(p => Enum.GetValues(typeof (HouseType)).
+                    Cast<HouseType>()
+                    .Select(h => new {Name = $"{h} - {p}", Function = new Func<Game, bool>(x => x.GetHousePlayer(h) == p)})
+                    )
                     .Concat(
-                        Players.All().SelectMany(p => Enum.GetValues(typeof (HouseType)).
-                            Cast<HouseType>()
-                            .Select(h => new { Name = $"{h} - {p}", Function = new Func<Game, bool> (x => x.GetHousePlayer(h) == p)})
-                            )
+                        GetPermutations(Players.All().ToList(), 2)
+                            .GroupBy(x =>
+                            {
+                                x.Sort();
+                                return x.First() + x.Last();
+                            })
+                            .Select(x => x.First())
+                            .Select(p => new {Name = $"neighbors({p.First()},{p.Last()})", Function = new Func<Game, bool>(x => AreNeighbors(p.First(), p.Last(), x.Houses))})
                     )
                     .ToList();
 
+            var result = new List<string>();
             foreach (var predicate1 in predicates)
             {
-                foreach (var predicate2 in predicates)
+                foreach (var predicate2 in Players.All().Select(p => new {Name = $"WINNER {p}", Function = new Func<Game, bool>(x => x.Winner == p)})
+                    .Concat(predicates)
+                    )
                 {
                     if (predicate1 == predicate2)
                         continue;
@@ -569,9 +580,17 @@ namespace Tests
                     var count = store.Games.Count(predicate1.Function);
                     if (count > 1 && store.Games.Where(predicate1.Function).All(predicate2.Function))
                     {
-                        Console.WriteLine($"if {predicate1.Name} ({count} games) then {predicate2.Name}");
+                        result.Add($"if {predicate1.Name} ({count} games) then {predicate2.Name}");
                     }
                 }
+            }
+
+            foreach (var line in result
+                .OrderByDescending(x=>x.Contains("WINNER"))
+                .ThenBy(x=>x)
+                )
+            {
+                Console.WriteLine(line);
             }
         }
     }
