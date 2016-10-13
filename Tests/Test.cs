@@ -563,7 +563,7 @@ namespace Tests
                                 return x.First() + x.Last();
                             })
                             .Select(x => x.First())
-                            .Select(p => new {Name = $"neighbors({p.First()},{p.Last()})", Function = new Func<Game, bool>(x => AreNeighbors(p.First(), p.Last(), x.Houses))})
+                            .Select(p => new {Name = $"соседи {p.First()} и {p.Last()}", Function = new Func<Game, bool>(x => AreNeighbors(p.First(), p.Last(), x.Houses))})
                     )
                     .ToList();
 
@@ -572,19 +572,19 @@ namespace Tests
 
                 Enum.GetValues(typeof(HouseType)).
                     Cast<HouseType>()
-                    .Select(h => new { Name = $"WINNER {h}", Function = new Func<Game, bool>(x => x.GetHousePlayer(h) == x.Winner) })
+                    .Select(h => new { Name = $"побеждает {h}", Function = new Func<Game, bool>(x => x.GetHousePlayer(h) == x.Winner) })
                 .Concat(
                     Enum.GetValues(typeof(HouseType)).
                     Cast<HouseType>()
-                    .Select(h => new { Name = $"NOT WINNER {h}", Function = new Func<Game, bool>(x => x.GetHousePlayer(h) != x.Winner) })
+                    .Select(h => new { Name = $"не побеждает {h}", Function = new Func<Game, bool>(x => x.GetHousePlayer(h) != x.Winner) })
                     )
-                //.Concat(
-                //Players.All().Select(p => new {Name = $"WINNER {p}", Function = new Func<Game, bool>(x => x.Winner == p)})
-                //    )
-                //.Concat(predicates)
-                //.Concat(
-                //    Players.All().Select(p => new {Name = $"neigbor({p}, WINNER)", Function = new Func<Game, bool>(x => AreNeighbors(p, x.Winner, x.Houses))})
-                //)
+                .Concat(
+                Players.All().Select(p => new {Name = $"побеждает {p}", Function = new Func<Game, bool>(x => x.Winner == p)})
+                    )
+                .Concat(predicates)
+                .Concat(
+                    Players.All().Select(p => new {Name = $"побеждает сосед игрока {p}", Function = new Func<Game, bool>(x => AreNeighbors(p, x.Winner, x.Houses))})
+                )
 
                 ;
 
@@ -598,13 +598,13 @@ namespace Tests
                     var count = store.Games.Count(predicate1.Function);
                     if (count > 1 && store.Games.Where(predicate1.Function).All(predicate2.Function))
                     {
-                        result.Add($"if {predicate1.Name} ({count} games) then {predicate2.Name}");
+                        result.Add($"Всегда, когда {predicate1.Name} ({count} игры) - {predicate2.Name}");
                     }
                 }
             }
 
             foreach (var line in result
-                .OrderByDescending(x=>x.Contains("WINNER"))
+                .OrderByDescending(x=>x.Contains("побеждает"))
                 .ThenBy(x=>x)
                 )
             {
