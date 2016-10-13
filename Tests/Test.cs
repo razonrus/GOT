@@ -248,7 +248,7 @@ namespace Tests
             Store store = new Store();
             var nextGame = GetNextGame(players, store.Games);
 
-            var facts = GetFacts()
+            var facts = GetFacts(players)
                 .Where(x=>x.ConditionPredicate.Function(nextGame.Variants.First().Houses.Select(d=>d.House).ToList()))
                 .ToList()
                 ;
@@ -555,7 +555,7 @@ namespace Tests
         {
             public override string ToString()
             {
-                return $"Всегда, когда {ConditionPredicate.Name} ({GamesCount} игры) - {ResultPredicate.Name}";
+                return $"{ResultPredicate.Name}, если {ConditionPredicate.Name} ({GamesCount} игры)";
             }
 
             public ConditionPredicate ConditionPredicate { get; set; }
@@ -595,7 +595,7 @@ namespace Tests
         [Test]
         public void Facts()
         {
-            var facts = GetFacts();
+            var facts = GetFacts(Players.All());
 
             WriteFacts(facts);
         }
@@ -603,26 +603,25 @@ namespace Tests
         private static void WriteFacts(List<Fact> facts)
         {
             foreach (var line in facts
+                .OrderBy(x => x.ResultPredicate.Name)
                 .Select(fact => fact.ToString())
-                .OrderByDescending(x => x.Contains("побеждает"))
-                .ThenBy(x => x)
                 )
             {
                 Console.WriteLine(line);
             }
         }
 
-        private static List<Fact> GetFacts()
+        private static List<Fact> GetFacts(List<string> players)
         {
             var store = new Store();
 
             var conditionPredicates =
-                Players.All().SelectMany(p => Enum.GetValues(typeof (HouseType)).
+                players.SelectMany(p => Enum.GetValues(typeof (HouseType)).
                     Cast<HouseType>()
                     .Select(h => new ConditionPredicate($"{h} - {p}", x => Game.GetHousePlayer(h, x) == p))
                     )
                     .Concat(
-                        GetPermutations(Players.All().ToList(), 2)
+                        GetPermutations(players.ToList(), 2)
                             .GroupBy(x =>
                             {
                                 x.Sort();
@@ -636,26 +635,26 @@ namespace Tests
             var predicate2s =
                 Enum.GetValues(typeof (HouseType)).
                     Cast<HouseType>()
-                    .Select(h => new ResultPredicate($"побеждает {h}", x => Game.GetHousePlayer(h, x.Houses) == x.Winner))
+                    .Select(h => new ResultPredicate($"{h} побеждает", x => Game.GetHousePlayer(h, x.Houses) == x.Winner))
                     .Concat(
                         Enum.GetValues(typeof (HouseType)).
                             Cast<HouseType>()
-                            .Select(h => new ResultPredicate($"не побеждает {h}", x => Game.GetHousePlayer(h, x.Houses) != x.Winner))
+                            .Select(h => new ResultPredicate($"{h} не побеждает", x => Game.GetHousePlayer(h, x.Houses) != x.Winner))
                     )
                     .Concat(
-                        Players.All().Select(p => new ResultPredicate($"побеждает {p}", x => x.Winner == p))
+                        players.Select(p => new ResultPredicate($"{p} побеждает", x => x.Winner == p))
                     )
                     .Concat(
-                        Players.All().Select(p => new ResultPredicate($"не побеждает {p}", x => x.Winner != p))
+                        players.Select(p => new ResultPredicate($"{p} не побеждает", x => x.Winner != p))
                     )
                     .Concat(conditionPredicates.Select(x=>x.ToResultPredicate()))
                     .Concat(
-                        Players.All().Select(p => new ResultPredicate($"побеждает сосед игрока {p}", x => AreNeighbors(p, x.Winner, x.Houses)))
+                        players.Select(p => new ResultPredicate($"сосед игрока {p} побеждает", x => AreNeighbors(p, x.Winner, x.Houses)))
                     )
                     .Concat(
                         Enum.GetValues(typeof (HouseType)).
                             Cast<HouseType>()
-                            .Select(h => new ResultPredicate($"побеждает сосед {h}'ов(ев)", x => AreNeighbors(Game.GetHousePlayer(h, x.Houses), x.Winner, x.Houses)))
+                            .Select(h => new ResultPredicate($"сосед {h}'ов(ев) побеждает", x => AreNeighbors(Game.GetHousePlayer(h, x.Houses), x.Winner, x.Houses)))
                     )
                     .ToList()
                 ;

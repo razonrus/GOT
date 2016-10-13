@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace BusinessLogic
 {
     public static class Players
@@ -12,9 +14,9 @@ namespace BusinessLogic
         public static string Dimon = "Dimon";
         public static string Edele = "Edele";
 
-        public static string[] All()
+        public static List<string> All()
         {
-            return new[]
+            return new List<string>
             {
                 Ruslan,
                 Anotron,
