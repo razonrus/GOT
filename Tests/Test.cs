@@ -490,7 +490,7 @@ namespace Tests
             {
                 var result = house.Name == g.Game.Houses.Single(l=>l.HouseType == house.HouseType).Name;
 
-                if (sb != null && result)
+                if (sb != null && result && g.Game.Date > DateTime.Today.AddMonths(-1))
                 {
                     sb.AppendLine($"Repeat {house} with the game at {g.Game.Date.ToShortDateString()}");
                 }
@@ -525,7 +525,7 @@ namespace Tests
                 result += Helper.GetPairs(houses).Count(p =>
                 {
                     var b = pairs.SingleOrDefault(p2 => Same(p, p2)) != null;
-                    if (b)
+                    if (b && game.Date > DateTime.Today.AddMonths(-1))
                     {
                         sb.AppendLine($"Repeat pair {p[0]}-{p[1]} with the game at {game.Date.ToShortDateString()}");
                     }
