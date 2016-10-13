@@ -248,13 +248,27 @@ namespace Tests
             Store store = new Store();
             var nextGame = GetNextGame(players, store.Games);
 
+            var houses = nextGame.Variants.First().Houses.Select(d=>d.House).ToList();
             var facts = GetFacts(players)
-                .Where(x=>x.ConditionPredicate.Function(nextGame.Variants.First().Houses.Select(d=>d.House).ToList()))
+                .Where(x=> x.ConditionPredicate.Function(houses))
                 .ToList()
                 ;
 
-            WriteFacts(facts);
+            Console.WriteLine("Тенденции победы:");
+            WriteFacts(facts.Where(x=>x.ResultPredicate.FromCondition == false).ToList());
+            Console.WriteLine("_____________________________________________________________________________");
+
+            Console.WriteLine("Тенденции расклада:");
+            foreach (var line in facts.Where(x => x.ResultPredicate.FromCondition)
+                .OrderBy(x1 => x1.ResultPredicate.Name)
+                .Select(fact => fact.ToString(houses))
+                )
+            {
+                Console.WriteLine(line);
+            }
+            Console.WriteLine("_____________________________________________________________________________");
             
+
             SaveJson(nextGame, "next game");
         }
         
@@ -561,12 +575,18 @@ namespace Tests
             public ConditionPredicate ConditionPredicate { get; set; }
             public ResultPredicate ResultPredicate { get; set; }
             public int GamesCount { get; set; }
+
+            public string ToString(List<House> houses)
+            {
+                return $"{ToString()} {(ResultPredicate.Function(new Game {Houses = houses}) ? "ПОДТВЕРЖДЕНО!" : "НАРУШЕНО!")}";
+            }
         }
         private class ResultPredicate
         {
             public string Name { get; }
 
             public Func<Game, bool> Function { get; }
+            public bool FromCondition { get; set; }
 
             public ResultPredicate(string name, Func<Game, bool> function)
             {
@@ -588,7 +608,11 @@ namespace Tests
 
             public ResultPredicate ToResultPredicate()
             {
-                return new ResultPredicate(Name, x=>Function(x.Houses));
+                return new ResultPredicate(Name, x => Function(x.Houses))
+                {
+                    FromCondition = true
+                }
+                    ;
             }
         }
 
@@ -603,7 +627,8 @@ namespace Tests
         private static void WriteFacts(List<Fact> facts)
         {
             foreach (var line in facts
-                .OrderBy(x => x.ResultPredicate.Name)
+                .OrderBy(x => x.ResultPredicate.Name.Contains("не побеждает"))
+                .ThenBy(x => x.ResultPredicate.Name)
                 .Select(fact => fact.ToString())
                 )
             {
