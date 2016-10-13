@@ -570,21 +570,29 @@ namespace Tests
             var result = new List<string>();
             var predicate2s =
 
-                Enum.GetValues(typeof(HouseType)).
+                Enum.GetValues(typeof (HouseType)).
                     Cast<HouseType>()
-                    .Select(h => new { Name = $"побеждает {h}", Function = new Func<Game, bool>(x => x.GetHousePlayer(h) == x.Winner) })
-                .Concat(
-                    Enum.GetValues(typeof(HouseType)).
-                    Cast<HouseType>()
-                    .Select(h => new { Name = $"не побеждает {h}", Function = new Func<Game, bool>(x => x.GetHousePlayer(h) != x.Winner) })
+                    .Select(h => new {Name = $"побеждает {h}", Function = new Func<Game, bool>(x => x.GetHousePlayer(h) == x.Winner)})
+                    .Concat(
+                        Enum.GetValues(typeof (HouseType)).
+                            Cast<HouseType>()
+                            .Select(h => new {Name = $"не побеждает {h}", Function = new Func<Game, bool>(x => x.GetHousePlayer(h) != x.Winner)})
                     )
-                .Concat(
-                Players.All().Select(p => new {Name = $"побеждает {p}", Function = new Func<Game, bool>(x => x.Winner == p)})
+                    .Concat(
+                        Players.All().Select(p => new {Name = $"побеждает {p}", Function = new Func<Game, bool>(x => x.Winner == p)})
                     )
-                .Concat(predicates)
-                .Concat(
-                    Players.All().Select(p => new {Name = $"побеждает сосед игрока {p}", Function = new Func<Game, bool>(x => AreNeighbors(p, x.Winner, x.Houses))})
-                )
+                    .Concat(
+                        Players.All().Select(p => new {Name = $"не побеждает {p}", Function = new Func<Game, bool>(x => x.Winner != p)})
+                    )
+                    .Concat(predicates)
+                    .Concat(
+                        Players.All().Select(p => new {Name = $"побеждает сосед игрока {p}", Function = new Func<Game, bool>(x => AreNeighbors(p, x.Winner, x.Houses))})
+                    )
+                    .Concat(
+                        Enum.GetValues(typeof (HouseType)).
+                            Cast<HouseType>()
+                            .Select(h => new {Name = $"побеждает сосед {h}'ов(ев)", Function = new Func<Game, bool>(x => AreNeighbors(x.GetHousePlayer(h), x.Winner, x.Houses))})
+                    )
 
                 ;
 
