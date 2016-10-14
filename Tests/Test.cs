@@ -259,13 +259,7 @@ namespace Tests
             Console.WriteLine("_____________________________________________________________________________");
 
             Console.WriteLine("Тенденции расклада:");
-            foreach (var line in facts.Where(x => x.ResultPredicate.IsFromCondition)
-                .OrderBy(x1 => x1.ResultPredicate.Name)
-                .Select(fact => fact.ToString(houses))
-                )
-            {
-                Console.WriteLine(line);
-            }
+            WriteFacts(facts.Where(x => x.ResultPredicate.IsFromCondition).ToList(), houses);
             Console.WriteLine("_____________________________________________________________________________");
             
 
@@ -624,14 +618,14 @@ namespace Tests
             WriteFacts(facts);
         }
 
-        private static void WriteFacts(List<Fact> facts)
+        private static void WriteFacts(List<Fact> facts, List<House> nextGame = null)
         {
             foreach (var line in facts
                 .OrderBy(x=>x.ResultPredicate.IsFromCondition)
                 .ThenBy(x=>facts.Count(f=>f.ResultPredicate.Name == x.ResultPredicate.Name))
                 //.OrderBy(x => x.ResultPredicate.Name.Contains("не побеждает"))
                 .ThenBy(x => x.ResultPredicate.Name)
-                .Select(fact => fact.ToString())
+                .Select(fact => nextGame == null ? fact.ToString() : fact.ToString(nextGame))
                 )
             {
                 Console.WriteLine(line);
