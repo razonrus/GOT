@@ -578,17 +578,17 @@ namespace Tests
 
             public string ToString(List<House> houses)
             {
-                return $"{ToString()} {(ResultPredicate.Function(new Game {Houses = houses}) ? "ПОДТВЕРЖДЕНО!" : "НАРУШЕНО!")}";
+                return $"{ToString()} {(ResultPredicate.Function(new Game {Houses = houses}) == false ? "НАРУШЕНО!" : "ПОДТВЕРЖДЕНО!")}";
             }
         }
         private class ResultPredicate
         {
             public string Name { get; }
 
-            public Func<Game, bool> Function { get; }
+            public Func<Game, bool?> Function { get; }
             public bool FromCondition { get; set; }
 
-            public ResultPredicate(string name, Func<Game, bool> function)
+            public ResultPredicate(string name, Func<Game, bool?> function)
             {
                 this.Name = name;
                 this.Function = function;
@@ -657,7 +657,7 @@ namespace Tests
                     )
                     .ToList();
 
-            var predicate2s =
+            var resultPredicates =
                 Enum.GetValues(typeof (HouseType)).
                     Cast<HouseType>()
                     .Select(h => new ResultPredicate($"{h} побеждает", x => Game.GetHousePlayer(h, x.Houses) == x.Winner))
@@ -670,7 +670,12 @@ namespace Tests
                         players.Select(p => new ResultPredicate($"{p} побеждает", x => x.Winner == p))
                     )
                     .Concat(
-                        players.Select(p => new ResultPredicate($"{p} не побеждает", x => x.Winner != p))
+                        players.Select(p => new ResultPredicate($"{p} не побеждает", x =>
+                        {
+                            if (x.Contains(p) == false)
+                                return null;
+                            return x.Winner != p;
+                        }))
                     )
                     .Concat(conditionPredicates.Select(x=>x.ToResultPredicate()))
                     .Concat(
@@ -685,18 +690,19 @@ namespace Tests
                 ;
 
             var facts = new List<Fact>();
-            foreach (var predicate1 in conditionPredicates)
+            foreach (var condition in conditionPredicates)
             {
-                facts.AddRange(predicate2s
-                    .Where(predicate2 => predicate1.Name != predicate2.Name)
-                    .Where(predicate2 => store.Games
-                        .Where(x=>predicate1.Function(x.Houses))
-                        .All(predicate2.Function))
-                    .Select(predicate2 => new Fact
+                facts.AddRange(resultPredicates
+                    .Where(predicate2 => condition.Name != predicate2.Name)
+                    .Where(result => store.Games
+                        .Where(x => result.Function(x) != null)
+                        .Where(x => condition.Function(x.Houses))
+                        .All(x => result.Function(x) == true))
+                    .Select(result => new Fact
                     {
-                        GamesCount = store.Games.Count(x=>predicate1.Function(x.Houses)),
-                        ConditionPredicate = predicate1,
-                        ResultPredicate = predicate2
+                        GamesCount = store.Games.Count(x => result.Function(x) != null && condition.Function(x.Houses)),
+                        ConditionPredicate = condition,
+                        ResultPredicate = result
                     })
                     .Where(x => x.GamesCount > 1)
                     );

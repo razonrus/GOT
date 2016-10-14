@@ -36,6 +36,11 @@ namespace BusinessLogic
         public DateTime Date { get; set; }
         public string Winner { get; set; }
         public WinType WinType { get; set; }
+
+        public bool Contains(string player)
+        {
+            return Houses.Any(x => x.Name == player);
+        }
     }
 
     public class Helper
