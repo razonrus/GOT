@@ -255,11 +255,11 @@ namespace Tests
                 ;
 
             Console.WriteLine("Тенденции победы:");
-            WriteFacts(facts.Where(x=>x.ResultPredicate.FromCondition == false).ToList());
+            WriteFacts(facts.Where(x=>x.ResultPredicate.IsFromCondition == false).ToList());
             Console.WriteLine("_____________________________________________________________________________");
 
             Console.WriteLine("Тенденции расклада:");
-            foreach (var line in facts.Where(x => x.ResultPredicate.FromCondition)
+            foreach (var line in facts.Where(x => x.ResultPredicate.IsFromCondition)
                 .OrderBy(x1 => x1.ResultPredicate.Name)
                 .Select(fact => fact.ToString(houses))
                 )
@@ -586,7 +586,7 @@ namespace Tests
             public string Name { get; }
 
             public Func<Game, bool?> Function { get; }
-            public bool FromCondition { get; set; }
+            public bool IsFromCondition { get; set; }
 
             public ResultPredicate(string name, Func<Game, bool?> function)
             {
@@ -610,7 +610,7 @@ namespace Tests
             {
                 return new ResultPredicate(Name, x => Function(x.Houses))
                 {
-                    FromCondition = true
+                    IsFromCondition = true
                 }
                     ;
             }
@@ -627,7 +627,9 @@ namespace Tests
         private static void WriteFacts(List<Fact> facts)
         {
             foreach (var line in facts
-                .OrderBy(x => x.ResultPredicate.Name.Contains("не побеждает"))
+                .OrderBy(x=>x.ResultPredicate.IsFromCondition)
+                .ThenBy(x=>facts.Count(f=>f.ResultPredicate.Name == x.ResultPredicate.Name))
+                //.OrderBy(x => x.ResultPredicate.Name.Contains("не побеждает"))
                 .ThenBy(x => x.ResultPredicate.Name)
                 .Select(fact => fact.ToString())
                 )
