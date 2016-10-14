@@ -682,9 +682,22 @@ namespace Tests
                         players.Select(p => new ResultPredicate($"сосед игрока {p} побеждает", x => AreNeighbors(p, x.Winner, x.Houses)))
                     )
                     .Concat(
+                        players.Select(p => new ResultPredicate($"сосед игрока {p} не побеждает", x =>
+                        {
+                            if (x.Contains(p) == false)
+                                return null;
+                            return AreNeighbors(p, x.Winner, x.Houses) == false;
+                        }))
+                    )
+                    .Concat(
                         Enum.GetValues(typeof (HouseType)).
                             Cast<HouseType>()
                             .Select(h => new ResultPredicate($"сосед {h}'ов(ев) побеждает", x => AreNeighbors(Game.GetHousePlayer(h, x.Houses), x.Winner, x.Houses)))
+                    )
+                    .Concat(
+                        Enum.GetValues(typeof (HouseType)).
+                            Cast<HouseType>()
+                            .Select(h => new ResultPredicate($"сосед {h}'ов(ев) не побеждает", x => AreNeighbors(Game.GetHousePlayer(h, x.Houses), x.Winner, x.Houses) == false))
                     )
                     .ToList()
                 ;
