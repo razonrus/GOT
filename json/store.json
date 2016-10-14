@@ -340,6 +340,37 @@
       "date": "2016-10-09T00:00:00",
       "winner": "Serega",
       "winType": 1
+    },
+    {
+      "houses": [
+        {
+          "name": "Semen",
+          "houseType": "Lannister"
+        },
+        {
+          "name": "Serega",
+          "houseType": "Tyrell"
+        },
+        {
+          "name": "AnotrOn",
+          "houseType": "Martell"
+        },
+        {
+          "name": "Igor",
+          "houseType": "Baratheon"
+        },
+        {
+          "name": "Gleb",
+          "houseType": "Stark"
+        },
+        {
+          "name": "Ruslan",
+          "houseType": "Greyjoy"
+        }
+      ],
+      "date": "2016-10-14T00:00:00",
+      "winner": "Ruslan",
+      "winType": 0
     }
   ]
 }
