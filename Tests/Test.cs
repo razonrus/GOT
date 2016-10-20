@@ -673,7 +673,7 @@ namespace Tests
                             return x.Winner != p;
                         }))
                     )
-                    .Concat(conditionPredicates.Select(x=>x.ToResultPredicate()))
+                    .Concat(conditionPredicates.Select(x => x.ToResultPredicate()))
                     .Concat(
                         players.Select(p => new ResultPredicate($"сосед игрока {p} побеждает", x => AreNeighbors(p, x.Winner, x.Houses)))
                     )
@@ -694,6 +694,13 @@ namespace Tests
                         Enum.GetValues(typeof (HouseType)).
                             Cast<HouseType>()
                             .Select(h => new ResultPredicate($"сосед {h}'ов(ев) не побеждает", x => AreNeighbors(Game.GetHousePlayer(h, x.Houses), x.Winner, x.Houses) == false))
+                    )
+                    .Concat(
+                        new[]
+                        {
+                            new ResultPredicate("победитель определяется по очкам", x => x.WinType == WinType.Score),
+                            new ResultPredicate("победитель берёт 7 замков", x => x.WinType == WinType.Seven)
+                        }
                     )
                     .ToList()
                 ;
