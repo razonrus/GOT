@@ -4,22 +4,28 @@
       "player": "Ruslan",
       "houses": {
         "greyjoy": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 2
         },
         "stark": {
-          "gamesCount": 3
+          "gamesCount": 3,
+          "winsCount": 2
         },
         "baratheon": {
-          "gamesCount": 1
+          "gamesCount": 1,
+          "winsCount": 0
         },
         "martell": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 1
         },
         "tyrell": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "lannister": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         }
       },
       "neighbors": {
@@ -67,22 +73,28 @@
       "player": "Gleb",
       "houses": {
         "greyjoy": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "stark": {
-          "gamesCount": 3
+          "gamesCount": 3,
+          "winsCount": 1
         },
         "baratheon": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "martell": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "tyrell": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "lannister": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 1
         }
       },
       "neighbors": {
@@ -130,22 +142,28 @@
       "player": "Semen",
       "houses": {
         "greyjoy": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 1
         },
         "stark": {
-          "gamesCount": 1
+          "gamesCount": 1,
+          "winsCount": 0
         },
         "baratheon": {
-          "gamesCount": 3
+          "gamesCount": 3,
+          "winsCount": 0
         },
         "martell": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "tyrell": {
-          "gamesCount": 3
+          "gamesCount": 3,
+          "winsCount": 1
         },
         "lannister": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         }
       },
       "neighbors": {
@@ -193,22 +211,28 @@
       "player": "AnotrOn",
       "houses": {
         "greyjoy": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "stark": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "baratheon": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "martell": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "tyrell": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "lannister": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         }
       },
       "neighbors": {
@@ -256,22 +280,28 @@
       "player": "Serega",
       "houses": {
         "greyjoy": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "stark": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 1
         },
         "baratheon": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "martell": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "tyrell": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "lannister": {
-          "gamesCount": 3
+          "gamesCount": 3,
+          "winsCount": 1
         }
       },
       "neighbors": {
@@ -319,22 +349,28 @@
       "player": "Igor",
       "houses": {
         "greyjoy": {
-          "gamesCount": 1
+          "gamesCount": 1,
+          "winsCount": 1
         },
         "stark": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 1
         },
         "baratheon": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "martell": {
-          "gamesCount": 3
+          "gamesCount": 3,
+          "winsCount": 0
         },
         "tyrell": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         },
         "lannister": {
-          "gamesCount": 2
+          "gamesCount": 2,
+          "winsCount": 0
         }
       },
       "neighbors": {

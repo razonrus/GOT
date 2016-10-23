@@ -73,10 +73,14 @@ namespace Tests
                         Enum.GetValues(typeof (HouseType)).Cast<HouseType>()
                             .ToDictionary(x => x,
                                 type =>
-                                    new PlayerHouseStat
+                                {
+                                    var games = store.Games.Where(x => x.Houses.Any(h => h.HouseType == type && h.Name == player)).ToList();
+                                    return new PlayerHouseStat
                                     {
-                                        GamesCount = store.Games.Count(x => x.Houses.Any(h => h.HouseType == type && h.Name == player))
-                                    }),
+                                        GamesCount = games.Count,
+                                        WinsCount = games.Count(x=>x.Winner == player)
+                                    };
+                                }),
                     Neighbors = players.Where(x => x != player)
                         .ToDictionary(x => x, p => new PlayerNeighborStat
                         {
@@ -729,5 +733,6 @@ namespace Tests
     public class PlayerHouseStat
     {
         public int GamesCount { get; set; }
+        public int WinsCount { get; set; }
     }
 }
