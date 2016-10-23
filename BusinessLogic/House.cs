@@ -36,6 +36,7 @@ namespace BusinessLogic
         public DateTime Date { get; set; }
         public string Winner { get; set; }
         public WinType WinType { get; set; }
+        public bool WithRandomCards { get; set; }
 
         public bool Contains(string player)
         {
