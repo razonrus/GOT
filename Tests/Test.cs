@@ -25,6 +25,7 @@ namespace Tests
             private StringBuilder Sb { get; }
 
             public string Description => Sb.ToString();
+            public double Probability { get; set; }
 
             public Variant(List<House> houses, double minusScore, StringBuilder sb)
             {
@@ -268,7 +269,48 @@ namespace Tests
 
             SaveJson(nextGame, "next game");
         }
-        
+
+        [Test]
+        public void ShowNextGameShances()
+        {
+            var players = new List<string>()
+            {
+                Players.Ruslan,
+                Players.Gleb,
+                Players.Semen,
+                Players.Anotron,
+                Players.Serega,
+                Players.Igor
+            };
+            Store store = new Store();
+
+            var result = GetAllVariants(players, store.Games);
+
+            var sum = result.Sum(variant => Invert(variant.MinusScore));
+            foreach (var variant in result)
+            {
+                variant.Probability = Invert(variant.MinusScore) / sum*100;
+            }
+
+            Console.WriteLine(result.Sum(x => x.Probability));
+
+            foreach (var item in result.OrderBy(x => x.MinusScore).Take(10).Concat(result.OrderByDescending(x => x.MinusScore).Take(3).OrderBy(x=>x.MinusScore)))
+            {
+                Console.WriteLine("minus score: " + item.MinusScore);
+                Console.WriteLine("Probability: " + item.Probability);
+                foreach (var house in item.Houses.OrderBy(x => x.House.HouseType))
+                {
+                    Console.WriteLine(house.House.HouseType + " " + house.House.Name);
+                }
+                Console.WriteLine("__________________________________________");
+            }
+        }
+
+        private static double Invert(double minusScore)
+        {
+            return Math.Pow(minusScore, -12);
+        }
+
         [Test]
         public void M2()
         {
@@ -305,27 +347,7 @@ namespace Tests
 
         private NextGame GetNextGame(List<string> players, List<Game> games)
         {
-            var result = new List<Variant>();
-
-            var enumerable = GetPermutations(players, players.Count).ToList()
-                .Select(p => p.Select((n, i) =>
-                    new House
-                    {
-                        Name = n,
-                        HouseType = (HouseType) i
-                    }).ToList())
-                .ToList();
-
-            foreach (var houses in enumerable)
-            {
-                var sb = new StringBuilder();
-
-                var minusScore = MinusHouses(houses, sb, games)
-                                 + MinusMutual(houses, games, sb)
-                    ;
-
-                result.Add(new Variant(houses, minusScore, sb));
-            }
+            var result = GetAllVariants(players, games);
 
             var min = result.Min(x => x.MinusScore);
 
@@ -374,6 +396,32 @@ namespace Tests
                 nextGame.Variants.Add(item);
             }
             return nextGame;
+        }
+
+        private List<Variant> GetAllVariants(List<string> players, List<Game> games)
+        {
+            var result = new List<Variant>();
+
+            var enumerable = GetPermutations(players, players.Count).ToList()
+                .Select(p => p.Select((n, i) =>
+                    new House
+                    {
+                        Name = n,
+                        HouseType = (HouseType) i
+                    }).ToList())
+                .ToList();
+
+            foreach (var houses in enumerable)
+            {
+                var sb = new StringBuilder();
+
+                var minusScore = MinusHouses(houses, sb, games)
+                                 + MinusMutual(houses, games, sb)
+                    ;
+
+                result.Add(new Variant(houses, minusScore, sb));
+            }
+            return result;
         }
 
         [Test]
