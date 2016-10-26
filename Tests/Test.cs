@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using BusinessLogic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -273,6 +274,8 @@ namespace Tests
         [Test]
         public void ShowNextGameShances()
         {
+            var random = new Random(DateTime.Now.Millisecond);
+
             var players = new List<string>()
             {
                 Players.Ruslan,
@@ -289,21 +292,51 @@ namespace Tests
             var sum = result.Sum(variant => Invert(variant.MinusScore));
             foreach (var variant in result)
             {
-                variant.Probability = Invert(variant.MinusScore) / sum*100;
+                variant.Probability = Invert(variant.MinusScore)/sum*100;
             }
 
             Console.WriteLine(result.Sum(x => x.Probability));
 
-            foreach (var item in result.OrderBy(x => x.MinusScore).Take(10).Concat(result.OrderByDescending(x => x.MinusScore).Take(3).OrderBy(x=>x.MinusScore)))
+            foreach (var item in result.OrderBy(x => x.MinusScore).Take(10).Concat(result.OrderByDescending(x => x.MinusScore).Take(3).OrderBy(x => x.MinusScore)))
             {
-                Console.WriteLine("minus score: " + item.MinusScore);
-                Console.WriteLine("Probability: " + item.Probability);
-                foreach (var house in item.Houses.OrderBy(x => x.House.HouseType))
-                {
-                    Console.WriteLine(house.House.HouseType + " " + house.House.Name);
-                }
-                Console.WriteLine("__________________________________________");
+                WriteVariant(item);
             }
+
+            var min = result.Min(x => x.Probability);
+
+            var stepsCount = (int) Math.Ceiling(100/min);
+            var step = 100/(double) stepsCount;
+
+            Assert.LessOrEqual(step, min);
+
+            var randomValue = random.Next(stepsCount + 1)*step;
+
+            Console.WriteLine("__________________________________________");
+            Console.WriteLine("__________________________________________");
+            Console.WriteLine("__________________________________________");
+
+            Console.WriteLine("random: " + randomValue);
+            double sum2 = 0;
+            foreach (var variant in result.OrderByDescending(x => x.Probability))
+            {
+                sum2 += variant.Probability;
+                if (sum2 > randomValue)
+                {
+                    WriteVariant(variant);
+                    break;
+                }
+            }
+        }
+
+        private static void WriteVariant(Variant item)
+        {
+            Console.WriteLine("minus score: " + item.MinusScore);
+            Console.WriteLine("Probability: " + item.Probability);
+            foreach (var house in item.Houses.OrderBy(x => x.House.HouseType))
+            {
+                Console.WriteLine(house.House.HouseType + " " + house.House.Name);
+            }
+            Console.WriteLine("__________________________________________");
         }
 
         private static double Invert(double minusScore)
