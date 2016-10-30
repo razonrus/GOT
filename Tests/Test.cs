@@ -293,7 +293,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShowNextGameShances()
+        public void ShowNextGameChances()
         {
             var random = new Random(DateTime.Now.Millisecond);
 
@@ -318,10 +318,7 @@ namespace Tests
 
             Console.WriteLine(result.Sum(x => x.Probability));
 
-            foreach (var item in result.OrderBy(x => x.MinusScore).Take(10).Concat(result.OrderByDescending(x => x.MinusScore).Take(3).OrderBy(x => x.MinusScore)))
-            {
-                WriteVariant(item);
-            }
+            
 
             var min = result.Min(x => x.Probability);
 
@@ -332,9 +329,7 @@ namespace Tests
 
             var randomValue = random.Next(stepsCount + 1)*step;
 
-            Console.WriteLine("__________________________________________");
-            Console.WriteLine("__________________________________________");
-            Console.WriteLine("__________________________________________");
+
 
             Console.WriteLine("random: " + randomValue);
             double sum2 = 0;
@@ -346,6 +341,18 @@ namespace Tests
                     WriteVariant(variant);
                     break;
                 }
+            }
+
+
+
+            Console.WriteLine("__________________________________________");
+            Console.WriteLine("__________________________________________");
+            Console.WriteLine("__________________________________________");
+
+
+            foreach (var item in result.OrderBy(x => x.MinusScore).Take(10).Concat(result.OrderByDescending(x => x.MinusScore).Take(3).OrderBy(x => x.MinusScore)))
+            {
+                WriteVariant(item);
             }
         }
 
