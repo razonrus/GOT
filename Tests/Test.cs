@@ -139,6 +139,26 @@ namespace Tests
             return Helper.GetNeighbors(houses).Any(x => x.Contains(player) && x.Contains(neighbor));
         }
 
+        [Test]
+        public void RelativeScores()
+        {
+            var store = new Store();
+
+            var houseWins = Enum.GetValues(typeof (HouseType)).Cast<HouseType>()
+                .ToDictionary(x => x, x => store.Games.Count(g => g.Winner == g.GetHousePlayer(x)));
+
+            var dict = Players.All().ToDictionary(x => x, x => (double) 0);
+
+            foreach (var game in store.Games)
+            {
+                dict[game.Winner] += 1/(double) houseWins[game.GetHouseType(game.Winner).Value];
+            }
+
+            foreach (var pair in dict.OrderByDescending(x => x.Value))
+            {
+                Console.WriteLine($"{pair.Key} {pair.Value:0.##}");
+            }
+        }
 
         [Test]
         public void CurrentForm()

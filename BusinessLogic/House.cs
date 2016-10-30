@@ -27,6 +27,15 @@ namespace BusinessLogic
 
     public class Game
     {
+        public HouseType? GetHouseType(string player)
+        {
+            return Houses.SingleOrDefault(x => x.PlayerName == player)?.HouseType;
+        }
+        public string GetHousePlayer(HouseType type)
+        {
+            return GetHousePlayer(type, Houses);
+        }
+
         public static string GetHousePlayer(HouseType type, List<House> houses)
         {
             return houses.SingleOrDefault(x => x.HouseType == type)?.PlayerName;
