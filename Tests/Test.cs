@@ -83,9 +83,14 @@ namespace Tests
                                     };
                                 }),
                     Neighbors = players.Where(x => x != player)
-                        .ToDictionary(x => x, p => new PlayerNeighborStat
+                        .ToDictionary(x => x, p =>
                         {
-                            GamesCountWithPair = GetCountOfGamesWithPair(player, p, store.Games)
+                            var games = store.Games.Where(g => AreNeighbors(player, p, g.Houses)).ToList();
+                            return new PlayerNeighborStat
+                            {
+                                GamesCountWithPair = games.Count,
+                                WinsCountWithPair = games.Count(x=>x.Winner == player)
+                            };
                         }),
                     NeighborWinStat = GetNeighborWinStat(player, store.Games)
                 };
@@ -124,11 +129,6 @@ namespace Tests
 
             string json = JsonConvert.SerializeObject(value, Formatting.Indented, serializerSettings);
             File.WriteAllText(BasePath + fileName + @".json", json);
-        }
-
-        private static int GetCountOfGamesWithPair(string player, string sosed, List<Game> games)
-        {
-            return games.Count(g => AreNeighbors(player, sosed, g.Houses));
         }
 
         private static bool AreNeighbors(string player, string neighbor, List<House> houses)

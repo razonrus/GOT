@@ -30,28 +30,36 @@
       },
       "neighbors": {
         "gleb": {
-          "gamesCountWithPair": 4
+          "gamesCountWithPair": 4,
+          "winsCountWithPair": 1
         },
         "semen": {
-          "gamesCountWithPair": 6
+          "gamesCountWithPair": 6,
+          "winsCountWithPair": 2
         },
         "anotrOn": {
-          "gamesCountWithPair": 6
+          "gamesCountWithPair": 6,
+          "winsCountWithPair": 3
         },
         "serega": {
-          "gamesCountWithPair": 4
+          "gamesCountWithPair": 4,
+          "winsCountWithPair": 2
         },
         "igor": {
-          "gamesCountWithPair": 4
+          "gamesCountWithPair": 4,
+          "winsCountWithPair": 2
         },
         "edele": {
-          "gamesCountWithPair": 1
+          "gamesCountWithPair": 1,
+          "winsCountWithPair": 0
         },
         "dimon": {
-          "gamesCountWithPair": 0
+          "gamesCountWithPair": 0,
+          "winsCountWithPair": 0
         },
         "levch": {
-          "gamesCountWithPair": 1
+          "gamesCountWithPair": 1,
+          "winsCountWithPair": 0
         }
       },
       "winStat": {
@@ -99,28 +107,36 @@
       },
       "neighbors": {
         "ruslan": {
-          "gamesCountWithPair": 4
+          "gamesCountWithPair": 4,
+          "winsCountWithPair": 1
         },
         "semen": {
-          "gamesCountWithPair": 7
+          "gamesCountWithPair": 7,
+          "winsCountWithPair": 1
         },
         "anotrOn": {
-          "gamesCountWithPair": 5
+          "gamesCountWithPair": 5,
+          "winsCountWithPair": 0
         },
         "serega": {
-          "gamesCountWithPair": 6
+          "gamesCountWithPair": 6,
+          "winsCountWithPair": 0
         },
         "igor": {
-          "gamesCountWithPair": 5
+          "gamesCountWithPair": 5,
+          "winsCountWithPair": 1
         },
         "edele": {
-          "gamesCountWithPair": 0
+          "gamesCountWithPair": 0,
+          "winsCountWithPair": 0
         },
         "dimon": {
-          "gamesCountWithPair": 1
+          "gamesCountWithPair": 1,
+          "winsCountWithPair": 1
         },
         "levch": {
-          "gamesCountWithPair": 0
+          "gamesCountWithPair": 0,
+          "winsCountWithPair": 0
         }
       },
       "winStat": {
@@ -168,28 +184,36 @@
       },
       "neighbors": {
         "ruslan": {
-          "gamesCountWithPair": 6
+          "gamesCountWithPair": 6,
+          "winsCountWithPair": 1
         },
         "gleb": {
-          "gamesCountWithPair": 7
+          "gamesCountWithPair": 7,
+          "winsCountWithPair": 0
         },
         "anotrOn": {
-          "gamesCountWithPair": 4
+          "gamesCountWithPair": 4,
+          "winsCountWithPair": 1
         },
         "serega": {
-          "gamesCountWithPair": 4
+          "gamesCountWithPair": 4,
+          "winsCountWithPair": 1
         },
         "igor": {
-          "gamesCountWithPair": 6
+          "gamesCountWithPair": 6,
+          "winsCountWithPair": 1
         },
         "edele": {
-          "gamesCountWithPair": 0
+          "gamesCountWithPair": 0,
+          "winsCountWithPair": 0
         },
         "dimon": {
-          "gamesCountWithPair": 1
+          "gamesCountWithPair": 1,
+          "winsCountWithPair": 0
         },
         "levch": {
-          "gamesCountWithPair": 0
+          "gamesCountWithPair": 0,
+          "winsCountWithPair": 0
         }
       },
       "winStat": {
@@ -237,28 +261,36 @@
       },
       "neighbors": {
         "ruslan": {
-          "gamesCountWithPair": 6
+          "gamesCountWithPair": 6,
+          "winsCountWithPair": 0
         },
         "gleb": {
-          "gamesCountWithPair": 5
+          "gamesCountWithPair": 5,
+          "winsCountWithPair": 0
         },
         "semen": {
-          "gamesCountWithPair": 4
+          "gamesCountWithPair": 4,
+          "winsCountWithPair": 0
         },
         "serega": {
-          "gamesCountWithPair": 6
+          "gamesCountWithPair": 6,
+          "winsCountWithPair": 0
         },
         "igor": {
-          "gamesCountWithPair": 5
+          "gamesCountWithPair": 5,
+          "winsCountWithPair": 0
         },
         "edele": {
-          "gamesCountWithPair": 0
+          "gamesCountWithPair": 0,
+          "winsCountWithPair": 0
         },
         "dimon": {
-          "gamesCountWithPair": 0
+          "gamesCountWithPair": 0,
+          "winsCountWithPair": 0
         },
         "levch": {
-          "gamesCountWithPair": 0
+          "gamesCountWithPair": 0,
+          "winsCountWithPair": 0
         }
       },
       "winStat": {
@@ -306,28 +338,36 @@
       },
       "neighbors": {
         "ruslan": {
-          "gamesCountWithPair": 4
+          "gamesCountWithPair": 4,
+          "winsCountWithPair": 1
         },
         "gleb": {
-          "gamesCountWithPair": 6
+          "gamesCountWithPair": 6,
+          "winsCountWithPair": 2
         },
         "semen": {
-          "gamesCountWithPair": 4
+          "gamesCountWithPair": 4,
+          "winsCountWithPair": 0
         },
         "anotrOn": {
-          "gamesCountWithPair": 6
+          "gamesCountWithPair": 6,
+          "winsCountWithPair": 1
         },
         "igor": {
-          "gamesCountWithPair": 6
+          "gamesCountWithPair": 6,
+          "winsCountWithPair": 1
         },
         "edele": {
-          "gamesCountWithPair": 1
+          "gamesCountWithPair": 1,
+          "winsCountWithPair": 1
         },
         "dimon": {
-          "gamesCountWithPair": 0
+          "gamesCountWithPair": 0,
+          "winsCountWithPair": 0
         },
         "levch": {
-          "gamesCountWithPair": 1
+          "gamesCountWithPair": 1,
+          "winsCountWithPair": 0
         }
       },
       "winStat": {
@@ -375,28 +415,36 @@
       },
       "neighbors": {
         "ruslan": {
-          "gamesCountWithPair": 4
+          "gamesCountWithPair": 4,
+          "winsCountWithPair": 0
         },
         "gleb": {
-          "gamesCountWithPair": 5
+          "gamesCountWithPair": 5,
+          "winsCountWithPair": 0
         },
         "semen": {
-          "gamesCountWithPair": 6
+          "gamesCountWithPair": 6,
+          "winsCountWithPair": 2
         },
         "anotrOn": {
-          "gamesCountWithPair": 5
+          "gamesCountWithPair": 5,
+          "winsCountWithPair": 0
         },
         "serega": {
-          "gamesCountWithPair": 6
+          "gamesCountWithPair": 6,
+          "winsCountWithPair": 2
         },
         "edele": {
-          "gamesCountWithPair": 0
+          "gamesCountWithPair": 0,
+          "winsCountWithPair": 0
         },
         "dimon": {
-          "gamesCountWithPair": 0
+          "gamesCountWithPair": 0,
+          "winsCountWithPair": 0
         },
         "levch": {
-          "gamesCountWithPair": 0
+          "gamesCountWithPair": 0,
+          "winsCountWithPair": 0
         }
       },
       "winStat": {
