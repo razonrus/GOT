@@ -19,32 +19,32 @@ namespace BusinessLogic
                     {
                         new House
                         {
-                            Name = Players.Ruslan,
+                            PlayerName = Players.Ruslan,
                             HouseType = HouseType.Stark
                         },
                         new House
                         {
-                            Name = Players.Serega,
+                            PlayerName = Players.Serega,
                             HouseType = HouseType.Greyjoy
                         },
                         new House
                         {
-                            Name = Players.Gleb,
+                            PlayerName = Players.Gleb,
                             HouseType = HouseType.Lannister
                         },
                         new House
                         {
-                            Name = Players.Semen,
+                            PlayerName = Players.Semen,
                             HouseType = HouseType.Tyrell
                         },
                         new House
                         {
-                            Name = Players.Igor,
+                            PlayerName = Players.Igor,
                             HouseType = HouseType.Martell
                         },
                         new House
                         {
-                            Name = Players.Anotron,
+                            PlayerName = Players.Anotron,
                             HouseType = HouseType.Baratheon
                         }
                     }
@@ -58,32 +58,32 @@ namespace BusinessLogic
                     {
                         new House
                         {
-                            Name = Players.Ruslan,
+                            PlayerName = Players.Ruslan,
                             HouseType = HouseType.Stark
                         },
                         new House
                         {
-                            Name = Players.Gleb,
+                            PlayerName = Players.Gleb,
                             HouseType = HouseType.Greyjoy
                         },
                         new House
                         {
-                            Name = Players.Igor,
+                            PlayerName = Players.Igor,
                             HouseType = HouseType.Lannister
                         },
                         new House
                         {
-                            Name = Players.Semen,
+                            PlayerName = Players.Semen,
                             HouseType = HouseType.Tyrell
                         },
                         new House
                         {
-                            Name = Players.Serega,
+                            PlayerName = Players.Serega,
                             HouseType = HouseType.Martell
                         },
                         new House
                         {
-                            Name = Players.Levch,
+                            PlayerName = Players.Levch,
                             HouseType = HouseType.Baratheon
                         }
                     }
@@ -97,32 +97,32 @@ namespace BusinessLogic
                     {
                         new House
                         {
-                            Name = Players.Ruslan,
+                            PlayerName = Players.Ruslan,
                             HouseType = HouseType.Martell
                         },
                         new House
                         {
-                            Name = Players.Serega,
+                            PlayerName = Players.Serega,
                             HouseType = HouseType.Lannister
                         },
                         new House
                         {
-                            Name = Players.Gleb,
+                            PlayerName = Players.Gleb,
                             HouseType = HouseType.Stark
                         },
                         new House
                         {
-                            Name = Players.Semen,
+                            PlayerName = Players.Semen,
                             HouseType = HouseType.Baratheon
                         },
                         new House
                         {
-                            Name = Players.Igor,
+                            PlayerName = Players.Igor,
                             HouseType = HouseType.Tyrell
                         },
                         new House
                         {
-                            Name = Players.Anotron,
+                            PlayerName = Players.Anotron,
                             HouseType = HouseType.Greyjoy
                         }
                     }
@@ -136,32 +136,32 @@ namespace BusinessLogic
                     {
                         new House
                         {
-                            Name = Players.Ruslan,
+                            PlayerName = Players.Ruslan,
                             HouseType = HouseType.Lannister
                         },
                         new House
                         {
-                            Name = Players.Serega,
+                            PlayerName = Players.Serega,
                             HouseType = HouseType.Tyrell
                         },
                         new House
                         {
-                            Name = Players.Gleb,
+                            PlayerName = Players.Gleb,
                             HouseType = HouseType.Martell
                         },
                         new House
                         {
-                            Name = Players.Igor,
+                            PlayerName = Players.Igor,
                             HouseType = HouseType.Baratheon
                         },
                         new House
                         {
-                            Name = Players.Anotron,
+                            PlayerName = Players.Anotron,
                             HouseType = HouseType.Stark
                         },
                         new House
                         {
-                            Name = Players.Semen,
+                            PlayerName = Players.Semen,
                             HouseType = HouseType.Greyjoy
                         }
                     }
@@ -175,32 +175,32 @@ namespace BusinessLogic
                     {
                         new House
                         {
-                            Name = Players.Anotron,
+                            PlayerName = Players.Anotron,
                             HouseType = HouseType.Lannister
                         },
                         new House
                         {
-                            Name = Players.Gleb,
+                            PlayerName = Players.Gleb,
                             HouseType = HouseType.Tyrell
                         },
                         new House
                         {
-                            Name = Players.Semen,
+                            PlayerName = Players.Semen,
                             HouseType = HouseType.Martell
                         },
                         new House
                         {
-                            Name = Players.Serega,
+                            PlayerName = Players.Serega,
                             HouseType = HouseType.Baratheon
                         },
                         new House
                         {
-                            Name = Players.Igor,
+                            PlayerName = Players.Igor,
                             HouseType = HouseType.Stark
                         },
                         new House
                         {
-                            Name = Players.Ruslan,
+                            PlayerName = Players.Ruslan,
                             HouseType = HouseType.Greyjoy
                         }
                     }
@@ -214,32 +214,32 @@ namespace BusinessLogic
                     {
                         new House
                         {
-                            Name = Players.Semen,
+                            PlayerName = Players.Semen,
                             HouseType = HouseType.Lannister
                         },
                         new House
                         {
-                            Name = Players.Ruslan,
+                            PlayerName = Players.Ruslan,
                             HouseType = HouseType.Tyrell
                         },
                         new House
                         {
-                            Name = Players.Anotron,
+                            PlayerName = Players.Anotron,
                             HouseType = HouseType.Martell
                         },
                         new House
                         {
-                            Name = Players.Gleb,
+                            PlayerName = Players.Gleb,
                             HouseType = HouseType.Baratheon
                         },
                         new House
                         {
-                            Name = Players.Serega,
+                            PlayerName = Players.Serega,
                             HouseType = HouseType.Stark
                         },
                         new House
                         {
-                            Name = Players.Igor,
+                            PlayerName = Players.Igor,
                             HouseType = HouseType.Greyjoy
                         }
                     }
@@ -253,32 +253,32 @@ namespace BusinessLogic
                     {
                         new House
                         {
-                            Name = Players.Serega,
+                            PlayerName = Players.Serega,
                             HouseType = HouseType.Lannister
                         },
                         new House
                         {
-                            Name = Players.Anotron,
+                            PlayerName = Players.Anotron,
                             HouseType = HouseType.Tyrell
                         },
                         new House
                         {
-                            Name = Players.Igor,
+                            PlayerName = Players.Igor,
                             HouseType = HouseType.Martell
                         },
                         new House
                         {
-                            Name = Players.Ruslan,
+                            PlayerName = Players.Ruslan,
                             HouseType = HouseType.Baratheon
                         },
                         new House
                         {
-                            Name = Players.Gleb,
+                            PlayerName = Players.Gleb,
                             HouseType = HouseType.Stark
                         },
                         new House
                         {
-                            Name = Players.Semen,
+                            PlayerName = Players.Semen,
                             HouseType = HouseType.Greyjoy
                         }
                     }
@@ -292,32 +292,32 @@ namespace BusinessLogic
                     {
                         new House
                         {
-                            Name = Players.Gleb,
+                            PlayerName = Players.Gleb,
                             HouseType = HouseType.Lannister
                         },
                         new House
                         {
-                            Name = Players.Igor,
+                            PlayerName = Players.Igor,
                             HouseType = HouseType.Tyrell
                         },
                         new House
                         {
-                            Name = Players.Serega,
+                            PlayerName = Players.Serega,
                             HouseType = HouseType.Martell
                         },
                         new House
                         {
-                            Name = Players.Anotron,
+                            PlayerName = Players.Anotron,
                             HouseType = HouseType.Baratheon
                         },
                         new House
                         {
-                            Name = Players.Semen,
+                            PlayerName = Players.Semen,
                             HouseType = HouseType.Stark
                         },
                         new House
                         {
-                            Name = Players.Dimon,
+                            PlayerName = Players.Dimon,
                             HouseType = HouseType.Greyjoy
                         }
                     }
@@ -331,32 +331,32 @@ namespace BusinessLogic
                     {
                         new House
                         {
-                            Name = Players.Igor,
+                            PlayerName = Players.Igor,
                             HouseType = HouseType.Lannister
                         },
                         new House
                         {
-                            Name = Players.Semen,
+                            PlayerName = Players.Semen,
                             HouseType = HouseType.Tyrell
                         },
                         new House
                         {
-                            Name = Players.Gleb,
+                            PlayerName = Players.Gleb,
                             HouseType = HouseType.Martell
                         },
                         new House
                         {
-                            Name = Players.Serega,
+                            PlayerName = Players.Serega,
                             HouseType = HouseType.Baratheon
                         },
                         new House
                         {
-                            Name = Players.Ruslan,
+                            PlayerName = Players.Ruslan,
                             HouseType = HouseType.Stark
                         },
                         new House
                         {
-                            Name = Players.Anotron,
+                            PlayerName = Players.Anotron,
                             HouseType = HouseType.Greyjoy
                         }
                     }
@@ -370,32 +370,32 @@ namespace BusinessLogic
                     {
                         new House
                         {
-                            Name = Players.Anotron,
+                            PlayerName = Players.Anotron,
                             HouseType = HouseType.Lannister
                         },
                         new House
                         {
-                            Name = Players.Gleb,
+                            PlayerName = Players.Gleb,
                             HouseType = HouseType.Tyrell
                         },
                         new House
                         {
-                            Name = Players.Ruslan,
+                            PlayerName = Players.Ruslan,
                             HouseType = HouseType.Martell
                         },
                         new House
                         {
-                            Name = Players.Semen,
+                            PlayerName = Players.Semen,
                             HouseType = HouseType.Baratheon
                         },
                         new House
                         {
-                            Name = Players.Igor,
+                            PlayerName = Players.Igor,
                             HouseType = HouseType.Stark
                         },
                         new House
                         {
-                            Name = Players.Serega,
+                            PlayerName = Players.Serega,
                             HouseType = HouseType.Greyjoy
                         }
                     }
@@ -409,32 +409,32 @@ namespace BusinessLogic
                     {
                         new House
                         {
-                            Name = Players.Ruslan,
+                            PlayerName = Players.Ruslan,
                             HouseType = HouseType.Lannister
                         },
                         new House
                         {
-                            Name = Players.Anotron,
+                            PlayerName = Players.Anotron,
                             HouseType = HouseType.Tyrell
                         },
                         new House
                         {
-                            Name = Players.Semen,
+                            PlayerName = Players.Semen,
                             HouseType = HouseType.Martell
                         },
                         new House
                         {
-                            Name = Players.Gleb,
+                            PlayerName = Players.Gleb,
                             HouseType = HouseType.Baratheon
                         },
                         new House
                         {
-                            Name = Players.Serega,
+                            PlayerName = Players.Serega,
                             HouseType = HouseType.Stark
                         },
                         new House
                         {
-                            Name = Players.Edele,
+                            PlayerName = Players.Edele,
                             HouseType = HouseType.Greyjoy
                         }
                     }
@@ -448,32 +448,32 @@ namespace BusinessLogic
                     {
                         new House
                         {
-                            Name = Players.Semen,
+                            PlayerName = Players.Semen,
                             HouseType = HouseType.Lannister
                         },
                         new House
                         {
-                            Name = Players.Serega,
+                            PlayerName = Players.Serega,
                             HouseType = HouseType.Tyrell
                         },
                         new House
                         {
-                            Name = Players.Anotron,
+                            PlayerName = Players.Anotron,
                             HouseType = HouseType.Martell
                         },
                         new House
                         {
-                            Name = Players.Igor,
+                            PlayerName = Players.Igor,
                             HouseType = HouseType.Baratheon
                         },
                         new House
                         {
-                            Name = Players.Gleb,
+                            PlayerName = Players.Gleb,
                             HouseType = HouseType.Stark
                         },
                         new House
                         {
-                            Name = Players.Ruslan,
+                            PlayerName = Players.Ruslan,
                             HouseType = HouseType.Greyjoy
                         }
                     }
@@ -488,32 +488,32 @@ namespace BusinessLogic
                     {
                         new House
                         {
-                            Name = Players.Serega,
+                            PlayerName = Players.Serega,
                             HouseType = HouseType.Lannister
                         },
                         new House
                         {
-                            Name = Players.Ruslan,
+                            PlayerName = Players.Ruslan,
                             HouseType = HouseType.Tyrell
                         },
                         new House
                         {
-                            Name = Players.Igor,
+                            PlayerName = Players.Igor,
                             HouseType = HouseType.Martell
                         },
                         new House
                         {
-                            Name = Players.Semen,
+                            PlayerName = Players.Semen,
                             HouseType = HouseType.Baratheon
                         },
                         new House
                         {
-                            Name = Players.Anotron,
+                            PlayerName = Players.Anotron,
                             HouseType = HouseType.Stark
                         },
                         new House
                         {
-                            Name = Players.Gleb,
+                            PlayerName = Players.Gleb,
                             HouseType = HouseType.Greyjoy
                         }
                     }
@@ -527,32 +527,32 @@ namespace BusinessLogic
                     {
                         new House
                         {
-                            Name = Players.Gleb,
+                            PlayerName = Players.Gleb,
                             HouseType = HouseType.Lannister
                         },
                         new House
                         {
-                            Name = Players.Igor,
+                            PlayerName = Players.Igor,
                             HouseType = HouseType.Tyrell
                         },
                         new House
                         {
-                            Name = Players.Serega,
+                            PlayerName = Players.Serega,
                             HouseType = HouseType.Martell
                         },
                         new House
                         {
-                            Name = Players.Anotron,
+                            PlayerName = Players.Anotron,
                             HouseType = HouseType.Baratheon
                         },
                         new House
                         {
-                            Name = Players.Ruslan,
+                            PlayerName = Players.Ruslan,
                             HouseType = HouseType.Stark
                         },
                         new House
                         {
-                            Name = Players.Semen,
+                            PlayerName = Players.Semen,
                             HouseType = HouseType.Greyjoy
                         }
                     }

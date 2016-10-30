@@ -64,7 +64,7 @@ namespace Tests
 
             var playerStats = new List<PlayerStat>();
 
-            foreach (var player in players.Where(p=>store.Games.Count(g=>g.Houses.Any(h=>h.Name == p)) > 1))
+            foreach (var player in players.Where(p=>store.Games.Count(g=>g.Houses.Any(h=>h.PlayerName == p)) > 1))
             {
                 var stat = new PlayerStat
                 {
@@ -75,7 +75,7 @@ namespace Tests
                             .ToDictionary(x => x,
                                 type =>
                                 {
-                                    var games = store.Games.Where(x => x.Houses.Any(h => h.HouseType == type && h.Name == player)).ToList();
+                                    var games = store.Games.Where(x => x.Houses.Any(h => h.HouseType == type && h.PlayerName == player)).ToList();
                                     return new PlayerHouseStat
                                     {
                                         GamesCount = games.Count,
@@ -209,7 +209,7 @@ namespace Tests
         private static WinStat GetHouseWinStat(HouseType type, List<Game> games)
         {
             var houseGames = games.Where(x => x.Houses.Any(h => h.HouseType == type)).ToList();
-            var wins = houseGames.Where(x => x.Houses.Single(h => h.Name == x.Winner).HouseType == type).ToList();
+            var wins = houseGames.Where(x => x.Houses.Single(h => h.PlayerName == x.Winner).HouseType == type).ToList();
 
             return new WinStat
             {
@@ -223,7 +223,7 @@ namespace Tests
 
         private static WinStat GetNeighborWinStat(string player, List<Game> games)
         {
-            var playerGames = games.Where(x => x.Houses.Any(h => h.Name == player)).ToList();
+            var playerGames = games.Where(x => x.Houses.Any(h => h.PlayerName == player)).ToList();
 
             var nWins = playerGames.Count(g => AreNeighbors(player, g.Winner, g.Houses));
 
@@ -237,7 +237,7 @@ namespace Tests
 
         private static WinStat GetPlayerWinStat(string player, List<Game> games)
         {
-            var playerGames = games.Where(x => x.Houses.Any(h => h.Name == player)).ToList();
+            var playerGames = games.Where(x => x.Houses.Any(h => h.PlayerName == player)).ToList();
             var wins = playerGames.Where(x => x.Winner == player).ToList();
 
             return new WinStat
@@ -349,6 +349,25 @@ namespace Tests
             Console.WriteLine("__________________________________________");
             Console.WriteLine("__________________________________________");
 
+            var dict = players.ToDictionary(x => x, x => Enum.GetValues(typeof (HouseType)).Cast<HouseType>().ToDictionary(t => t, t => (double)0));
+
+            foreach (var variant in result)
+                foreach (var house in variant.Houses)
+                    dict[house.House.PlayerName][house.House.HouseType] += variant.Probability;
+
+            foreach (var pair in dict)
+            {
+                Console.WriteLine(pair.Key + ":");
+                foreach (var d in pair.Value)
+                {
+                    Console.WriteLine($"{d.Key} {d.Value:0.##}%");
+                }
+                Console.WriteLine("__________________________________________");
+            }
+
+            Console.WriteLine("__________________________________________");
+            Console.WriteLine("__________________________________________");
+
 
             foreach (var item in result.OrderBy(x => x.MinusScore).Take(10).Concat(result.OrderByDescending(x => x.MinusScore).Take(3).OrderBy(x => x.MinusScore)))
             {
@@ -362,7 +381,7 @@ namespace Tests
             Console.WriteLine("Probability: " + item.Probability);
             foreach (var house in item.Houses.OrderBy(x => x.House.HouseType))
             {
-                Console.WriteLine(house.House.HouseType + " " + house.House.Name);
+                Console.WriteLine(house.House.HouseType + " " + house.House.PlayerName);
             }
             Console.WriteLine("__________________________________________");
         }
@@ -431,10 +450,10 @@ namespace Tests
                 var winScores = item.Houses.ToDictionary(x => x,
                     dto =>
                     {
-                        var neighbors = players.Where(p => AreNeighbors(p, dto.House.Name, item.Houses.Select(x => x.House).ToList())).ToList();
+                        var neighbors = players.Where(p => AreNeighbors(p, dto.House.PlayerName, item.Houses.Select(x => x.House).ToList())).ToList();
 
 
-                        var playerStat = playerStats[dto.House.Name];
+                        var playerStat = playerStats[dto.House.PlayerName];
                         var houseStat = houseStats[dto.House.HouseType];
 
                         double neighborsAvgGames = neighbors.Sum(n => neighborStats[n].GamesCount)/2d;
@@ -446,7 +465,7 @@ namespace Tests
                 Console.WriteLine("minus score: " + item.MinusScore);
                 foreach (var house in item.Houses.OrderBy(x => x.House.HouseType))
                 {
-                    Console.WriteLine(house.House.HouseType + " " + house.House.Name);
+                    Console.WriteLine(house.House.HouseType + " " + house.House.PlayerName);
 
                     house.WinsWith = winScores[house]*100/winScores.Sum(x => x.Value);
                     Console.WriteLine($"Wins with: {house.WinsWith:0.##}%");
@@ -467,7 +486,7 @@ namespace Tests
                 .Select(p => p.Select((n, i) =>
                     new House
                     {
-                        Name = n,
+                        PlayerName = n,
                         HouseType = (HouseType) i
                     }).ToList())
                 .ToList();
@@ -504,7 +523,7 @@ namespace Tests
                 .Select(p => p.Select((n, i) =>
                     new House
                     {
-                        Name = n,
+                        PlayerName = n,
                         HouseType = (HouseType) i
                     }).ToList())
                 .ToList();
@@ -525,10 +544,10 @@ namespace Tests
                 var winScores = item.Houses.ToDictionary(x => x,
                     dto =>
                     {
-                        var neighbors = players.Where(p => AreNeighbors(p, dto.House.Name, item.Houses.Select(x=>x.House).ToList())).ToList();
+                        var neighbors = players.Where(p => AreNeighbors(p, dto.House.PlayerName, item.Houses.Select(x=>x.House).ToList())).ToList();
 
 
-                        var playerStat = playerStats[dto.House.Name];
+                        var playerStat = playerStats[dto.House.PlayerName];
                         var houseStat = houseStats[dto.House.HouseType];
 
                         double neighborsAvgGames = neighbors.Sum(n => neighborStats[n].GamesCount)/2d;
@@ -556,7 +575,7 @@ namespace Tests
                 Console.WriteLine("minus score: " + item.MinusScore);
                 foreach (var house in item.Houses.OrderBy(x => x.House.HouseType))
                 {
-                    Console.WriteLine(house.House.HouseType + " " + house.House.Name);
+                    Console.WriteLine(house.House.HouseType + " " + house.House.PlayerName);
                     
                     Console.WriteLine($"Wins with: {house.WinsWith:0.##}%");
                 }
@@ -572,7 +591,7 @@ namespace Tests
 
         private static double MinusHouseForPlayer(StringBuilder sb, House house, List<Game> games)
         {
-            var houseGames = games.Where(x=>x.Houses.Any(h=>h.Name == house.Name))
+            var houseGames = games.Where(x=>x.Houses.Any(h=>h.PlayerName == house.PlayerName))
                 .OrderByDescending(x=>x.Date)
                 .Select((x,i)=>
                 {
@@ -608,7 +627,7 @@ namespace Tests
 
             return houseGames.Sum(g =>
             {
-                var result = house.Name == g.Game.Houses.Single(l=>l.HouseType == house.HouseType).Name;
+                var result = house.PlayerName == g.Game.Houses.Single(l=>l.HouseType == house.HouseType).PlayerName;
 
                 if (sb != null && result && g.Game.Date > DateTime.Today.AddMonths(-1))
                 {
@@ -735,7 +754,7 @@ namespace Tests
             foreach (var line in facts
                 .OrderBy(x=>x.ResultPredicate.IsFromCondition)
                 .ThenBy(x=>facts.Count(f=>f.ResultPredicate.Name == x.ResultPredicate.Name))
-                //.OrderBy(x => x.ResultPredicate.Name.Contains("не побеждает"))
+                //.OrderBy(x => x.ResultPredicate.PlayerName.Contains("не побеждает"))
                 .ThenBy(x => x.ResultPredicate.Name)
                 .Select(fact => nextGame == null ? fact.ToString() : fact.ToString(nextGame))
                 )

@@ -14,14 +14,14 @@ namespace BusinessLogic
     }
     public class House
     {
-        public string Name { get; set; }
+        public string PlayerName { get; set; }
 
         [JsonConverter(typeof(StringEnumConverter))]
         public HouseType HouseType { get; set; }
 
         public override string ToString()
         {
-            return HouseType + " - " + Name;
+            return HouseType + " - " + PlayerName;
         }
     }
 
@@ -29,7 +29,7 @@ namespace BusinessLogic
     {
         public static string GetHousePlayer(HouseType type, List<House> houses)
         {
-            return houses.SingleOrDefault(x => x.HouseType == type)?.Name;
+            return houses.SingleOrDefault(x => x.HouseType == type)?.PlayerName;
         }
 
         public List<House> Houses { get; set; }
@@ -40,7 +40,7 @@ namespace BusinessLogic
 
         public bool Contains(string player)
         {
-            return Houses.Any(x => x.Name == player);
+            return Houses.Any(x => x.PlayerName == player);
         }
     }
 
@@ -61,7 +61,7 @@ namespace BusinessLogic
 
         public static string GetName(HouseType type, List<House> houses)
         {
-            return houses.Single(x => x.HouseType == type).Name;
+            return houses.Single(x => x.HouseType == type).PlayerName;
         }
     }
 }
