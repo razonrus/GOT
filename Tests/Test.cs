@@ -139,6 +139,28 @@ namespace Tests
             return Helper.GetPairs(houses).Any(x => x.Contains(player) && x.Contains(neighbor));
         }
 
+
+        [Test]
+        public void CurrentForm()
+        {
+            var store = new Store();
+
+            var games = store.Games.OrderBy(x => x.Date).ToList();
+
+            var dict = Players.All().ToDictionary(x => x, x=>0);
+
+            for (int i = 0; i < games.Count; i++)
+            {
+                dict[games[i].Winner] += i + 1;
+            }
+
+            foreach (var pair in dict.OrderByDescending(x=>x.Value))
+            {
+                Console.WriteLine(pair.Key + " " + pair.Value);
+            }
+        }
+
+
         [Test]
         public void WinnersStats()
         {
