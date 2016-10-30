@@ -136,7 +136,7 @@ namespace Tests
             if (player == neighbor)
                 return false;
 
-            return Helper.GetPairs(houses).Any(x => x.Contains(player) && x.Contains(neighbor));
+            return Helper.GetNeighbors(houses).Any(x => x.Contains(player) && x.Contains(neighbor));
         }
 
 
@@ -350,21 +350,39 @@ namespace Tests
             Console.WriteLine("__________________________________________");
 
             var dict = players.ToDictionary(x => x, x => Enum.GetValues(typeof (HouseType)).Cast<HouseType>().ToDictionary(t => t, t => (double)0));
+            var dictNeighbors = players.ToDictionary(x => x, x => players.ToDictionary(t => t, t => (double)0));
 
             foreach (var variant in result)
+            {
                 foreach (var house in variant.Houses)
                     dict[house.House.PlayerName][house.House.HouseType] += variant.Probability;
+
+                foreach (var pair in Helper.GetNeighbors(variant.Houses.Select(x=>x.House).ToList()))
+                {
+                    dictNeighbors[pair.First()][pair.Last()] += variant.Probability;
+                    dictNeighbors[pair.Last()][pair.First()] += variant.Probability;
+                }
+            }
 
             foreach (var pair in dict)
             {
                 Console.WriteLine(pair.Key + ":");
-                foreach (var d in pair.Value)
+                foreach (var d in pair.Value.OrderByDescending(x => x.Value))
                 {
                     Console.WriteLine($"{d.Key} {d.Value:0.##}%");
                 }
                 Console.WriteLine("__________________________________________");
+                Console.WriteLine("Соседство с:");
+                foreach (var neighbor in dictNeighbors[pair.Key].OrderByDescending(x=>x.Value))
+                {
+                    if(neighbor.Value > 0)
+                        Console.WriteLine($"{neighbor.Key} {neighbor.Value:0.##}%");
+                }
+                Console.WriteLine("__________________________________________");
+                Console.WriteLine("__________________________________________");
             }
 
+            Console.WriteLine("__________________________________________");
             Console.WriteLine("__________________________________________");
             Console.WriteLine("__________________________________________");
 
@@ -660,8 +678,8 @@ namespace Tests
                 }
 
                 var game = games[index];
-                var pairs = Helper.GetPairs(game.Houses);
-                result += Helper.GetPairs(houses).Count(p =>
+                var pairs = Helper.GetNeighbors(game.Houses);
+                result += Helper.GetNeighbors(houses).Count(p =>
                 {
                     var b = pairs.SingleOrDefault(p2 => Same(p, p2)) != null;
                     if (b && game.Date > DateTime.Today.AddMonths(-1))

@@ -43,25 +43,4 @@ namespace BusinessLogic
             return Houses.Any(x => x.PlayerName == player);
         }
     }
-
-    public class Helper
-    {
-        public static string[][] GetPairs(List<House> houses)
-        {
-            return new[]
-            {
-                new[] {GetName(HouseType.Baratheon, houses), GetName(HouseType.Stark, houses)},
-                new[] {GetName(HouseType.Baratheon, houses), GetName(HouseType.Martell, houses)},
-                new[] {GetName(HouseType.Tyrell, houses), GetName(HouseType.Martell, houses)},
-                new[] {GetName(HouseType.Tyrell, houses), GetName(HouseType.Lannister, houses)},
-                new[] {GetName(HouseType.Greyjoy, houses), GetName(HouseType.Lannister, houses)},
-                new[] {GetName(HouseType.Greyjoy, houses), GetName(HouseType.Stark, houses)}
-            };
-        }
-
-        public static string GetName(HouseType type, List<House> houses)
-        {
-            return houses.Single(x => x.HouseType == type).PlayerName;
-        }
-    }
 }
