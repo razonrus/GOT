@@ -1,200 +1,298 @@
 {
-  "bestCount": 1,
+  "bestCount": 3,
   "variants": [
     {
       "houses": [
         {
           "house": {
-            "name": "Igor",
+            "playerName": "Ruslan",
             "houseType": "Greyjoy"
           },
-          "winsWith": 20.895334014676383
+          "winsWith": 22.201492537313435
         },
         {
           "house": {
-            "name": "Semen",
+            "playerName": "Dima_M",
             "houseType": "Stark"
           },
-          "winsWith": 22.757017278784172
+          "winsWith": 31.343283582089548
         },
         {
           "house": {
-            "name": "Serega",
+            "playerName": "Misha",
             "houseType": "Baratheon"
           },
-          "winsWith": 12.121738955831461
+          "winsWith": 12.313432835820896
         },
         {
           "house": {
-            "name": "Ruslan",
+            "playerName": "Valya",
             "houseType": "Martell"
           },
-          "winsWith": 21.829079367695069
+          "winsWith": 5.5970149253731343
         },
         {
           "house": {
-            "name": "Gleb",
+            "playerName": "Stas",
             "houseType": "Tyrell"
           },
-          "winsWith": 12.303662916337222
+          "winsWith": 8.9552238805970141
         },
         {
           "house": {
-            "name": "AnotrOn",
+            "playerName": "Maxim",
             "houseType": "Lannister"
           },
-          "winsWith": 10.093167466675689
+          "winsWith": 19.589552238805972
         }
       ],
-      "minusScore": 55.465329115329112,
-      "description": "Repeat Martell - Ruslan with the game at 07.10.2016\r\nRepeat Tyrell - Gleb with the game at 07.10.2016\r\nRepeat Lannister - AnotrOn with the game at 07.10.2016\r\nRepeat pair Serega-Ruslan with the game at 21.10.2016\r\nRepeat pair Gleb-AnotrOn with the game at 21.10.2016\r\nRepeat pair Igor-Semen with the game at 21.10.2016\r\nRepeat pair Serega-Semen with the game at 14.10.2016\r\nRepeat pair Gleb-Ruslan with the game at 14.10.2016\r\nRepeat pair Igor-AnotrOn with the game at 14.10.2016\r\nRepeat pair Gleb-Ruslan with the game at 07.10.2016\r\nRepeat pair Gleb-AnotrOn with the game at 07.10.2016\r\nRepeat pair Igor-Semen with the game at 07.10.2016\r\n",
+      "minusScore": 0.0,
+      "description": "",
       "probability": 0.0
     },
     {
       "houses": [
         {
           "house": {
-            "name": "AnotrOn",
+            "playerName": "Misha",
             "houseType": "Greyjoy"
           },
-          "winsWith": 16.05895908681326
+          "winsWith": 12.573270808909729
         },
         {
           "house": {
-            "name": "Semen",
+            "playerName": "Valya",
             "houseType": "Stark"
           },
-          "winsWith": 22.7339637783689
+          "winsWith": 33.147713950762018
         },
         {
           "house": {
-            "name": "Serega",
+            "playerName": "Stas",
             "houseType": "Baratheon"
           },
-          "winsWith": 12.005357122501001
+          "winsWith": 9.14419695193435
         },
         {
           "house": {
-            "name": "Gleb",
+            "playerName": "Maxim",
             "houseType": "Martell"
           },
-          "winsWith": 14.460413476489435
+          "winsWith": 20.002930832356387
         },
         {
           "house": {
-            "name": "Ruslan",
+            "playerName": "Ruslan",
             "houseType": "Tyrell"
           },
-          "winsWith": 19.713357533546461
+          "winsWith": 22.669988276670573
         },
         {
           "house": {
-            "name": "Igor",
+            "playerName": "Dima_M",
             "houseType": "Lannister"
           },
-          "winsWith": 15.027949002280952
+          "winsWith": 2.46189917936694
         }
       ],
-      "minusScore": 60.915859140859133,
-      "description": "Repeat Tyrell - Ruslan with the game at 21.10.2016\r\nRepeat pair Serega-Gleb with the game at 21.10.2016\r\nRepeat pair Ruslan-Igor with the game at 21.10.2016\r\nRepeat pair AnotrOn-Semen with the game at 21.10.2016\r\nRepeat pair Serega-Semen with the game at 14.10.2016\r\nRepeat pair Ruslan-Gleb with the game at 14.10.2016\r\nRepeat pair AnotrOn-Igor with the game at 14.10.2016\r\nRepeat pair Serega-Gleb with the game at 09.10.2016\r\nRepeat pair AnotrOn-Semen with the game at 09.10.2016\r\nRepeat pair Ruslan-Gleb with the game at 07.10.2016\r\n",
+      "minusScore": 0.0,
+      "description": "",
       "probability": 0.0
     },
     {
       "houses": [
         {
           "house": {
-            "name": "AnotrOn",
+            "playerName": "Misha",
             "houseType": "Greyjoy"
           },
-          "winsWith": 16.075243762182051
+          "winsWith": 12.313432835820898
         },
         {
           "house": {
-            "name": "Semen",
+            "playerName": "Dima_M",
             "houseType": "Stark"
           },
-          "winsWith": 22.757017278784168
+          "winsWith": 31.343283582089551
         },
         {
           "house": {
-            "name": "Serega",
+            "playerName": "Ruslan",
             "houseType": "Baratheon"
           },
-          "winsWith": 12.121738955831459
+          "winsWith": 22.201492537313438
         },
         {
           "house": {
-            "name": "Ruslan",
+            "playerName": "Maxim",
             "houseType": "Martell"
           },
-          "winsWith": 21.829079367695066
+          "winsWith": 19.589552238805972
         },
         {
           "house": {
-            "name": "Gleb",
+            "playerName": "Stas",
             "houseType": "Tyrell"
           },
-          "winsWith": 12.30366291633722
+          "winsWith": 8.9552238805970159
         },
         {
           "house": {
-            "name": "Igor",
+            "playerName": "Valya",
             "houseType": "Lannister"
           },
-          "winsWith": 14.913257719170019
+          "winsWith": 5.5970149253731352
         }
       ],
-      "minusScore": 62.730902430902418,
-      "description": "Repeat Martell - Ruslan with the game at 07.10.2016\r\nRepeat Tyrell - Gleb with the game at 07.10.2016\r\nRepeat pair Gleb-Igor with the game at 27.10.2016\r\nRepeat pair Serega-Ruslan with the game at 21.10.2016\r\nRepeat pair AnotrOn-Semen with the game at 21.10.2016\r\nRepeat pair Serega-Semen with the game at 14.10.2016\r\nRepeat pair Gleb-Ruslan with the game at 14.10.2016\r\nRepeat pair Gleb-Igor with the game at 14.10.2016\r\nRepeat pair AnotrOn-Igor with the game at 14.10.2016\r\nRepeat pair AnotrOn-Semen with the game at 09.10.2016\r\nRepeat pair Gleb-Ruslan with the game at 07.10.2016\r\n",
+      "minusScore": 0.0,
+      "description": "",
       "probability": 0.0
     },
     {
       "houses": [
         {
           "house": {
-            "name": "AnotrOn",
+            "playerName": "Ruslan",
             "houseType": "Greyjoy"
           },
-          "winsWith": 16.031057771105253
+          "winsWith": 18.628454452405322
         },
         {
           "house": {
-            "name": "Igor",
+            "playerName": "Misha",
             "houseType": "Stark"
           },
-          "winsWith": 22.30003093750685
+          "winsWith": 34.698055271238481
         },
         {
           "house": {
-            "name": "Ruslan",
+            "playerName": "Dima_M",
             "houseType": "Baratheon"
           },
-          "winsWith": 17.275686316780209
+          "winsWith": 5.7025880976750987
         },
         {
           "house": {
-            "name": "Gleb",
+            "playerName": "Stas",
             "houseType": "Martell"
           },
-          "winsWith": 14.435289521724075
+          "winsWith": 12.545693814885217
         },
         {
           "house": {
-            "name": "Serega",
+            "playerName": "Valya",
             "houseType": "Tyrell"
           },
-          "winsWith": 14.304079041098477
+          "winsWith": 5.7025880976750987
         },
         {
           "house": {
-            "name": "Semen",
+            "playerName": "Maxim",
             "houseType": "Lannister"
           },
-          "winsWith": 15.653856411785126
+          "winsWith": 22.722620266120778
         }
       ],
-      "minusScore": 64.7209817959818,
-      "description": "Repeat Stark - Igor with the game at 07.10.2016\r\nRepeat Tyrell - Serega with the game at 14.10.2016\r\nRepeat Lannister - Semen with the game at 14.10.2016\r\nRepeat pair Ruslan-Igor with the game at 21.10.2016\r\nRepeat pair Serega-Gleb with the game at 21.10.2016\r\nRepeat pair AnotrOn-Semen with the game at 21.10.2016\r\nRepeat pair Ruslan-Gleb with the game at 14.10.2016\r\nRepeat pair Serega-Semen with the game at 14.10.2016\r\nRepeat pair AnotrOn-Igor with the game at 14.10.2016\r\nRepeat pair Serega-Gleb with the game at 09.10.2016\r\nRepeat pair AnotrOn-Semen with the game at 09.10.2016\r\nRepeat pair Ruslan-Gleb with the game at 07.10.2016\r\n",
+      "minusScore": 4.0,
+      "description": "Repeat pair Dima_M-Stas with the game at 31.01.2025\r\nRepeat pair Valya-Maxim with the game at 31.01.2025\r\n",
+      "probability": 0.0
+    },
+    {
+      "houses": [
+        {
+          "house": {
+            "playerName": "Valya",
+            "houseType": "Greyjoy"
+          },
+          "winsWith": 5.825242718446602
+        },
+        {
+          "house": {
+            "playerName": "Stas",
+            "houseType": "Stark"
+          },
+          "winsWith": 40.7766990291262
+        },
+        {
+          "house": {
+            "playerName": "Dima_M",
+            "houseType": "Baratheon"
+          },
+          "winsWith": 5.825242718446602
+        },
+        {
+          "house": {
+            "playerName": "Misha",
+            "houseType": "Martell"
+          },
+          "winsWith": 5.3323375653472747
+        },
+        {
+          "house": {
+            "playerName": "Ruslan",
+            "houseType": "Tyrell"
+          },
+          "winsWith": 19.029126213592232
+        },
+        {
+          "house": {
+            "playerName": "Maxim",
+            "houseType": "Lannister"
+          },
+          "winsWith": 23.211351755041076
+        }
+      ],
+      "minusScore": 4.0,
+      "description": "Repeat pair Dima_M-Stas with the game at 31.01.2025\r\nRepeat pair Valya-Maxim with the game at 31.01.2025\r\n",
+      "probability": 0.0
+    },
+    {
+      "houses": [
+        {
+          "house": {
+            "playerName": "Misha",
+            "houseType": "Greyjoy"
+          },
+          "winsWith": 8.1957370159111367
+        },
+        {
+          "house": {
+            "playerName": "Valya",
+            "houseType": "Stark"
+          },
+          "winsWith": 30.441308916241368
+        },
+        {
+          "house": {
+            "playerName": "Maxim",
+            "houseType": "Baratheon"
+          },
+          "winsWith": 26.928850195136597
+        },
+        {
+          "house": {
+            "playerName": "Stas",
+            "houseType": "Martell"
+          },
+          "winsWith": 5.8540978685079557
+        },
+        {
+          "house": {
+            "playerName": "Dima_M",
+            "houseType": "Tyrell"
+          },
+          "winsWith": 5.3587511257880527
+        },
+        {
+          "house": {
+            "playerName": "Ruslan",
+            "houseType": "Lannister"
+          },
+          "winsWith": 23.221254878414889
+        }
+      ],
+      "minusScore": 4.0,
+      "description": "Repeat pair Maxim-Valya with the game at 31.01.2025\r\nRepeat pair Dima_M-Stas with the game at 31.01.2025\r\n",
       "probability": 0.0
     }
   ]

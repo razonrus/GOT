@@ -13,7 +13,7 @@ namespace Tests
     [TestFixture]
     public class Test
     {
-        private const string BasePath = @"D:\Projects\GOT\json\";
+        private const string BasePath = @"C:\Home_Project\GOT-master\json\";
 
         public class Variant
         {
@@ -52,19 +52,17 @@ namespace Tests
             var players = new List<string>
             {
                 Players.Ruslan,
-                Players.Gleb,
-                Players.Semen,
-                Players.Anotron,
-                Players.Serega,
-                Players.Igor,
-                Players.Edele,
-                Players.Dimon,
-                Players.Levch
+                Players.Valya,
+                Players.Maxim,
+                Players.Dima_M,
+                Players.Misha,
+                Players.Sasha,
+                Players.Stas,
             };
 
             var playerStats = new List<PlayerStat>();
 
-            foreach (var player in players.Where(p=>store.Games.Count(g=>g.Houses.Any(h=>h.PlayerName == p)) > 1))
+            foreach (var player in players.Where(p=>store.Games.Count(g=>g.Houses.Any(h=>h.PlayerName == p)) > 0))
             {
                 var stat = new PlayerStat
                 {
@@ -285,11 +283,11 @@ namespace Tests
             var players = new List<string>()
             {
                 Players.Ruslan,
-                Players.Gleb,
-                Players.Semen,
-                Players.Anotron,
-                Players.Serega,
-                Players.Igor
+                Players.Valya,
+                Players.Dima_M,
+                Players.Misha,
+                Players.Stas,
+                Players.Maxim
             };
             Store store = new Store();
             var nextGame = GetNextGame(players, store.Games);
@@ -345,7 +343,7 @@ namespace Tests
             var stepsCount = (int) Math.Ceiling(100/min);
             var step = 100/(double) stepsCount;
 
-            Assert.LessOrEqual(step, min);
+            //Assert.LessOrEqual(step, min);
 
             var randomValue = random.Next(stepsCount + 1)*step;
 

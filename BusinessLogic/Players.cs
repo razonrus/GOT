@@ -14,6 +14,13 @@ namespace BusinessLogic
         public static string Dimon = "Dimon";
         public static string Edele = "Edele";
 
+        public static string Maxim = "Maxim";
+        public static string Dima_M = "Dima_M";
+        public static string Valya = "Valya";
+        public static string Sasha = "Sasha";
+        public static string Misha = "Misha";
+        public static string Stas = "Stas";
+
         public static List<string> All()
         {
             return new List<string>
@@ -26,7 +33,13 @@ namespace BusinessLogic
                 Levch,
                 Serega,
                 Dimon,
-                Edele
+                Edele,
+                Maxim,
+                Valya,
+                Dima_M,
+                Sasha,
+                Misha,
+                Stas
             };
         }
     }
