@@ -58,6 +58,7 @@ namespace Tests
                 Players.Misha,
                 Players.Sasha,
                 Players.Stas,
+                Players.Leha
             };
 
             var playerStats = new List<PlayerStat>();
@@ -186,15 +187,14 @@ namespace Tests
 
             foreach (var player in new List<string>()
             {
-                Players.Dimon,
+                Players.Dima_M,
                 Players.Ruslan,
-                Players.Levch,
-                Players.Gleb,
-                Players.Semen,
-                Players.Anotron,
-                Players.Serega,
-                Players.Igor,
-                Players.Edele
+                Players.Valya,
+                Players.Sasha,
+                Players.Leha,
+                Players.Maxim,
+                Players.Misha,
+                Players.Stas
             })
             {
                 Console.WriteLine(player);
@@ -283,10 +283,10 @@ namespace Tests
             var players = new List<string>()
             {
                 Players.Ruslan,
-                Players.Valya,
+                Players.Leha,
                 Players.Dima_M,
                 Players.Misha,
-                Players.Stas,
+                Players.Sasha,
                 Players.Maxim
             };
             Store store = new Store();
@@ -313,7 +313,7 @@ namespace Tests
         [Test]
         public void ShowNextGameChances()
         {
-            var random = new Random(DateTime.Now.Millisecond);
+            var random = new Random();
 
             var players = new List<string>()
             {

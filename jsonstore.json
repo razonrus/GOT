@@ -63,38 +63,6 @@
       "winner": "Ruslan",
       "winType": 1,
       "withRandomCards": false
-    },
-    {
-      "houses": [
-        {
-          "playerName": "Dima_M",
-          "houseType": "Stark"
-        },
-        {
-          "playerName": "Misha",
-          "houseType": "Greyjoy"
-        },
-        {
-          "playerName": "Leha",
-          "houseType": "Lannister"
-        },
-        {
-          "playerName": "Sasha",
-          "houseType": "Tyrell"
-        },
-        {
-          "playerName": "Maxim",
-          "houseType": "Martell"
-        },
-        {
-          "playerName": "Ruslan",
-          "houseType": "Baratheon"
-        }
-      ],
-      "date": "2025-05-07T00:00:00",
-      "winner": "Ruslan",
-      "winType": 0,
-      "withRandomCards": false
     }
   ]
 }

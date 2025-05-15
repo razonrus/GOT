@@ -20,6 +20,7 @@ namespace BusinessLogic
         public static string Sasha = "Sasha";
         public static string Misha = "Misha";
         public static string Stas = "Stas";
+        public static string Leha = "Leha";
 
         public static List<string> All()
         {
@@ -39,7 +40,8 @@ namespace BusinessLogic
                 Dima_M,
                 Sasha,
                 Misha,
-                Stas
+                Stas,
+                Leha
             };
         }
     }
