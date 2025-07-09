@@ -284,9 +284,9 @@ namespace Tests
             {
                 Players.Ruslan,
                 Players.Leha,
-                Players.Dima_M,
+                Players.Andrey,
                 Players.Misha,
-                Players.Sasha,
+                Players.Serega_B,
                 Players.Maxim
             };
             Store store = new Store();
@@ -481,6 +481,7 @@ namespace Tests
             var neighborStats = players.ToDictionary(x => x, x => GetNeighborWinStat(x, games));
             var houseStats = Enum.GetValues(typeof (HouseType)).Cast<HouseType>().ToDictionary(x => x, x => GetHouseWinStat(x, games));
 
+            var number = 1;
             foreach (var item in result.OrderBy(x => x.MinusScore).Take(best.Count + 3))
             {
                 var winScores = item.Houses.ToDictionary(x => x,
@@ -498,6 +499,7 @@ namespace Tests
                     });
 
 
+                Console.WriteLine("# " + number++);
                 Console.WriteLine("minus score: " + item.MinusScore);
                 foreach (var house in item.Houses.OrderBy(x => x.House.HouseType))
                 {
@@ -511,6 +513,25 @@ namespace Tests
 
                 nextGame.Variants.Add(item);
             }
+
+            foreach (var player in players)
+            {
+                foreach (HouseType houseType in Enum.GetValues(typeof(HouseType)))
+                {
+                    int count = result.OrderBy(x => x.MinusScore).Take(best.Count)
+                                        .SelectMany(x => x.Houses).Count(h => h.House.PlayerName == player && h.House.HouseType == houseType);
+                    if (count > 0)
+                        Console.WriteLine(player + " будет играть за **" + houseType + "** с вероятностью " + count * 100 / best.Count + " %");
+                }
+                Console.WriteLine("_____________________________");
+            }
+
+            foreach (var player in players)
+            {
+                Console.WriteLine(player + " победит с вероятностью **" + Math.Round(result.OrderBy(x => x.MinusScore).Take(best.Count)
+                                .SelectMany(x => x.Houses).Where(h => h.House.PlayerName == player).Average(x => x.WinsWith),2) + " %**");
+            }
+
             return nextGame;
         }
 

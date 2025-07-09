@@ -4,7 +4,8 @@ namespace BusinessLogic
 {
     public static class Players
     {
-        public static string Ruslan = "Ruslan";
+        public static string Ruslan = "@ruslan.safin";
+
         public static string Anotron = "AnotrOn";
         public static string Semen = "Semen";
         public static string Gleb = "Gleb";
@@ -14,13 +15,15 @@ namespace BusinessLogic
         public static string Dimon = "Dimon";
         public static string Edele = "Edele";
 
-        public static string Maxim = "Maxim";
+        public static string Maxim = "@maximmadasov";
         public static string Dima_M = "Dima_M";
         public static string Valya = "Valya";
         public static string Sasha = "Sasha";
-        public static string Misha = "Misha";
+        public static string Misha = "@aizek";
         public static string Stas = "Stas";
-        public static string Leha = "Leha";
+        public static string Leha = "@lavrovaleksey";
+        public static string Andrey = "Andrey";
+        public static string Serega_B = "@sergei.bondarenko";
 
         public static List<string> All()
         {
@@ -41,7 +44,9 @@ namespace BusinessLogic
                 Sasha,
                 Misha,
                 Stas,
-                Leha
+                Leha,
+                Andrey,
+                Serega_B
             };
         }
     }
