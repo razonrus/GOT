@@ -5,48 +5,48 @@
       "houses": [
         {
           "house": {
-            "playerName": "Ruslan",
+            "playerName": "@maximmadasov",
             "houseType": "Greyjoy"
           },
-          "winsWith": 26.875314047807048
+          "winsWith": 9.9222878458190884
         },
         {
           "house": {
-            "playerName": "Misha",
+            "playerName": "@aizek",
             "houseType": "Stark"
           },
-          "winsWith": 26.358481085349222
+          "winsWith": 21.084861672365562
         },
         {
           "house": {
-            "playerName": "Maxim",
+            "playerName": "Andrey",
             "houseType": "Baratheon"
           },
-          "winsWith": 25.382241045151108
+          "winsWith": 23.54574655476117
         },
         {
           "house": {
-            "playerName": "Leha",
+            "playerName": "@lavrovaleksey",
             "houseType": "Martell"
           },
-          "winsWith": 12.080970497451728
+          "winsWith": 3.6224225468863342
         },
         {
           "house": {
-            "playerName": "Dima_M",
+            "playerName": "@ruslan.safin",
             "houseType": "Tyrell"
           },
-          "winsWith": 2.0673318498313118
+          "winsWith": 32.601802921977
         },
         {
           "house": {
-            "playerName": "Sasha",
+            "playerName": "@sergei.bondarenko",
             "houseType": "Lannister"
           },
-          "winsWith": 7.2356614744095911
+          "winsWith": 9.2228784581908627
         }
       ],
-      "minusScore": 2.0,
+      "minusScore": 1.5,
       "description": "",
       "probability": 0.0
     },
@@ -54,48 +54,48 @@
       "houses": [
         {
           "house": {
-            "playerName": "Maxim",
+            "playerName": "@maximmadasov",
             "houseType": "Greyjoy"
           },
-          "winsWith": 17.404163348879532
+          "winsWith": 11.555587734858632
         },
         {
           "house": {
-            "playerName": "Misha",
+            "playerName": "@aizek",
             "houseType": "Stark"
           },
-          "winsWith": 26.106245023319296
+          "winsWith": 20.978894399594534
         },
         {
           "house": {
-            "playerName": "Sasha",
+            "playerName": "@lavrovaleksey",
             "houseType": "Baratheon"
           },
-          "winsWith": 14.332840404959617
+          "winsWith": 12.163776563009087
         },
         {
           "house": {
-            "playerName": "Ruslan",
+            "playerName": "Andrey",
             "houseType": "Martell"
           },
-          "winsWith": 30.167216471391193
+          "winsWith": 15.407450313144841
         },
         {
           "house": {
-            "playerName": "Leha",
+            "playerName": "@sergei.bondarenko",
             "houseType": "Tyrell"
           },
-          "winsWith": 8.1219428961437838
+          "winsWith": 16.507982478369474
         },
         {
           "house": {
-            "playerName": "Dima_M",
+            "playerName": "@ruslan.safin",
             "houseType": "Lannister"
           },
-          "winsWith": 3.8675918553065634
+          "winsWith": 23.386308511023419
         }
       ],
-      "minusScore": 7.0,
+      "minusScore": 5.5,
       "description": "",
       "probability": 0.0
     },
@@ -103,48 +103,48 @@
       "houses": [
         {
           "house": {
-            "playerName": "Dima_M",
+            "playerName": "@ruslan.safin",
             "houseType": "Greyjoy"
           },
-          "winsWith": 1.9847300556754504
+          "winsWith": 21.670592498641057
         },
         {
           "house": {
-            "playerName": "Leha",
+            "playerName": "@lavrovaleksey",
             "houseType": "Stark"
           },
-          "winsWith": 36.9035744727154
+          "winsWith": 24.634092327515045
         },
         {
           "house": {
-            "playerName": "Maxim",
+            "playerName": "Andrey",
             "houseType": "Baratheon"
           },
-          "winsWith": 24.3680745724597
+          "winsWith": 22.874514304121124
         },
         {
           "house": {
-            "playerName": "Misha",
+            "playerName": "@aizek",
             "houseType": "Martell"
           },
-          "winsWith": 3.9955749805045246
+          "winsWith": 3.9590505526363478
         },
         {
           "house": {
-            "playerName": "Ruslan",
+            "playerName": "@maximmadasov",
             "houseType": "Tyrell"
           },
-          "winsWith": 25.801490723780855
+          "winsWith": 17.901793803225225
         },
         {
           "house": {
-            "playerName": "Sasha",
+            "playerName": "@sergei.bondarenko",
             "houseType": "Lannister"
           },
-          "winsWith": 6.9465551948640769
+          "winsWith": 8.95995651386121
         }
       ],
-      "minusScore": 10.0,
+      "minusScore": 9.5,
       "description": "",
       "probability": 0.0
     },
@@ -152,49 +152,49 @@
       "houses": [
         {
           "house": {
-            "playerName": "Ruslan",
+            "playerName": "Andrey",
             "houseType": "Greyjoy"
           },
-          "winsWith": 28.208106723693458
+          "winsWith": 13.812402974099191
         },
         {
           "house": {
-            "playerName": "Leha",
+            "playerName": "@aizek",
             "houseType": "Stark"
           },
-          "winsWith": 30.920424677894751
+          "winsWith": 21.694480758231879
         },
         {
           "house": {
-            "playerName": "Maxim",
+            "playerName": "@maximmadasov",
             "houseType": "Baratheon"
           },
-          "winsWith": 23.506755603077885
+          "winsWith": 18.169887245690006
         },
         {
           "house": {
-            "playerName": "Misha",
+            "playerName": "@lavrovaleksey",
             "houseType": "Martell"
           },
-          "winsWith": 8.95064924886427
+          "winsWith": 8.58577089631506
         },
         {
           "house": {
-            "playerName": "Dima_M",
+            "playerName": "@ruslan.safin",
             "houseType": "Tyrell"
           },
-          "winsWith": 1.7130429184429226
+          "winsWith": 33.54440722281231
         },
         {
           "house": {
-            "playerName": "Sasha",
+            "playerName": "@sergei.bondarenko",
             "houseType": "Lannister"
           },
-          "winsWith": 6.7010208280267269
+          "winsWith": 4.19305090285154
         }
       ],
-      "minusScore": 12.0,
-      "description": "Repeat pair Dima_M-Misha with the game at 07.05.2025\r\n",
+      "minusScore": 11.5,
+      "description": "Repeat pair @maximmadasov-@lavrovaleksey with the game at 09.07.2025\r\n",
       "probability": 0.0
     }
   ]

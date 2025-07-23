@@ -13,7 +13,7 @@ namespace Tests
     [TestFixture]
     public class Test
     {
-        private const string BasePath = @"C:\Home_Project\GOT-master\json\";
+        private const string BasePath = @"C:\Home_Project\GOT\json\";
 
         public class Variant
         {
@@ -567,11 +567,11 @@ namespace Tests
             var players = new List<string>()
             {
                 Players.Ruslan,
-                Players.Gleb,
-                Players.Semen,
-                Players.Anotron,
-                Players.Serega,
-                Players.Igor
+                Players.Andrey,
+                Players.Misha,
+                Players.Leha,
+                Players.Serega_B,
+                Players.Maxim
             };
             var store = new Store();
             var result = new List<Variant>();
